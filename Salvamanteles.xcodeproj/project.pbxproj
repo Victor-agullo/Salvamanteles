@@ -12,9 +12,12 @@
 		B9B793BB23CE3B7F0048146E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B793B923CE3B7F0048146E /* Main.storyboard */; };
 		B9B793BD23CE3B7F0048146E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B793BC23CE3B7F0048146E /* Assets.xcassets */; };
 		B9B793C023CE3B7F0048146E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B793BE23CE3B7F0048146E /* LaunchScreen.storyboard */; };
+		BA27FFDD9C972A65BE44E5E5 /* Pods_Salvamanteles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2793D61D0BF97EB5656A8768 /* Pods_Salvamanteles.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2793D61D0BF97EB5656A8768 /* Pods_Salvamanteles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Salvamanteles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CC2D02C338CDF74AB1AC7F /* Pods-Salvamanteles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salvamanteles.debug.xcconfig"; path = "Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles.debug.xcconfig"; sourceTree = "<group>"; };
 		B9B793B223CE3B7F0048146E /* Salvamanteles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvamanteles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B793B523CE3B7F0048146E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9B793B723CE3B7F0048146E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		B9B793BC23CE3B7F0048146E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9B793BF23CE3B7F0048146E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9B793C123CE3B7F0048146E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD750E5ADE647CF47EA4865F /* Pods-Salvamanteles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salvamanteles.release.xcconfig"; path = "Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA27FFDD9C972A65BE44E5E5 /* Pods_Salvamanteles.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		402D2054D29B8804FC6E919C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2793D61D0BF97EB5656A8768 /* Pods_Salvamanteles.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2187A51204F1D950FAFBC27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5CC2D02C338CDF74AB1AC7F /* Pods-Salvamanteles.debug.xcconfig */,
+				DD750E5ADE647CF47EA4865F /* Pods-Salvamanteles.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B9B793A923CE3B7F0048146E = {
 			isa = PBXGroup;
 			children = (
 				B9B793B423CE3B7F0048146E /* Salvamanteles */,
 				B9B793B323CE3B7F0048146E /* Products */,
+				A2187A51204F1D950FAFBC27 /* Pods */,
+				402D2054D29B8804FC6E919C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B793C423CE3B7F0048146E /* Build configuration list for PBXNativeTarget "Salvamanteles" */;
 			buildPhases = (
+				39788074AE4609FCADDC1732 /* [CP] Check Pods Manifest.lock */,
 				B9B793AE23CE3B7F0048146E /* Sources */,
 				B9B793AF23CE3B7F0048146E /* Frameworks */,
 				B9B793B023CE3B7F0048146E /* Resources */,
+				BFD40D9DD27083FEB59484EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39788074AE4609FCADDC1732 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Salvamanteles-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFD40D9DD27083FEB59484EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9B793AE23CE3B7F0048146E /* Sources */ = {
@@ -280,6 +349,7 @@
 		};
 		B9B793C523CE3B7F0048146E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5CC2D02C338CDF74AB1AC7F /* Pods-Salvamanteles.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +368,7 @@
 		};
 		B9B793C623CE3B7F0048146E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD750E5ADE647CF47EA4865F /* Pods-Salvamanteles.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
