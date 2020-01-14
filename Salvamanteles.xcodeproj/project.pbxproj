@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,7 +54,6 @@
 				B5CC2D02C338CDF74AB1AC7F /* Pods-Salvamanteles.debug.xcconfig */,
 				DD750E5ADE647CF47EA4865F /* Pods-Salvamanteles.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
