@@ -16,48 +16,32 @@ class LoginController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if var data = UserDefaults.standard.dictionary(forKey: "user") {
-            let file = usagesProvider()
+        if let data = UserDefaults.standard.dictionary(forKey: "user") {
             
-            data["csvFile"] = file
             viewJumper(parameters: data, uri: "login")
         }
     }
     
-    func usagesProvider() -> URL {
-        
-        let name = "usage.csv"
-        
-        let directory = FileManager.default.urls(for:.documentDirectory, in: .userDomainMask)
-        let rute = directory.first?.appendingPathComponent(name)
-
-        return rute!
-    }
-    
     @IBAction func registerButton(_ sender: UIButton) {
-        let file = usagesProvider()
-        
-        let params = [
-            "name" : nameEntry.text!,
-            "email" : mailEntry.text!,
-            "password" : passEntry.text!,
-            "csvFile" : file
-            ] as [String : Any]
+        let params = paramGetter()
         
         viewJumper(parameters: params, uri: "register")
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
-        let file = usagesProvider()
-        
-        let params = [
-        "name" : nameEntry.text!,
-        "email" : mailEntry.text!,
-        "password" : passEntry.text!,
-        "csvFile" : file
-            ] as [String : Any]
+        let params = paramGetter()
         
         viewJumper(parameters: params, uri: "login")
+    }
+    
+    func paramGetter() -> Dictionary<String, String> {
+        
+         let params = [
+            "name" : nameEntry.text!,
+            "email" : mailEntry.text!,
+            "password" : passEntry.text!,
+        ]
+        return params
     }
     
     func viewJumper(parameters: Any, uri: String) {
@@ -78,11 +62,10 @@ class LoginController: UIViewController {
                     
                 } else if uri == "register" {
                     UserDefaults.standard.set(parameters, forKey: "user")
-                    self.performSegue(withIdentifier: "Logged", sender: from)
+                    self.performSegue(withIdentifier: "Registered", sender: from)
                 }
                 
             case .failure:
-                print("fallo")
                 break
             }
         }

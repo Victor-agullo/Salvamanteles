@@ -13,7 +13,7 @@ class MainController:UIViewController, UICollectionViewDataSource, UICollectionV
     
     var jsonArray: NSArray?
     var nameArray: Array<String> = []
-    var timeArray: Array<String> = []
+    var optionsArray: Array<String> = []
     var imageURLArray: Array<String> = []
     
     @IBOutlet weak var AppCollection: UICollectionView!
@@ -39,14 +39,11 @@ class MainController:UIViewController, UICollectionViewDataSource, UICollectionV
                 for item in self.jsonArray! as! [NSDictionary] {
                     
                     let name = item["name"] as! String
+                    let options = item["options"] as! String
                     let imageURL = item["icon"] as! String
                     
-                    var timesOrdered = item.keysSortedByValue(using: #selector(NSNumber.compare(_:)))
-                    let timeToday = timesOrdered[1] as! String
-                    let time = item[timeToday] as! String
-                    
                     self.nameArray.append(name)
-                    self.timeArray.append(time)
+                    self.optionsArray.append(options)
                     self.imageURLArray.append(imageURL)
                 }
                 self.AppCollection.reloadData()
@@ -59,11 +56,12 @@ class MainController:UIViewController, UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppCells", for: indexPath) as! AppCells
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restCells", for: indexPath) as! restCells
+        
         let url = URL(string: self.imageURLArray[indexPath.row])
         
-        cell.AppName.text = nameArray[indexPath.row]
-        cell.AppTime.text = timeArray[indexPath.row]
+        cell..text = nameArray[indexPath.row]
+        cell.optionsArray.text = optionsArray[indexPath.row]
         cell.AppIcon.af_setImage(withURL: url!)
         
         return cell

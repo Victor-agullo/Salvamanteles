@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "6c0-HH-Mag"; */
+"6c0-HH-Mag.normalTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "7dr-Ly-AqO"; */
+"7dr-Ly-AqO.normalTitle" = "Register";
+
+/* Class = "UITextField"; placeholder = "mail"; ObjectID = "GyP-gh-f6c"; */
+"GyP-gh-f6c.placeholder" = "mail";
+
+/* Class = "UIButton"; normalTitle = "¿Olvidaste la contraseña?"; ObjectID = "KAq-QR-8m2"; */
+"KAq-QR-8m2.normalTitle" = "Forgot your password?";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "QnN-ml-PN3"; */
+"QnN-ml-PN3.normalTitle" = "English";
+
+/* Class = "UITextField"; placeholder = "contra"; ObjectID = "a3e-KG-FQ7"; */
+"a3e-KG-FQ7.placeholder" = "pass";
+
+/* Class = "UIButton"; normalTitle = "Español"; ObjectID = "htV-sJ-1aT"; */
+"htV-sJ-1aT.normalTitle" = "Español";
+
+/* Class = "UITextField"; placeholder = "nombre"; ObjectID = "vzv-A0-7bh"; */
+"vzv-A0-7bh.placeholder" = "name";
+
+/* Class = "UITextField"; placeholder = "nombre"; ObjectID = "zDD-OC-eOG"; */
+"zDD-OC-eOG.placeholder" = "name";

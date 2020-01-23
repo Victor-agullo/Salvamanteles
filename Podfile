@@ -7,6 +7,6 @@ target 'Salvamanteles' do
 
   # Pods for Bienestapp
 	use_frameworks!
-	pod 'Alamofire', '~> 4.5'
-  	pod 'AlamofireImage', '~> 3.5'
+	pod 'Alamofire'
+  	pod 'AlamofireImage'
 end
