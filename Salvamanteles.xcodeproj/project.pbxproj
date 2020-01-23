@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7FC28F1B23D994D100C6A8D7 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28F1723D994CF00C6A8D7 /* TableController.swift */; };
+		7FC28F1B23D994D100C6A8D7 /* RestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28F1723D994CF00C6A8D7 /* RestController.swift */; };
 		7FC28F1C23D994D100C6A8D7 /* HTTPMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28F1823D994D000C6A8D7 /* HTTPMessenger.swift */; };
 		7FC28F1D23D994D100C6A8D7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28F1923D994D000C6A8D7 /* LoginController.swift */; };
 		7FC28F1E23D994D100C6A8D7 /* RestCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28F1A23D994D000C6A8D7 /* RestCells.swift */; };
 		7FC28F2523D9A9AB00C6A8D7 /* languageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28F2423D9A9AB00C6A8D7 /* languageController.swift */; };
 		7FC28F2E23D9D58A00C6A8D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FC28F3023D9D58A00C6A8D7 /* Localizable.strings */; };
+		B9682BF223DA4A450094D671 /* serverRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9682BF123DA4A450094D671 /* serverRetriever.swift */; };
 		B9B793B623CE3B7F0048146E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B793B523CE3B7F0048146E /* AppDelegate.swift */; };
 		B9B793B823CE3B7F0048146E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B793B723CE3B7F0048146E /* ViewController.swift */; };
 		B9B793BB23CE3B7F0048146E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B793B923CE3B7F0048146E /* Main.storyboard */; };
@@ -23,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		2793D61D0BF97EB5656A8768 /* Pods_Salvamanteles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Salvamanteles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FC28F1723D994CF00C6A8D7 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
+		7FC28F1723D994CF00C6A8D7 /* RestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestController.swift; sourceTree = "<group>"; };
 		7FC28F1823D994D000C6A8D7 /* HTTPMessenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMessenger.swift; sourceTree = "<group>"; };
 		7FC28F1923D994D000C6A8D7 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7FC28F1A23D994D000C6A8D7 /* RestCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCells.swift; sourceTree = "<group>"; };
@@ -31,6 +32,7 @@
 		7FC28F2F23D9D58A00C6A8D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7FC28F3123D9D58D00C6A8D7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5CC2D02C338CDF74AB1AC7F /* Pods-Salvamanteles.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salvamanteles.debug.xcconfig"; path = "Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles.debug.xcconfig"; sourceTree = "<group>"; };
+		B9682BF123DA4A450094D671 /* serverRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = serverRetriever.swift; path = ../../../BienestappFront/Bienestapp/Background/serverRetriever.swift; sourceTree = "<group>"; };
 		B9B793B223CE3B7F0048146E /* Salvamanteles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvamanteles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B793B523CE3B7F0048146E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9B793B723CE3B7F0048146E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				7FC28F1A23D994D000C6A8D7 /* RestCells.swift */,
-				7FC28F1723D994CF00C6A8D7 /* TableController.swift */,
+				7FC28F1723D994CF00C6A8D7 /* RestController.swift */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -84,6 +86,7 @@
 				B9B793B523CE3B7F0048146E /* AppDelegate.swift */,
 				B9B793BC23CE3B7F0048146E /* Assets.xcassets */,
 				7FC28F1823D994D000C6A8D7 /* HTTPMessenger.swift */,
+				B9682BF123DA4A450094D671 /* serverRetriever.swift */,
 			);
 			path = Background;
 			sourceTree = "<group>";
@@ -267,10 +270,11 @@
 				B9B793B823CE3B7F0048146E /* ViewController.swift in Sources */,
 				7FC28F1E23D994D100C6A8D7 /* RestCells.swift in Sources */,
 				7FC28F2523D9A9AB00C6A8D7 /* languageController.swift in Sources */,
-				7FC28F1B23D994D100C6A8D7 /* TableController.swift in Sources */,
+				7FC28F1B23D994D100C6A8D7 /* RestController.swift in Sources */,
 				B9B793B623CE3B7F0048146E /* AppDelegate.swift in Sources */,
 				7FC28F1C23D994D100C6A8D7 /* HTTPMessenger.swift in Sources */,
 				7FC28F1D23D994D100C6A8D7 /* LoginController.swift in Sources */,
+				B9682BF223DA4A450094D671 /* serverRetriever.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
