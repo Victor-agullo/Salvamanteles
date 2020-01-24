@@ -9,4 +9,5 @@ target 'Salvamanteles' do
 	use_frameworks!
 	pod 'Alamofire'
   	pod 'AlamofireImage'
+	pod 'Lokalise'
 end

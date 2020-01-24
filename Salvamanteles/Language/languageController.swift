@@ -11,19 +11,18 @@ import UIKit
 
 class languageController: UIViewController {
     
+    // usa el pod de Lokalizer para cambiar los idiomas automáticamente
+    // la vista enlazada quítala y la funcionalidad pásala a ajustes si tienes tiempo
+    // https://cocoapods.org/pods/Lokalise
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func toEng(_ sender: UIButton) {
-        languageChange()
+
     }
     
     @IBAction func toEsp(_ sender: UIButton) {
-        languageChange()
-    }
-    
-    func languageChange() {
-        let buttonTitle = NSLocalizedString("bear", comment: "The name of the animal")
-        print(buttonTitle)
+
     }
 }

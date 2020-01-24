@@ -2,20 +2,24 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - Lokalise (0.10.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Lokalise
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - Lokalise
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  Lokalise: bc42066e2dde59b43b46e88ecc0b92b7d593dc72
 
-PODFILE CHECKSUM: 3bb4665ff0605ea29c55ea5448e5cd31b737b9bc
+PODFILE CHECKSUM: 4155b7901e758b0f892fa58f80d6edcb7c0c6485
 
-COCOAPODS: 1.9.0.beta.2
+COCOAPODS: 1.8.4
