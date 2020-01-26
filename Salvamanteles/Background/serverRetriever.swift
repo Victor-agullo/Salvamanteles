@@ -1,6 +1,6 @@
 //
 //  serverRetriever.swift
-//  Bienestapp
+//  Salvamanteles
 //
 //  Created by Víctor Agulló on 22/1/20.
 //  Copyright © 2020 Víctor. All rights reserved.
