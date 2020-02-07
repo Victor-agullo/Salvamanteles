@@ -12,6 +12,13 @@ import AlamofireImage
 
 class RestController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    //ejemplos
+    
+    let exampleNameArray: [String] = ["Burger", "McDonald"]
+    let exampleImgArray: [UIImage] = [#imageLiteral(resourceName: "image8"), #imageLiteral(resourceName: "image9")]
+    let exampleOptionArray: [String] = ["patata", "hamburguesa"]
+    
+    
     //La vista de la colección
     @IBOutlet weak var restaurantsCollection: UICollectionView!
     
@@ -35,14 +42,20 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
         // establece cual es la celda
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restCells", for: indexPath) as! restCells
         
+        cell.restName.text = exampleNameArray[indexPath.row]
+        cell.options.text = exampleOptionArray[indexPath.row]
+        cell.logo.image = exampleImgArray[indexPath.row]
+        
         // transforma el string obtenido del server en un formato de array
+        /*
         let url = URL(string: imageURLArray[indexPath.row])
         
         // establece los valores de cada objeto de la celda
+        
         cell.restName.text = nameArray[indexPath.row]
         cell.options.text = optionsArray[indexPath.row]
         cell.logo.af_setImage(withURL: url!)
-        
+        */
         return cell
     }
 }

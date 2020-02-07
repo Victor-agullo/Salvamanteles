@@ -13,10 +13,10 @@ class HTTPMessenger {
     
     // recoge la string de contacto con el server y, junto con el fragmento del endpoint,
     // la convierte en una URL válida
-    func urlModder(direction: String) -> URL {
+    func urlModder(urlEndpoint: String) -> URL {
         let urlString = "http://localhost:8888/bienestapp/public/index.php/api/"
 
-        let url = URL(string: urlString+direction)!
+        let url = URL(string: urlString+urlEndpoint)!
         
         return url
     }
@@ -24,7 +24,7 @@ class HTTPMessenger {
     // función que realiza el post
     func post(endpoint: String, params: Any) -> DataRequest{
         
-        let url = urlModder(direction: endpoint)
+        let url = urlModder(urlEndpoint: endpoint)
         
         let post = Alamofire.request(url, method: .post, parameters: params as? Parameters)
         
@@ -34,7 +34,7 @@ class HTTPMessenger {
     // función que realiza el get con el token en el header
     func get(endpoint: String) -> DataRequest {
         
-        let url = urlModder(direction: endpoint)
+        let url = urlModder(urlEndpoint: endpoint)
         
         let token = [
             "token" : UserDefaults.standard.value(forKey: "token")!

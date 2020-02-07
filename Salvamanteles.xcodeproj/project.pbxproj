@@ -63,6 +63,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F4ED30E23E065DE004A5575 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		7FC28F1F23D996D000C6A8D7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +145,7 @@
 		B9B793B423CE3B7F0048146E /* Salvamanteles */ = {
 			isa = PBXGroup;
 			children = (
+				7F4ED30E23E065DE004A5575 /* Helpers */,
 				7FC28F2323D9A98E00C6A8D7 /* Language */,
 				7FC28F1F23D996D000C6A8D7 /* Login */,
 				7FC28F2023D996E800C6A8D7 /* Restaurants */,

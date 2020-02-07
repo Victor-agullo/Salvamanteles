@@ -5,10 +5,34 @@
 //  Created by alumnos on 08/01/2020.
 //  Copyright © 2020 Víctor. All rights reserved.
 //
-
 import UIKit
 
+var nameEntry = ""
+var mailEntry = ""
+var passEntry = ""
+var errorFromJSON = ""
+
 class LoginController: UIViewController {
+    
+    //Funcion que crea un label con sus especificaciones, la cual llamaremos cuando sea necesario para mostrarinformación puntual al usuario (mas adelante habra que crear clase especifica con esta funcion)
+    func showToast(message : String) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height/1.35, width: 300, height: 35))
+        toastLabel.textColor = UIColor.red
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: toastLabel.font.fontName, size: 20)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+    let urlLogin = ""
+    let urlRegister = ""
     
     // obtención de las entradas de la pantalla del login
     @IBOutlet weak var nameEntry: UITextField!
@@ -72,8 +96,33 @@ class LoginController: UIViewController {
                     self.performSegue(withIdentifier: "Logged", sender: from)
                 } else if uri == "register" {
                     // guarda el usuario en defaults
-                    UserDefaults.standard.set(parameters, forKey: "user")
-                    self.performSegue(withIdentifier: "Registered", sender: from)
+                    
+                    //CODIGO DEPENDIENTE DE CADA CODIGO HTTP DEVUELTO POR API
+                    
+                    if (self.nameEntry.text != "" && self.passEntry.text != "" && self.mailEntry.text != "") {
+                        //POST USER
+                        var httpCodeDifferences = self.HttpMessenger.post(endpoint: "register", params: parameters)
+                        httpCodeDifferences.responseJSON
+                            {
+                                response in
+                                switch (response.response?.statusCode)
+                                {
+                                case 200:
+                                    UserDefaults.standard.set(parameters, forKey: "user")
+                                    self.performSegue(withIdentifier: "Registered", sender: from)
+                                    
+                                case 401:
+                                    var JSONtoString = response.result.value as! [String:Any]
+                                    errorFromJSON = JSONtoString["message"] as! String
+                                    self.showToast(message: errorFromJSON)
+                                default: break
+                                }
+                        }
+                    }
+                    else {
+                        //Shows toast when the user is not logged
+                        self.showToast(message: "Empty fields!")
+                    }
                 }
                 
             case .failure:
