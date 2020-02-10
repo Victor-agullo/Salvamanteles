@@ -10,44 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Language Controller-->
-        <scene sceneID="Z7s-42-MpL">
-            <objects>
-                <viewController id="TFp-Rx-WhS" customClass="languageController" customModule="Salvamanteles" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ycx-af-8ot">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htV-sJ-1aT">
-                                <rect key="frame" x="130" y="401" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Español"/>
-                                <connections>
-                                    <action selector="toEsp:" destination="TFp-Rx-WhS" eventType="touchUpInside" id="zdp-zX-qsV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnN-ml-PN3">
-                                <rect key="frame" x="238" y="401" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="English"/>
-                                <connections>
-                                    <action selector="toEng:" destination="TFp-Rx-WhS" eventType="touchUpInside" id="GLc-JN-69R"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="r38-lk-JUE"/>
-                    </view>
-                    <connections>
-                        <outlet property="EnglishLang" destination="QnN-ml-PN3" id="rEL-C7-qts"/>
-                        <outlet property="SpanishLang" destination="htV-sJ-1aT" id="8jx-1f-Cn3"/>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" id="W0c-GB-Ahu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VaA-Vq-xjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-639" y="25"/>
-        </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -122,6 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-428" y="86"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gaz-QV-9Nc">
@@ -131,10 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgF-T3-y2I">
-                                <rect key="frame" x="0.0" y="64" width="414" height="98"/>
-                            </pickerView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uFP-eN-8oK" userLabel="RestCollection">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uFP-eN-8oK" userLabel="RestCollection">
                                 <rect key="frame" x="20" y="192" width="374" height="620"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l0o-PI-Gcu">
@@ -158,20 +118,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AgF-T3-y2I" firstAttribute="top" secondItem="k2Q-k5-KTZ" secondAttribute="top" constant="20" id="766-4Q-d8H"/>
-                            <constraint firstItem="AgF-T3-y2I" firstAttribute="trailing" secondItem="k2Q-k5-KTZ" secondAttribute="trailing" id="8Uf-u9-AbE"/>
                             <constraint firstItem="k2Q-k5-KTZ" firstAttribute="trailing" secondItem="uFP-eN-8oK" secondAttribute="trailing" constant="20" id="CgU-MN-2td"/>
                             <constraint firstItem="uFP-eN-8oK" firstAttribute="leading" secondItem="5hO-Bx-zXI" secondAttribute="leading" constant="20" id="cMf-xF-9d8"/>
-                            <constraint firstItem="uFP-eN-8oK" firstAttribute="top" secondItem="AgF-T3-y2I" secondAttribute="bottom" constant="30" id="di5-qT-peC"/>
                             <constraint firstItem="k2Q-k5-KTZ" firstAttribute="bottom" secondItem="uFP-eN-8oK" secondAttribute="bottom" constant="50" id="qP6-I0-zJ3"/>
-                            <constraint firstItem="AgF-T3-y2I" firstAttribute="leading" secondItem="k2Q-k5-KTZ" secondAttribute="leading" id="xml-kx-DkD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2Q-k5-KTZ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNe-CQ-afl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1433" y="-238"/>
+            <point key="canvasLocation" x="806" y="-250"/>
         </scene>
         <!--Rest Controller-->
         <scene sceneID="SpX-9s-nFj">
@@ -243,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sY-bR-6B7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430.4347826086957" y="421.875"/>
+            <point key="canvasLocation" x="807" y="388"/>
         </scene>
     </scenes>
 </document>

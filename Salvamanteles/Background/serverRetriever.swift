@@ -8,24 +8,26 @@
 
 import UIKit
 
-// se declaran fuera de la clase para que sean unas variables publicas y accesibles
-var nameArray: Array<String> = []
-var optionsArray: Array<String> = []
-var imageURLArray: Array<String> = []
-
 class serverRetriever: UIViewController {
     
-    // array genérico para meter la respuesta del get
-    var jsonArray: NSArray?
+    // se declaran fuera de la clase para que sean unas variables publicas y accesibles
+    static var nameArray: Array<String> = []
+    static var optionsArray: Array<String> = []
+    static var imageURLArray: Array<String> = []
+
     
-    // llamada al gestor de respuestas
-    var HttpMessenger = HTTPMessenger()
 
     // tras pedir información al server, la traduce a Arrays y luego los guarda en divisiones
-    func infoGatherer(thisCollectionView: UICollectionView) {
+    static func infoGatherer(thisCollectionView: UICollectionView) {
+        
+        // llamada al gestor de respuestas
+        var HttpMessenger = HTTPMessenger()
+        
+        // array genérico para meter la respuesta del get
+        var jsonArray: NSArray?
         
         // realiza el get
-        let get = self.HttpMessenger.get(endpoint: "times")
+        let get = HttpMessenger.get(endpoint: "times")
         
         // recoge la respuesta
         get.responseJSON { response in
@@ -34,7 +36,7 @@ class serverRetriever: UIViewController {
             if let JSON = response.result.value {
                 
                 // pasa el JSON a array
-                self.jsonArray = JSON as? NSArray
+                jsonArray = JSON as? NSArray
                 
                 // bucle que desgrana el array del JSON en los arrays que necesitamos según
                 // el índice de
