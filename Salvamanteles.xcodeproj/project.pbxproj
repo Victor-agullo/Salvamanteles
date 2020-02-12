@@ -20,6 +20,18 @@
 		B9B793BD23CE3B7F0048146E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9B793BC23CE3B7F0048146E /* Assets.xcassets */; };
 		B9B793C023CE3B7F0048146E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9B793BE23CE3B7F0048146E /* LaunchScreen.storyboard */; };
 		BA27FFDD9C972A65BE44E5E5 /* Pods_Salvamanteles.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2793D61D0BF97EB5656A8768 /* Pods_Salvamanteles.framework */; };
+		FD585D2723F1AFC8005CDA59 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D2623F1AFC8005CDA59 /* RegisterController.swift */; };
+		FD585D2A23F1B086005CDA59 /* RecoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D2923F1B086005CDA59 /* RecoverController.swift */; };
+		FD585D2D23F1B2F3005CDA59 /* ForbiddenFoodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D2C23F1B2F3005CDA59 /* ForbiddenFoodController.swift */; };
+		FD585D2F23F1B307005CDA59 /* ForbiddenCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D2E23F1B307005CDA59 /* ForbiddenCells.swift */; };
+		FD585D3223F1BACC005CDA59 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3123F1BACC005CDA59 /* ProfileController.swift */; };
+		FD585D3423F1BADD005CDA59 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3323F1BADD005CDA59 /* ProfileCell.swift */; };
+		FD585D3723F1C848005CDA59 /* DishesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3623F1C848005CDA59 /* DishesController.swift */; };
+		FD585D3A23F1C865005CDA59 /* DishesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3923F1C865005CDA59 /* DishesCell.swift */; };
+		FD585D3D23F1D37B005CDA59 /* IngredientsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3C23F1D37B005CDA59 /* IngredientsController.swift */; };
+		FD585D3F23F1D38F005CDA59 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3E23F1D38F005CDA59 /* IngredientsCell.swift */; };
+		FD585D4223F1DB30005CDA59 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D4123F1DB30005CDA59 /* SummaryController.swift */; };
+		FD585D4423F1DB41005CDA59 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D4323F1DB41005CDA59 /* SummaryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +53,18 @@
 		B9B793BF23CE3B7F0048146E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9B793C123CE3B7F0048146E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD750E5ADE647CF47EA4865F /* Pods-Salvamanteles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salvamanteles.release.xcconfig"; path = "Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles.release.xcconfig"; sourceTree = "<group>"; };
+		FD585D2623F1AFC8005CDA59 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		FD585D2923F1B086005CDA59 /* RecoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverController.swift; sourceTree = "<group>"; };
+		FD585D2C23F1B2F3005CDA59 /* ForbiddenFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForbiddenFoodController.swift; sourceTree = "<group>"; };
+		FD585D2E23F1B307005CDA59 /* ForbiddenCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForbiddenCells.swift; sourceTree = "<group>"; };
+		FD585D3123F1BACC005CDA59 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		FD585D3323F1BADD005CDA59 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		FD585D3623F1C848005CDA59 /* DishesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesController.swift; sourceTree = "<group>"; };
+		FD585D3923F1C865005CDA59 /* DishesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesCell.swift; sourceTree = "<group>"; };
+		FD585D3C23F1D37B005CDA59 /* IngredientsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsController.swift; sourceTree = "<group>"; };
+		FD585D3E23F1D38F005CDA59 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
+		FD585D4123F1DB30005CDA59 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
+		FD585D4323F1DB41005CDA59 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +172,13 @@
 				7F4ED30E23E065DE004A5575 /* Helpers */,
 				7FC28F2323D9A98E00C6A8D7 /* Language */,
 				7FC28F1F23D996D000C6A8D7 /* Login */,
+				FD585D2523F1AF8A005CDA59 /* Register */,
+				FD585D2823F1B05E005CDA59 /* Recover */,
+				FD585D4023F1DB11005CDA59 /* Summary */,
+				FD585D3B23F1D309005CDA59 /* Ingredients */,
+				FD585D3523F1C82D005CDA59 /* Dishes */,
+				FD585D3023F1BA63005CDA59 /* Profile */,
+				FD585D2B23F1B1EB005CDA59 /* ForbiddenFood */,
 				7FC28F2023D996E800C6A8D7 /* Restaurants */,
 				7FC28F2223D9980F00C6A8D7 /* OptionsSelected */,
 				B9B793B923CE3B7F0048146E /* Main.storyboard */,
@@ -156,6 +187,67 @@
 				7FC28F2123D9970F00C6A8D7 /* Background */,
 			);
 			path = Salvamanteles;
+			sourceTree = "<group>";
+		};
+		FD585D2523F1AF8A005CDA59 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D2623F1AFC8005CDA59 /* RegisterController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FD585D2823F1B05E005CDA59 /* Recover */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D2923F1B086005CDA59 /* RecoverController.swift */,
+			);
+			path = Recover;
+			sourceTree = "<group>";
+		};
+		FD585D2B23F1B1EB005CDA59 /* ForbiddenFood */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D2C23F1B2F3005CDA59 /* ForbiddenFoodController.swift */,
+				FD585D2E23F1B307005CDA59 /* ForbiddenCells.swift */,
+			);
+			path = ForbiddenFood;
+			sourceTree = "<group>";
+		};
+		FD585D3023F1BA63005CDA59 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D3123F1BACC005CDA59 /* ProfileController.swift */,
+				FD585D3323F1BADD005CDA59 /* ProfileCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FD585D3523F1C82D005CDA59 /* Dishes */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D3623F1C848005CDA59 /* DishesController.swift */,
+				FD585D3923F1C865005CDA59 /* DishesCell.swift */,
+			);
+			path = Dishes;
+			sourceTree = "<group>";
+		};
+		FD585D3B23F1D309005CDA59 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D3C23F1D37B005CDA59 /* IngredientsController.swift */,
+				FD585D3E23F1D38F005CDA59 /* IngredientsCell.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		FD585D4023F1DB11005CDA59 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				FD585D4123F1DB30005CDA59 /* SummaryController.swift */,
+				FD585D4323F1DB41005CDA59 /* SummaryCell.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,11 +371,23 @@
 				B9B793B823CE3B7F0048146E /* ViewController.swift in Sources */,
 				7FC28F1E23D994D100C6A8D7 /* RestCells.swift in Sources */,
 				7FC28F2523D9A9AB00C6A8D7 /* languageController.swift in Sources */,
+				FD585D2F23F1B307005CDA59 /* ForbiddenCells.swift in Sources */,
 				7FC28F1B23D994D100C6A8D7 /* RestController.swift in Sources */,
+				FD585D3423F1BADD005CDA59 /* ProfileCell.swift in Sources */,
+				FD585D3723F1C848005CDA59 /* DishesController.swift in Sources */,
+				FD585D3223F1BACC005CDA59 /* ProfileController.swift in Sources */,
+				FD585D3D23F1D37B005CDA59 /* IngredientsController.swift in Sources */,
+				FD585D2D23F1B2F3005CDA59 /* ForbiddenFoodController.swift in Sources */,
+				FD585D4223F1DB30005CDA59 /* SummaryController.swift in Sources */,
+				FD585D3F23F1D38F005CDA59 /* IngredientsCell.swift in Sources */,
 				B9B793B623CE3B7F0048146E /* AppDelegate.swift in Sources */,
 				7FC28F1C23D994D100C6A8D7 /* HTTPMessenger.swift in Sources */,
+				FD585D4423F1DB41005CDA59 /* SummaryCell.swift in Sources */,
+				FD585D3A23F1C865005CDA59 /* DishesCell.swift in Sources */,
 				7FC28F1D23D994D100C6A8D7 /* LoginController.swift in Sources */,
 				B97491DD23DDDC03009F6D3D /* serverRetriever.swift in Sources */,
+				FD585D2A23F1B086005CDA59 /* RecoverController.swift in Sources */,
+				FD585D2723F1AFC8005CDA59 /* RegisterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
