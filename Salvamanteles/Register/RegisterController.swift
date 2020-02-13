@@ -6,4 +6,34 @@
 //  Copyright © 2020 Thorn&Wheat. All rights reserved.
 //
 
-import Foundation
+import UIKit
+class RegisterController: UIViewController{
+    
+    
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passField: UITextField!
+    @IBAction func registerButton(_ sender: UIButton) {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+

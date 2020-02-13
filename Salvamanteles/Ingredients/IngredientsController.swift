@@ -12,6 +12,7 @@ class IngredientsController: UIViewController, UITableViewDelegate, UITableViewD
     var numberOfRows = 0
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

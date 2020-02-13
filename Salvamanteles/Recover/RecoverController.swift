@@ -6,4 +6,13 @@
 //  Copyright © 2020 Thorn&Wheat. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class RecoverController: UIViewController {
+    
+    
+    
+    
+    
+    
+}

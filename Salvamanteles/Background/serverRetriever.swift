@@ -40,7 +40,7 @@ class serverRetriever: UIViewController {
                 
                 // bucle que desgrana el array del JSON en los arrays que necesitamos según
                 // el índice de
-                for item in self.jsonArray! as! [NSDictionary] {
+                for item in self.jsonArray as! [NSDictionary] {
                     
                     let name = item["name"] as! String
                     let imageURL = item["icon"] as! String

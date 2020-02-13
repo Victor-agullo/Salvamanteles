@@ -20,7 +20,10 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     
     
     //La vista de la colección
+    //@IBOutlet weak var restaurantsCollection: UICollectionView!
+    
     @IBOutlet weak var restaurantsCollection: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,7 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     
     // obtención dinámica del número de celdas a mostrar
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return nameArray.count
+        return exampleNameArray.count
     }
     
     // rellena las celdas con los arrays públicos obtenidos del serverRetriever

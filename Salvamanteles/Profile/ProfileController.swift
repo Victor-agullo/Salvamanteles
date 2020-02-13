@@ -12,7 +12,8 @@ class ProfileController:UIViewController, UICollectionViewDataSource, UICollecti
     
     let exampleNameArray: [String] = ["Javi", "Victor", "Diego", "Alex"]
     
-    @IBOutlet weak var ProfileCollection: UICollectionView!
+    
+    @IBOutlet weak var ProfileCollection: ProfileCollection!
     
     override func viewDidLoad() {
         ProfileCollection.dataSource = self

@@ -11,7 +11,12 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     var numberOfRows = 0
     
+    //@IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -35,6 +35,9 @@ class LoginController: UIViewController {
     let urlRegister = ""
     
     // obtención de las entradas de la pantalla del login
+    
+    
+    
     @IBOutlet weak var nameEntry: UITextField!
     @IBOutlet weak var mailEntry: UITextField!
     @IBOutlet weak var passEntry: UITextField!
@@ -51,18 +54,23 @@ class LoginController: UIViewController {
     }
     
     // Botón de registro
+    
+    
     @IBAction func registerButton(_ sender: UIButton) {
         let params = paramGetter()
         
         viewJumper(parameters: params, uri: "register")
     }
     
+    
     //botón de login
+  
     @IBAction func loginButton(_ sender: UIButton) {
         let params = paramGetter()
         
         viewJumper(parameters: params, uri: "login")
     }
+    
     
     // getter de las entradas de la vista
     func paramGetter() -> Dictionary<String, String> {
@@ -131,12 +139,30 @@ class LoginController: UIViewController {
         }
     }
     
+    //@IBAction func passRecovery(_ sender: UIButton) {
+        //let params = [
+            //"email" : mailEntry.text!,
+        //]
+        
+        // recuperación de contraseña
+        //let _ = HttpMessenger.post(endpoint: "forgot", params: params)
+    //}
+    
     @IBAction func passRecovery(_ sender: UIButton) {
         let params = [
             "email" : mailEntry.text!,
         ]
         
-        // recuperación de contraseña
         let _ = HttpMessenger.post(endpoint: "forgot", params: params)
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

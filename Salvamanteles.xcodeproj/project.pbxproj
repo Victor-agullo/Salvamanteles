@@ -32,6 +32,7 @@
 		FD585D3F23F1D38F005CDA59 /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D3E23F1D38F005CDA59 /* IngredientsCell.swift */; };
 		FD585D4223F1DB30005CDA59 /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D4123F1DB30005CDA59 /* SummaryController.swift */; };
 		FD585D4423F1DB41005CDA59 /* SummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD585D4323F1DB41005CDA59 /* SummaryCell.swift */; };
+		FDDA03DB23F55B380052A025 /* Version10Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDA03DA23F55B380052A025 /* Version10Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		FD585D3E23F1D38F005CDA59 /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
 		FD585D4123F1DB30005CDA59 /* SummaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		FD585D4323F1DB41005CDA59 /* SummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCell.swift; sourceTree = "<group>"; };
+		FDDA03DA23F55B380052A025 /* Version10Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Version10Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				B9B793BE23CE3B7F0048146E /* LaunchScreen.storyboard */,
 				B9B793C123CE3B7F0048146E /* Info.plist */,
 				7FC28F2123D9970F00C6A8D7 /* Background */,
+				FDDA03DA23F55B380052A025 /* Version10Storyboard.storyboard */,
 			);
 			path = Salvamanteles;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				B9B793C023CE3B7F0048146E /* LaunchScreen.storyboard in Resources */,
 				7FC28F2E23D9D58A00C6A8D7 /* Localizable.strings in Resources */,
 				B9B793BD23CE3B7F0048146E /* Assets.xcassets in Resources */,
+				FDDA03DB23F55B380052A025 /* Version10Storyboard.storyboard in Resources */,
 				B9B793BB23CE3B7F0048146E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
