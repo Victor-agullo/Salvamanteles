@@ -5,7 +5,6 @@
 //  Created by alumnos on 09/01/2020.
 //  Copyright © 2020 Víctor. All rights reserved.
 //
-
 import UIKit
 //Esto está relacionado con el af_setImage para que saque la imagen de la url
 import AlamofireImage

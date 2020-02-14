@@ -155,9 +155,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TQw-6P-74a">
-                                <rect key="frame" x="10" y="194" width="394" height="459"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TQw-6P-74a">
+                                <rect key="frame" x="10" y="391" width="394" height="459"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LOP-Pv-vBc">
                                     <size key="itemSize" width="394" height="74"/>
@@ -177,10 +176,32 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPE-9x-7DC">
+                                <rect key="frame" x="30" y="104" width="354" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PlK-VJ-phd"/>
+                                </constraints>
+                                <state key="normal" title="¿Qué restricciones tienes?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickSelectRestrict:" destination="fDr-qu-Zi3" eventType="touchUpInside" id="6ll-Vx-gKt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZPE-9x-7DC" firstAttribute="leading" secondItem="UfT-DY-zxn" secondAttribute="leading" constant="30" id="6aV-hs-Meo"/>
+                            <constraint firstItem="ZPE-9x-7DC" firstAttribute="top" secondItem="UfT-DY-zxn" secondAttribute="top" constant="60" id="Vv3-4k-G71"/>
+                            <constraint firstItem="UfT-DY-zxn" firstAttribute="trailing" secondItem="ZPE-9x-7DC" secondAttribute="trailing" constant="30" id="hTK-OR-WGR"/>
+                            <constraint firstItem="TQw-6P-74a" firstAttribute="top" secondItem="ZPE-9x-7DC" secondAttribute="bottom" constant="461" id="jyU-1O-Ggi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UfT-DY-zxn"/>
                     </view>
+                    <connections>
+                        <outlet property="btnSelectRestriction" destination="ZPE-9x-7DC" id="uEw-0k-eFw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2en-5g-C8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
