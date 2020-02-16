@@ -7,45 +7,15 @@
 //
 import UIKit
 
-var nameEntry = ""
-var mailEntry = ""
-var passEntry = ""
-var errorFromJSON = ""
-
 class LoginController: UIViewController {
     
-    //Funcion que crea un label con sus especificaciones, la cual llamaremos cuando sea necesario para mostrarinformación puntual al usuario (mas adelante habra que crear clase especifica con esta funcion)
-    func showToast(message : String) {
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 150, y: self.view.frame.size.height/1.35, width: 300, height: 35))
-        toastLabel.textColor = UIColor.red
-        toastLabel.textAlignment = .center;
-        toastLabel.font = UIFont(name: toastLabel.font.fontName, size: 20)
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.clipsToBounds  =  true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 2, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: {(isCompleted) in
-            toastLabel.removeFromSuperview()
-        })
-    }
-    
-    let urlLogin = ""
-    let urlRegister = ""
-    
     // obtención de las entradas de la pantalla del login
-    
-    
-    
-    @IBOutlet weak var nameEntry: UITextField!
     @IBOutlet weak var mailEntry: UITextField!
     @IBOutlet weak var passEntry: UITextField!
+    @IBOutlet weak var loginButt: UIButton!
     
-    var HttpMessenger = HTTPMessenger()
-
-    override func viewDidAppear(_ animated: Bool) {
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         //si al iniciar la app, hay un "user" guardado en defaults, hace un login automáticamente
         if let data = UserDefaults.standard.dictionary(forKey: "user") {
             
@@ -53,33 +23,31 @@ class LoginController: UIViewController {
         }
     }
     
-    // Botón de registro
-    
-    
-    @IBAction func registerButton(_ sender: UIButton) {
-        let params = paramGetter()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        viewJumper(parameters: params, uri: "register")
+        passEntry.placeholder = NSLocalizedString("pass", comment: "")
     }
     
+    // Botón que manda a la ventana de registro
+    @IBAction func toRegistryButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toRegistry", sender: Any?.self)
+    }
     
     //botón de login
-  
     @IBAction func loginButton(_ sender: UIButton) {
         let params = paramGetter()
         
         viewJumper(parameters: params, uri: "login")
     }
     
-    
     // getter de las entradas de la vista
     func paramGetter() -> Dictionary<String, String> {
         
-         let params = [
-            "name" : nameEntry.text!,
+        let params = [
             "email" : mailEntry.text!,
             "password" : passEntry.text!,
-        ]
+            ]
         return params
     }
     
@@ -90,79 +58,43 @@ class LoginController: UIViewController {
         let from = Any?.self
         
         // se realiza el post
-        let hadConnected = HttpMessenger.post(endpoint: uri, params: parameters)
+        let hadConnected = HTTPMessenger.init().post(endpoint: uri, params: parameters)
         
         // respuesta del server
         hadConnected.responseJSON { response in
             
-            switch response.result {
+            switch (response.response?.statusCode) {
                 
-            case .success:
+            case 200:
                 
                 if uri == "login"{
-                    self.HttpMessenger.tokenSavior(response: response)
+                    HTTPMessenger.init().tokenSavior(response: response)
                     self.performSegue(withIdentifier: "Logged", sender: from)
+                    
                 } else if uri == "register" {
+                    
                     // guarda el usuario en defaults
-                    
-                    //CODIGO DEPENDIENTE DE CADA CODIGO HTTP DEVUELTO POR API
-                    
-                    if (self.nameEntry.text != "" && self.passEntry.text != "" && self.mailEntry.text != "") {
-                        //POST USER
-                        var httpCodeDifferences = self.HttpMessenger.post(endpoint: "register", params: parameters)
-                        httpCodeDifferences.responseJSON
-                            {
-                                response in
-                                switch (response.response?.statusCode)
-                                {
-                                case 200:
-                                    UserDefaults.standard.set(parameters, forKey: "user")
-                                    self.performSegue(withIdentifier: "Registered", sender: from)
-                                    
-                                case 401:
-                                    var JSONtoString = response.result.value as! [String:Any]
-                                    errorFromJSON = JSONtoString["message"] as! String
-                                    self.showToast(message: errorFromJSON)
-                                default: break
-                                }
-                        }
-                    }
-                    else {
-                        //Shows toast when the user is not logged
-                        self.showToast(message: "Empty fields!")
-                    }
+                    UserDefaults.standard.set(parameters, forKey: "user")
+                    self.performSegue(withIdentifier: "Registered", sender: from)
                 }
+                break
+            case 401:
                 
-            case .failure:
+                var JSONtoString = response.result.value as! [String:Any]
+                let errorFromJSON = JSONtoString["message"] as! String
+                let view = self.view
+                Toaster.init().showToast(message: errorFromJSON, view: view!)
+                break
+                
+            case .none:
+                let errorConection = "Sin conexión a la base de datos"
+                let view = self.view
+                Toaster.init().showToast(message: errorConection, view: view!)
+                break
+                
+            case .some(_):
                 break
             }
         }
     }
-    
-    //@IBAction func passRecovery(_ sender: UIButton) {
-        //let params = [
-            //"email" : mailEntry.text!,
-        //]
-        
-        // recuperación de contraseña
-        //let _ = HttpMessenger.post(endpoint: "forgot", params: params)
-    //}
-    
-    @IBAction func passRecovery(_ sender: UIButton) {
-        let params = [
-            "email" : mailEntry.text!,
-        ]
-        
-        let _ = HttpMessenger.post(endpoint: "forgot", params: params)
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

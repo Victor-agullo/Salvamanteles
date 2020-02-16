@@ -10,24 +10,20 @@ import UIKit
 
 class serverRetriever: UIViewController {
     
-    // se declaran fuera de la clase para que sean unas variables publicas y accesibles
-    static var nameArray: Array<String> = []
-    static var optionsArray: Array<String> = []
-    static var imageURLArray: Array<String> = []
-
+    var namesArray: Array<String> = []
+    var restaurantsArray: Array<String> = []
+    var categoriesArray: Array<String> = []
+    var dishesArray: Array<String> = []
+    var allergensArray: Array<String> = []
     
-
+    // llamada al gestor de respuestas
+    var HttpMessenger = HTTPMessenger()
+    
     // tras pedir información al server, la traduce a Arrays y luego los guarda en divisiones
-    static func infoGatherer(thisCollectionView: UICollectionView) {
-        
-        // llamada al gestor de respuestas
-        var HttpMessenger = HTTPMessenger()
-        
-        // array genérico para meter la respuesta del get
-        var jsonArray: NSArray?
+    func infoGatherer(thisCollectionView: UICollectionView) {
         
         // realiza el get
-        let get = HttpMessenger.get(endpoint: "times")
+        let get = self.HttpMessenger.get(endpoint: "endpointAlServer")
         
         // recoge la respuesta
         get.responseJSON { response in
@@ -36,23 +32,32 @@ class serverRetriever: UIViewController {
             if let JSON = response.result.value {
                 
                 // pasa el JSON a array
-                jsonArray = JSON as? NSArray
+                let jsonArray = JSON as? NSArray
                 
-                // bucle que desgrana el array del JSON en los arrays que necesitamos según
-                // el índice de
-                for item in self.jsonArray as! [NSDictionary] {
-                    
-                    let name = item["name"] as! String
-                    let imageURL = item["icon"] as! String
-                    let options = item["options"] as! String
-                    
-                    nameArray.append(name)
-                    optionsArray.append(options)
-                    imageURLArray.append(imageURL)
-                }
+                self.arraysDistributor(jsonArray: jsonArray!)
+                
                 // recarga la vista para hacer efectivos los cambios
                 thisCollectionView.reloadData()
             }
+        }
+    }
+    
+    // bucle que desgrana el array del JSON en los arrays que necesitamos
+    func arraysDistributor(jsonArray: NSArray) {
+        
+        for item in jsonArray as! [NSDictionary] {
+            
+            let names = item[""] as! String
+            let restaurants = item[""] as! String
+            let categories = item[""] as! String
+            let dishes = item[""] as! String
+            let allergens = item[""] as! String
+            
+            namesArray.append(names)
+            restaurantsArray.append(restaurants)
+            categoriesArray.append(categories)
+            dishesArray.append(dishes)
+            allergensArray.append(allergens)
         }
     }
 }

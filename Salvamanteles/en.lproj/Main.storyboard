@@ -194,7 +194,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGE-vA-pTC" userLabel="login Butt" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGE-vA-pTC" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="314" height="50"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.74509803919999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -239,7 +239,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="loginButt" destination="tGE-vA-pTC" id="QJv-hj-dP3"/>
                         <outlet property="mailEntry" destination="VCr-qn-Vuj" id="iTe-tB-hfo"/>
                         <outlet property="passEntry" destination="4Af-Bk-nsF" id="D8B-FV-rwQ"/>
                         <segue destination="0i8-Ys-9Tq" kind="showDetail" id="wa9-dA-p5D"/>

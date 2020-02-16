@@ -8,7 +8,7 @@
 //
 
 import UIKit
-
+/*
 class CellClass: UITableViewCell {
     
 }
@@ -86,3 +86,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+*/
