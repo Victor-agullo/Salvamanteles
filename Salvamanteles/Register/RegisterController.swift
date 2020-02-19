@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class RegisterController: UIViewController{
     
     @IBOutlet weak var nameField: UITextField!
@@ -17,17 +18,24 @@ class RegisterController: UIViewController{
     @IBOutlet weak var errorMail: UILabel!
     @IBOutlet weak var errorPass: UILabel!
     
+    var hadConnected: Bool = Bool()
+
     @IBAction func registerButton(_ sender: UIButton) {
         
         let mail = validator.init().validateMail(field: emailField)
         let name = validator.init().validateName(field: nameField)
         let pass = validator.init().validatePass(entry: passField)
         
-        if mail.isEmpty && name.isEmpty && pass.isEmpty {
+        if mail == " " && name == " " && pass == " " {
             
             let params = paramGetter()
             
-            LoginController.init().viewJumper(parameters: params, uri: "register")
+            HTTPMessenger.init().viewJumper(parameters: params, uri: "createUser", view: self.view, completion: {
+                success in self.hadConnected = success
+                if self.hadConnected == true {
+                    self.performSegue(withIdentifier: "toForbidden", sender: self)
+                }
+            })
         } else {
             
             errorName.text! = name

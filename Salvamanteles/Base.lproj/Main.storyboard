@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sjx-bK-oAQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgU-mw-pbc">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -125,7 +125,7 @@
                         <outlet property="errorPass" destination="oSn-Dm-LQS" id="izC-vt-3qN"/>
                         <outlet property="nameField" destination="8Bi-JX-w5Z" id="87l-Hf-S53"/>
                         <outlet property="passField" destination="8mC-kD-68p" id="I5A-UR-6vN"/>
-                        <segue destination="fDr-qu-Zi3" kind="showDetail" id="ZHK-do-eYm"/>
+                        <segue destination="fDr-qu-Zi3" kind="showDetail" identifier="toForbidden" id="ZHK-do-eYm"/>
                         <segue destination="zgU-mw-pbc" kind="showDetail" identifier="toLogin" id="Y8a-Ea-Orm"/>
                     </connections>
                 </viewController>
@@ -249,7 +249,7 @@
                         <outlet property="loginButt" destination="tGE-vA-pTC" id="QJv-hj-dP3"/>
                         <outlet property="mailEntry" destination="VCr-qn-Vuj" id="iTe-tB-hfo"/>
                         <outlet property="passEntry" destination="4Af-Bk-nsF" id="D8B-FV-rwQ"/>
-                        <segue destination="0i8-Ys-9Tq" kind="showDetail" id="wa9-dA-p5D"/>
+                        <segue destination="0i8-Ys-9Tq" kind="showDetail" identifier="toProfiles" id="wa9-dA-p5D"/>
                         <segue destination="jnl-fd-mZt" kind="showDetail" identifier="toRegistry" id="8rL-tm-PC8"/>
                     </connections>
                 </viewController>
@@ -453,14 +453,6 @@
                                 <rect key="frame" x="343" y="71" width="51" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Cb-ob-w06">
-                                <rect key="frame" x="20" y="123" width="374" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Sjx-bK-oAQ" id="ZlD-1d-2au"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="roi-SW-J7b"/>
@@ -475,7 +467,6 @@
                 <searchDisplayController id="gws-bT-qnJ">
                     <connections>
                         <outlet property="delegate" destination="Sjx-bK-oAQ" id="auw-oK-ojx"/>
-                        <outlet property="searchBar" destination="5Cb-ob-w06" id="see-he-z4a"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -650,7 +641,6 @@
         <image name="bluefish 23.36.26" width="900" height="1718"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8rL-tm-PC8"/>
         <segue reference="UGe-g4-xJJ"/>
         <segue reference="wa9-dA-p5D"/>
         <segue reference="ZHK-do-eYm"/>

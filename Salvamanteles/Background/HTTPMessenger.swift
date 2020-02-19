@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class HTTPMessenger {
+class HTTPMessenger: UIViewController {
     
     // recoge la string de contacto con el server y, junto con el fragmento del endpoint,
     // la convierte en una URL válida
@@ -23,7 +23,7 @@ class HTTPMessenger {
     
     // función que realiza el post
     func post(endpoint: String, params: Any) -> DataRequest{
-        
+
         let url = urlModder(urlEndpoint: endpoint)
         
         let post = Alamofire.request(url, method: .post, parameters: params as? Parameters)
@@ -60,5 +60,49 @@ class HTTPMessenger {
         let object = jsonToken as! [String: Any]
         
         return object
+    }
+    
+    // hace un post, cambia de vista si su respuesta es afirmativa y guarda el user si es un registro
+    func viewJumper(parameters: Any, uri: String, view: UIView, completion: @escaping (Bool) -> Void ) {
+        
+        // se realiza el post
+        let hadConnected = HTTPMessenger.init().post(endpoint: uri, params: parameters)
+        
+        // respuesta del server
+        hadConnected.responseJSON { response in
+            
+            switch (response.response?.statusCode) {
+                
+            case 200:
+                
+                if uri == "loginUser"{
+                    HTTPMessenger.init().tokenSavior(response: response)
+                    completion(true)
+                    
+                } else if uri == "createUser" {
+                    
+                    // guarda el usuario en defaults
+                    UserDefaults.standard.set(parameters, forKey: "user")
+                    completion(true)
+                }
+                break
+                
+            case 401:
+                
+                var JSONtoString = response.result.value as! [String:Any]
+                let errorFromJSON = JSONtoString["message"] as! String
+                Toaster.init().showToast(message: errorFromJSON, view: view)
+                break
+                
+            case .none:
+                let errorConection = "Sin conexión a la base de datos"
+                let view = self.view
+                Toaster.init().showToast(message: errorConection, view: view!)
+                break
+                
+            case .some(_):
+                break
+            }
+        }
     }
 }
