@@ -15,6 +15,11 @@ class ProfileController:UIViewController, UICollectionViewDataSource, UICollecti
     
     @IBOutlet weak var ProfileCollection: UICollectionView!
     
+    
+    @IBAction func addProfilesButton(_ sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         ProfileCollection.dataSource = self
         ProfileCollection.delegate = self
@@ -27,7 +32,7 @@ class ProfileController:UIViewController, UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ProfileCell" , for: indexPath) as! ProfileCell
-        cell.name.text = exampleNameArray[indexPath.row]
+        //cell.name.text = exampleNameArray[indexPath.row]
         
         return cell
     }

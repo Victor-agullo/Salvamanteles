@@ -8,7 +8,7 @@
 
 import UIKit
 
-class restCells: UICollectionViewCell {
+class RestCells: UICollectionViewCell {
     
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var restName: UILabel!

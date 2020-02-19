@@ -13,6 +13,8 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     //@IBOutlet weak var tableView: UITableView!
     
+    let exampleArray: [String] = ["Hamburguesa","Patatas","Fanta de naranja"]
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -25,12 +27,12 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return exampleArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DishesCell", for: indexPath) as? DishesCell)!
-        
+        cell.dishName.text = exampleArray[indexPath.row]
         return cell
     }
     

@@ -6,4 +6,9 @@
 //  Copyright © 2020 Thorn&Wheat. All rights reserved.
 //
 
-import Foundation
+import UIKit
+class ForbiddenCells: UICollectionViewCell {
+    
+@IBOutlet weak var alergeName: UILabel!
+    
+}

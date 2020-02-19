@@ -9,12 +9,12 @@
 import UIKit
 class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var numberOfRows = 0
-    @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var TableView: UITableView?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TableView.delegate = self
-        TableView.dataSource = self
+        TableView?.delegate = self
+        TableView?.dataSource = self
     }
     
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,7 +22,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = (TableView.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath) as? SummaryCell)!
+        let cell = (TableView?.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath) as? SummaryCell)!
         return cell
     }
     

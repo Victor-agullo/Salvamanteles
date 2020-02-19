@@ -11,7 +11,10 @@ import UIKit
 class ProfileCell: UICollectionViewCell {
     
    
-    @IBOutlet weak var name: UILabel!
+    
+    
+    
+    
     
     
     

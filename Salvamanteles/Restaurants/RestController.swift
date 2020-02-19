@@ -14,7 +14,7 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     //ejemplos
     
     let exampleNameArray: [String] = ["Burger", "McDonald"]
-    let exampleImgArray: [UIImage] = [#imageLiteral(resourceName: "image8"), #imageLiteral(resourceName: "image9")]
+    let exampleImgArray: [UIImage] = [#imageLiteral(resourceName: "mas"), #imageLiteral(resourceName: "ajustes")]
     let exampleOptionArray: [String] = ["patata", "hamburguesa"]
     
     
@@ -23,6 +23,11 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     
     @IBOutlet weak var restaurantsCollection: UICollectionView!
     
+    @IBOutlet weak var toSettings: UIImageView!
+    
+    
+    @IBOutlet var searchController: UISearchController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +35,14 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
         restaurantsCollection.dataSource = self
         restaurantsCollection.delegate = self
         
+       
+    
+        
         // llamada a la función que recoge la información desde la clase serverRetriever en Background
-       serverRetriever.init().infoGatherer(thisCollectionView: restaurantsCollection)
+       //serverRetriever.init().infoGatherer(thisCollectionView: restaurantsCollection)
     }
+    
+    
     
     // obtención dinámica del número de celdas a mostrar
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -42,7 +52,7 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     // rellena las celdas con los arrays públicos obtenidos del serverRetriever
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // establece cual es la celda
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restCells", for: indexPath) as! restCells
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestCells", for: indexPath) as! RestCells
         
         cell.restName.text = exampleNameArray[indexPath.row]
         cell.options.text = exampleOptionArray[indexPath.row]
@@ -60,4 +70,10 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
         */
         return cell
     }
+    
+   
 }
+
+
+
+

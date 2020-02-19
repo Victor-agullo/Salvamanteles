@@ -8,82 +8,118 @@
 //
 
 import UIKit
-/*
-class CellClass: UITableViewCell {
+
+var actualRow = 0
+
+class ForbiddenFoodController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
     
-}
-class ForbiddenFoodController: UIViewController{
+    @IBOutlet weak var textBox: UITextField!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var dropDown: UIPickerView!
+    
+    var TableList: [[String]] = [["Queso","Leche","Yougurt"],
+                                 ["Trucha","Atún","Lubina"], ["Pollo","Cerdo","Vacuno"],["Cigalas","Almejas","Ostras"]]
     
     
-    @IBOutlet weak var btnSelectRestriction: UIButton!
+    var PickerList = ["Lactosa","Pescado","Carne","Marisco"]
     
-    let transparentView = UIView()
-    let tableView = UITableView()
     
-    var selectedButton = UIButton()
+    //var alergiaPescado = ["Trucha","Atún","Lubina"]
+    //var alergiaCarne = ["Pollo","Cerdo","Vacuno"]
+    //var alergiaMarisco = ["Cigalas","Almejas","Ostras"]
     
-    var dataSource = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(CellClass.self, forCellReuseIdentifier: "Cell")
-    }
-    
-    func addTransparentView(frames: CGRect) {
-        let window = UIApplication.shared.keyWindow
-        transparentView.frame = window?.frame ?? self.view.frame
-        self.view.addSubview(transparentView)
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y,
-                                 width: frames.width, height: 0)
-        self.view.addSubview(tableView)
-        tableView.layer.cornerRadius = 5
-        
-        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-        tableView.reloadData()
-        let tapgesture = UITapGestureRecognizer(target: self, action:
-            #selector(removeTransparentView))
-        transparentView.addGestureRecognizer(tapgesture)
-        
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,options: .curveEaseInOut,
-                       animations: {
-                        self.transparentView.alpha = 0.5
-                        self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y +
-                            frames.height + 5,width: frames.width, height: CGFloat(self.dataSource.count * 50)) //aquí misteriosamente sí lo pilla 
-        } , completion: nil)
-    }
     
-    @objc func removeTransparentView(){
-        let frames = selectedButton.frame
-        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0,
-                       initialSpringVelocity: 1.0,options: .curveEaseInOut,
-                       animations: {
-                        self.transparentView.alpha = 0
-                        self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y +
-                            frames.height,width: frames.width, height: 0)
-        } , completion: nil)
-    }
-    
-    @IBAction func onClickSelectRestrict(_ sender: Any) {
-        dataSource = ["Lactosa", "Pescado", "Marisco", "Frutas"]
-        selectedButton = btnSelectRestriction
-        addTransparentView(frames: btnSelectRestriction.frame)
-    }
-    
-}
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
-      return dataSource.count //no me pilla el nombre del array, no sé porqué
+}
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = dataSource[indexPath.row] //sigue sin pillarme el array
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
+        return PickerList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow
+        row: Int, forComponent component: Int) ->String? {
+        
+        self.view.endEditing(true)
+        return PickerList[row]
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow
+        row: Int, inComponent component : Int) {
+        
+        self.textBox.text = self.PickerList[row]
+        
+        
+       
+          actualRow = row
+       
+        print(TableList)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        
+        
+       
+        
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        if textField == self.textBox {
+            self.dropDown.isHidden = false
+            textField.endEditing(true)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return TableList[actualRow].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ForbiddenCells", for: indexPath) as! ForbiddenCells
+        cell.alergeName.text = TableList[actualRow][indexPath.row]
+        
         return cell
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
 }
-*/
