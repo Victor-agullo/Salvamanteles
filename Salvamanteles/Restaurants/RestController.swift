@@ -1,183 +1,77 @@
-//
-//  MainController.swift
-//  Salvamanteles
-//
-//  Created by alumnos on 09/01/2020.
-//  Copyright © 2020 Víctor. All rights reserved.
-//
 import UIKit
-//Esto está relacionado con el af_setImage para que saque la imagen de la url
-import AlamofireImage
 
-class RestController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class RestController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
-    //ejemplos
+    @IBOutlet weak var tableView: UITableView!
     
-    let exampleNameArray: [String] = ["Burger King", "McDonald's"]
-    let exampleImgArray: [UIImage] = [#imageLiteral(resourceName: "Burger-King-Logo-600x338"), #imageLiteral(resourceName: "kisspng-mcdonalds-hamburger-logo-golden-arches-mcdonalds-logo-transparent-png-5a73c3e8551ba8.0353089715175362323486")]
-    let exampleOptionArray: [String] = ["Patatas fritas", "Cheeseburger"]
+    var searchController : UISearchController!
     
-    /*
-    var candies: [Candy] = []
-    let searchController = UISearchController(searchResultsController: nil)
-    var filteredCandies: [Candy] = []
-    */
+    var resultsController = UITableViewController()
     
-    //La vista de la colección
-    //@IBOutlet weak var restaurantsCollection: UICollectionView!
+    let restList = ["Burguer king", "McDonalds", "VIPS", "Ginos", "El Chino De Abajo", "Bar Ricadas"]
     
-    @IBOutlet weak var restaurantsCollection: UICollectionView!
-    
-    @IBAction func toSettings(_ sender: Any) {
-        
-    }
-    
+    var filteredRests = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurantsCollection.dataSource = self
-        restaurantsCollection.delegate = self
-        
-       
-    
-        
-        // llamada a la función que recoge la información desde la clase serverRetriever en Background
-       //serverRetriever.init().infoGatherer(thisCollectionView: restaurantsCollection)
-        
-        /*
-        candies = Candy.candies()
-        
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        
-        searchController.searchBar.scopeButtonTitles = Candy.Category.allCases.map { $0.rawValue }
-        searchController.searchBar.delegate = self
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification,
-                                       object: nil, queue: .main) { (notification) in
-                                        self.handleKeyboard(notification: notification) }
-        notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification,
-                                       object: nil, queue: .main) { (notification) in
-                                        self.handleKeyboard(notification: notification) }
- */
-    }
-    /*
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: indexPath, animated: true)
-        }
-    }
-    */
-    
-    // obtención dinámica del número de celdas a mostrar
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return exampleNameArray.count
+        self.creatingSearhBar()
+        self.tableSettings()
     }
     
-    // rellena las celdas con los arrays públicos obtenidos del serverRetriever
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // establece cual es la celda
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestCells", for: indexPath) as! RestCells
-        
-        cell.restName.text = exampleNameArray[indexPath.row]
-        cell.options.text = exampleOptionArray[indexPath.row]
-        cell.logo.image = exampleImgArray[indexPath.row]
-        
-        // transforma el string obtenido del server en un formato de array
-        /*
-        let url = URL(string: imageURLArray[indexPath.row])
-        
-        // establece los valores de cada objeto de la celda
-        
-        cell.restName.text = nameArray[indexPath.row]
-        cell.options.text = optionsArray[indexPath.row]
-        cell.logo.af_setImage(withURL: url!)
-        */
-        return cell
+    func creatingSearhBar() {
+        self.searchController = UISearchController(searchResultsController: self.resultsController)
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.searchController.searchResultsUpdater = self
     }
     
-   /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard
-            segue.identifier == "ShowDetailSegue",
-            let indexPath = restaurantsCollection.indexPathsForSelectedItems,
-            let detailViewController = segue.destination as? DishesController
-            else {
-                return
-        }
+    func tableSettings() {
+        self.resultsController.tableView.dataSource = self
+        self.resultsController.tableView.delegate = self
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
         
-        let candy: Candy
-        
-        if isFiltering {
-            candy = filteredCandies[indexPath.row]
-        } else {
-            candy = candies[indexPath.row]
-        }
-        DishesController.candy = candy
-    }
-    
-    var isSearchBarEmpty: Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    var isFiltering: Bool {
-        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
-        return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
-    }
-    
-    func filterContentForSearchText(_ searchText: String,
-                                    category: Candy.Category? = nil) {
-        filteredCandies = candies.filter { (candy: Candy) -> Bool in
-            let doesCategoryMatch = category == .all || candy.category == category
+        self.filteredRests = self.restList.filter {
             
-            if isSearchBarEmpty {
-                return doesCategoryMatch
-            } else {
-                return doesCategoryMatch && candy.name.lowercased().contains(searchText.lowercased())
+            (rest: String) -> Bool in
+            
+            if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
+                return true
+            } else{
+                return false
             }
         }
-        
-        restaurantsCollection.reloadData()
+        self.resultsController.tableView.reloadData()
     }
- */
-}
-/*
-extension MasterViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let candy: Candy
-        if isFiltering {
-            candy = filteredCandies[indexPath.row]
-        } else {
-            candy = candies[indexPath.row]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == self.tableView {
+            return restList.count
         }
-        cell.textLabel?.text = candy.name
-        cell.detailTextLabel?.text = candy.category.rawValue
+        else {
+            return filteredRests.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
+        
+        if tableView == self.tableView {
+            cell.name.text = restList[indexPath.row]
+            //cell.options.text = optionsList[indexPath.row]
+        }else{
+            cell.name.text = filteredRests[indexPath.row]
+            //cell.options.text = optionsList[indexPath.row]
+        }
+        
         return cell
     }
-}
-
-extension MasterViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let category = Candy.Category(rawValue:
-            searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
-        filterContentForSearchText(searchBar.text!, category: category)
+    
+    @IBAction func settingsButt(_ sender: UIButton) {
+        performSegue(withIdentifier: "toSettings", sender: self)
     }
+    
 }
-
-extension MasterViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        let category = Candy.Category(rawValue:
-            searchBar.scopeButtonTitles![selectedScope])
-        filterContentForSearchText(searchBar.text!, category: category)
-    }
-}
-*/

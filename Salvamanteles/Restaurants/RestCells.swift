@@ -8,20 +8,19 @@
 
 import UIKit
 
-class RestCells: UICollectionViewCell {
+class RestCells: UITableViewCell {
     
-    @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var restName: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var options: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
 }
