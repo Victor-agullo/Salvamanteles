@@ -13,9 +13,9 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     
     //ejemplos
     
-    let exampleNameArray: [String] = ["Burger", "McDonald"]
-    let exampleImgArray: [UIImage] = [#imageLiteral(resourceName: "mas"), #imageLiteral(resourceName: "ajustes")]
-    let exampleOptionArray: [String] = ["patata", "hamburguesa"]
+    let exampleNameArray: [String] = ["Burger King", "McDonald's"]
+    let exampleImgArray: [UIImage] = [#imageLiteral(resourceName: "Burger-King-Logo-600x338"), #imageLiteral(resourceName: "kisspng-mcdonalds-hamburger-logo-golden-arches-mcdonalds-logo-transparent-png-5a73c3e8551ba8.0353089715175362323486")]
+    let exampleOptionArray: [String] = ["Patatas fritas", "Cheeseburger"]
     
     /*
     var candies: [Candy] = []
@@ -28,7 +28,10 @@ class RestController:UIViewController, UICollectionViewDataSource, UICollectionV
     
     @IBOutlet weak var restaurantsCollection: UICollectionView!
     
-    @IBOutlet weak var toSettings: UIImageView!
+    @IBAction func toSettings(_ sender: Any) {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
