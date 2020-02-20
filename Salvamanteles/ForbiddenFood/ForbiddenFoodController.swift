@@ -25,20 +25,12 @@ class ForbiddenFoodController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     var PickerList = ["Lactosa","Pescado","Carne","Marisco"]
     
-    
-    //var alergiaPescado = ["Trucha","Atún","Lubina"]
-    //var alergiaCarne = ["Pollo","Cerdo","Vacuno"]
-    //var alergiaMarisco = ["Cigalas","Almejas","Ostras"]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+    }
     
-
-}
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -61,18 +53,11 @@ class ForbiddenFoodController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         self.textBox.text = self.PickerList[row]
         
-        
-       
           actualRow = row
        
-        print(TableList)
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-        
-        
-       
-        
     }
     
     func textFieldDidBeginEditing(textField: UITextField)
@@ -94,32 +79,4 @@ class ForbiddenFoodController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         return cell
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
 }
