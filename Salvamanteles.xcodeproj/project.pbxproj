@@ -93,8 +93,8 @@
 		7FC28F2023D996E800C6A8D7 /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
-				7FC28F1A23D994D000C6A8D7 /* RestCells.swift */,
 				7FC28F1723D994CF00C6A8D7 /* RestController.swift */,
+				7FC28F1A23D994D000C6A8D7 /* RestCells.swift */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -107,8 +107,8 @@
 				B97491DC23DDDC03009F6D3D /* serverRetriever.swift */,
 				B9D8E6ED23F738DE00116977 /* Toaster.swift */,
 				B9D8E6EF23F73C2500116977 /* Validator.swift */,
-				B9D8E6F423F756D100116977 /* Assets.xcassets */,
 				B98890FB23F98EC00087724C /* Editables.swift */,
+				B9D8E6F423F756D100116977 /* Assets.xcassets */,
 			);
 			path = Background;
 			sourceTree = "<group>";
@@ -143,14 +143,14 @@
 		B9B793B423CE3B7F0048146E /* Salvamanteles */ = {
 			isa = PBXGroup;
 			children = (
-				B9D8E6F123F74DDF00116977 /* Settings */,
 				7FC28F1F23D996D000C6A8D7 /* Login */,
-				FD585D2523F1AF8A005CDA59 /* Register */,
-				FD585D4023F1DB11005CDA59 /* Summary */,
-				FD585D3523F1C82D005CDA59 /* Dishes */,
 				FD585D3023F1BA63005CDA59 /* Profiles */,
+				FD585D2523F1AF8A005CDA59 /* Register */,
 				FD585D2B23F1B1EB005CDA59 /* ForbiddenFood */,
 				7FC28F2023D996E800C6A8D7 /* Restaurants */,
+				FD585D3523F1C82D005CDA59 /* Dishes */,
+				FD585D4023F1DB11005CDA59 /* Summary */,
+				B9D8E6F123F74DDF00116977 /* Settings */,
 				B98890FF23F9D07D0087724C /* Main.storyboard */,
 				B9B793BE23CE3B7F0048146E /* LaunchScreen.storyboard */,
 				B9B793C123CE3B7F0048146E /* Info.plist */,

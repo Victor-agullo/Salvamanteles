@@ -1,20 +1,10 @@
-//
-//  serverRetriever.swift
-//  Salvamanteles
-//
-//  Created by Víctor Agulló on 22/1/20.
-//  Copyright © 2020 Víctor. All rights reserved.
-//
-
 import UIKit
 
 class serverRetriever: UIViewController {
     
-    var namesArray: Array<String> = []
     var restaurantsArray: Array<String> = []
     var categoriesArray: Array<String> = []
-    var dishesArray: Array<String> = []
-    var allergensArray: Array<String> = []
+    var descriptionsArray: Array<String> = []
     
     // llamada al gestor de respuestas
     var HttpMessenger = HTTPMessenger()
@@ -47,17 +37,13 @@ class serverRetriever: UIViewController {
         
         for item in jsonArray as! [NSDictionary] {
             
-            let names = item[""] as! String
-            let restaurants = item[""] as! String
-            let categories = item[""] as! String
-            let dishes = item[""] as! String
-            let allergens = item[""] as! String
+            let restaurants = item["restaurants"] as! String
+            let categories = item["categories"] as! String
+            let descriptions = item["descriptions"] as! String
             
-            namesArray.append(names)
             restaurantsArray.append(restaurants)
             categoriesArray.append(categories)
-            dishesArray.append(dishes)
-            allergensArray.append(allergens)
+            descriptionsArray.append(descriptions)
         }
     }
 }

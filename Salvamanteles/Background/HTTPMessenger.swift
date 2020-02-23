@@ -1,11 +1,3 @@
-//
-//  File.swift
-//  Salvamanteles
-//
-//  Created by alumnos on 14/01/2020.
-//  Copyright © 2020 Víctor. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 
@@ -14,7 +6,7 @@ class HTTPMessenger: UIViewController {
     // recoge la string de contacto con el server y, junto con el fragmento del endpoint,
     // la convierte en una URL válida
     func urlModder(urlEndpoint: String) -> URL {
-        let urlString = "http://127.0.0.1/salvamanteles/public/index.php/api/"
+        let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
 
         let url = URL(string: urlString+urlEndpoint)!
         

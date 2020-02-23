@@ -1,16 +1,8 @@
-//
-//  ProfileController.swift
-//  Salvamanteles
-//
-//  Created by Javier Piñas on 10/02/2020.
-//  Copyright © 2020 Thorn&Wheat. All rights reserved.
-//
-
 import UIKit
 
-class ProfileController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ProfileController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    let exampleNameArray: [String] = ["Javi", "Victor", "Diego", "Alex"]
+    var profileArray: Array<String> = []
     
     var profile = ""
     
@@ -18,18 +10,38 @@ class ProfileController:UIViewController, UICollectionViewDataSource, UICollecti
     
     @IBOutlet weak var ProfileCollection: UICollectionView!
     
-    
-    @IBAction func addProfilesButton(_ sender: UIButton) {
-    }
-    
-    
     override func viewDidLoad() {
+        loadProfiles()
+        
         ProfileCollection.dataSource = self
         ProfileCollection.delegate = self
     }
     
+    func loadProfiles() {
+        let profiles = HTTPMessenger.init().get(endpoint: "getProfiles")
+        
+        profiles.responseJSON { response in
+            
+            // se cerciona de que haya respuesta
+            if let JSON = response.result.value {
+                
+                // pasa el JSON a array
+                let jsonArray = JSON as? NSArray
+                
+                for item in jsonArray as! [NSDictionary] {
+                
+                    let profile = item["name"] as! String
+                    
+                    self.profileArray.append(profile)
+                }
+                // recarga la vista para hacer efectivos los cambios
+                self.ProfileCollection.reloadData()
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfProfiles = exampleNameArray.count
+        let numberOfProfiles = profileArray.count
         ProfileController.colorsOfProfiles(numbersOfColor: numberOfProfiles)
         
         return numberOfProfiles
@@ -39,7 +51,7 @@ class ProfileController:UIViewController, UICollectionViewDataSource, UICollecti
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ProfileCell" , for: indexPath) as! ProfileCell
         
-        cell.nameLabel.text = exampleNameArray[indexPath.row]
+        cell.nameLabel.text = profileArray[indexPath.row]
         cell.backgroundColor = ProfileController.colors[indexPath.row]
         
         return cell
@@ -50,10 +62,6 @@ class ProfileController:UIViewController, UICollectionViewDataSource, UICollecti
         
         // cambio de pantalla
         performSegue(withIdentifier: "toRestaurants", sender: self)
-    }
-    
-    @objc func onClickedprofileButton(_sender: Any) {
-        print("Tapped")
     }
     
     // método que genera un array de colores aleatorios cuando se le llama

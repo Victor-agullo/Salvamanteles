@@ -4,16 +4,19 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    let restList = ["Burguer king", "McDonalds", "VIPS", "Ginos", "El Chino De Abajo", "Bar Ricadas"]
+    
     var searchController : UISearchController!
     
     var resultsController = UITableViewController()
     
-    let restList = ["Burguer king", "McDonalds", "VIPS", "Ginos", "El Chino De Abajo", "Bar Ricadas"]
-    
+
     var filteredRests = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _ = serverRetriever.init().infoGatherer
         
         self.creatingSearhBar()
         self.tableSettings()
@@ -70,8 +73,8 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    @IBAction func settingsButt(_ sender: UIButton) {
-        performSegue(withIdentifier: "toSettings", sender: self)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "toDishes", sender: self)
     }
-    
 }

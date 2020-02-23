@@ -1,11 +1,3 @@
-//
-//  Editables.swift
-//  Salvamanteles
-//
-//  Created by Víctor Agulló on 16/2/20.
-//  Copyright © 2020 Thorn&Wheat. All rights reserved.
-//
-
 import UIKit
 
 @IBDesignable
