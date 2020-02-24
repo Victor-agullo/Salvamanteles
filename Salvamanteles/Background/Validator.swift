@@ -1,11 +1,3 @@
-//
-//  validator.swift
-//  salvamanteles
-//
-//  Created by Víctor Agulló on 13/2/20.
-//  Copyright © 2020 Thorn&Wheat. All rights reserved.
-//
-
 import UIKit
 
 class validator {

@@ -4,16 +4,19 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    let restList = ["Burguer king", "McDonalds", "VIPS", "Ginos", "El Chino De Abajo", "Bar Ricadas"]
+    
     var searchController : UISearchController!
     
     var resultsController = UITableViewController()
     
-    let restList = ["uno", "dos", "tres", "cuatro", "cinco", "seis"]
-    
+
     var filteredRests = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _ = serverRetriever.init().infoGatherer
         
         self.creatingSearhBar()
         self.tableSettings()
@@ -57,16 +60,21 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "RestCells", for: indexPath) as! RestCells
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
-        if tableView != self.tableView {
-            cell.name.text! = restList[indexPath.row]
-            cell.options.text! = restList[indexPath.row]
+        if tableView == self.tableView {
+            cell.name.text = restList[indexPath.row]
+            //cell.options.text = optionsList[indexPath.row]
         }else{
-            cell.name.text! = filteredRests[indexPath.row]
-            cell.options.text! = filteredRests[indexPath.row]
+            cell.name.text = filteredRests[indexPath.row]
+            //cell.options.text = optionsList[indexPath.row]
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "toDishes", sender: self)
     }
 }
