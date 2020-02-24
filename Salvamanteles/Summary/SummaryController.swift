@@ -20,7 +20,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         let cell = (tableView.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath) as? SummaryCell)!
         
         cell.name.text = nameArray[indexPath.row]
-        cell.deleteimage.image = #imageLiteral(resourceName: "dejar")
+        cell.deletebutton.buttonType
         
         return cell
     }

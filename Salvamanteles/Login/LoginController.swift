@@ -7,14 +7,24 @@ class LoginController: UIViewController {
     @IBOutlet weak var passEntry: UITextField!
     @IBOutlet weak var loginButt: UIButton!
     
+    @IBOutlet weak var imageLogo: UIImageView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imageLogo.layer.masksToBounds = true
+        imageLogo.layer.cornerRadius = imageLogo.bounds.width / 2
+    }
+    
+    
     var hadConnected: Bool = Bool()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         //si al iniciar la app, hay un "user" guardado en defaults, hace un login automáticamente
-        if let params = UserDefaults.standard.dictionary(forKey: "user") {
-            gettinInTouch(params: params)
-        }
+        //if let params = UserDefaults.standard.dictionary(forKey: "user") {
+            //gettinInTouch(params: params)
+        //}
     }
     
     //botón de login

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MqT-BF-jvM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mqL-kg-pku">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -301,6 +301,17 @@
                                     <action selector="toRegistryButton:" destination="zgU-mw-pbc" eventType="touchUpInside" id="BKE-Bj-7FB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¡Bienvenido a Salvamanteles!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-7r-KRf">
+                                <rect key="frame" x="49" y="89" width="315" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logopequeño" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
+                                <rect key="frame" x="87" y="124" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99491733312606812" green="0.95658451318740845" blue="0.85061752796173096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -318,6 +329,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="imageLogo" destination="Lk7-Lj-3eX" id="gLc-jg-0Xc"/>
                         <outlet property="loginButt" destination="tGE-vA-pTC" id="QJv-hj-dP3"/>
                         <outlet property="mailEntry" destination="VCr-qn-Vuj" id="iTe-tB-hfo"/>
                         <outlet property="passEntry" destination="4Af-Bk-nsF" id="D8B-FV-rwQ"/>
@@ -740,14 +752,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dejar" translatesAutoresizingMaskIntoConstraints="NO" id="RYS-nz-zIx">
-                                                    <rect key="frame" x="337" y="0.0" width="37" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaF-4T-Vzi">
+                                                    <rect key="frame" x="344" y="0.0" width="42" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                    <state key="normal" image="dejar"/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="deleteimage" destination="RYS-nz-zIx" id="Gti-v9-lxv"/>
+                                            <outlet property="deletebutton" destination="RaF-4T-Vzi" id="UXf-uZ-dcz"/>
                                             <outlet property="name" destination="yON-PT-fZo" id="WGI-IQ-Sze"/>
                                         </connections>
                                     </tableViewCell>
@@ -806,11 +819,11 @@
         <image name="Restaurants_Screen-image" width="1000" height="1000"/>
         <image name="bluefish 23.36.26" width="900" height="1718"/>
         <image name="dejar" width="512" height="512"/>
+        <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y8a-Ea-Orm"/>
         <segue reference="Vtt-ew-5uo"/>
-        <segue reference="uj5-ga-sS6"/>
-        <segue reference="yxh-Zu-6mT"/>
+        <segue reference="RHc-i5-Ov5"/>
+        <segue reference="Syn-G2-IH1"/>
     </inferredMetricsTieBreakers>
 </document>
