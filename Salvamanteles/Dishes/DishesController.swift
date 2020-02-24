@@ -4,7 +4,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    var selected: Array<String> = []
+    var selected: [String] = []
     
     let example = [["Hamburguesa", "uetr"], ["Patatas"], ["Fanta de naranja"], ["asdf"], ["asdfgh"]]
     
@@ -15,7 +15,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
-       }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return example.count
@@ -40,10 +40,23 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.cellForRow(at: indexPath) as? DishesCell
         
         cell!.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
-        print(cell!)
+        let platoElegido = cell!.dishName?.text!
+        
+        selected.append(platoElegido!)
+        print(selected)
+    }
+    
+    @IBAction func sendDataButton(_ sender: RoundButton) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextScreen = segue.destination as! SummaryController
+        
+        nextScreen.nameArray = selected
     }
 }

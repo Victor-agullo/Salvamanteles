@@ -3,7 +3,7 @@ import UIKit
 class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UISearchResultsUpdating{
     
     var actualRow = 0
-
+    
     @IBOutlet weak var dropDown: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,7 +17,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
                                  ["Cigalas","Almejas","Ostras"]]
     
     var PickerList = ["Lactosa","Pescado","Carne","Marisco"]
- 
+    var selected: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +47,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
                 let jsonArray = JSON as? NSArray
                 print(jsonArray)
                 for item in jsonArray as! [NSDictionary] {
-
+                    
                     let ingredientes = item["ingredientes"] as! [String]
                     let categorias = item["categorias"] as! String
                     
@@ -57,7 +58,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-    */
+ */
     func creatingSearhBar() {
         self.searchController = UISearchController(searchResultsController: self.resultsController)
         self.tableView.tableHeaderView = self.searchController.searchBar
@@ -72,7 +73,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     func updateSearchResults(for searchController: UISearchController) {
         
         // self.filteredRests = self.TableList[actualRow].filter {
-           self.filteredRests = self.TableList[actualRow].filter {
+        self.filteredRests = self.TableList[actualRow].filter {
             (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
@@ -99,8 +100,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component : Int) {
-          actualRow = row
-       
+        actualRow = row
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -129,10 +130,23 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.cellForRow(at: indexPath) as! ForbiddenCells
         
-        cell!.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
-        print(cell!)
+        let platoElegido = cell.alergeName.text
+        
+        selected.append(platoElegido!)
+        print(selected)
+    }
+    
+    @IBAction func sendDataButton(_ sender: RoundButton) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextScreen = segue.destination as! SummaryController
+        
+        nextScreen.nameArray = selected
     }
 }

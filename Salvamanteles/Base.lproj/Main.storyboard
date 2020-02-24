@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mqL-kg-pku">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MqT-BF-jvM">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -817,11 +817,13 @@
         <image name="AdobeStock_-4 23.36.26" width="812" height="812"/>
         <image name="AdobeStock_265018256_Preview 23.36.26" width="816" height="816"/>
         <image name="Restaurants_Screen-image" width="1000" height="1000"/>
+        <image name="ajustes" width="512" height="512"/>
         <image name="bluefish 23.36.26" width="900" height="1718"/>
         <image name="dejar" width="512" height="512"/>
         <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="8rL-tm-PC8"/>
         <segue reference="Vtt-ew-5uo"/>
         <segue reference="RHc-i5-Ov5"/>
         <segue reference="Syn-G2-IH1"/>

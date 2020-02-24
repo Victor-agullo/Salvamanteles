@@ -1,8 +1,8 @@
 import UIKit
 class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let nameArray: [String] = ["Cheeseburger","Patatas","Nachos"]
-    
+    //let nameArray: [String] = ["Cheeseburger","Patatas","Nachos"]
+    var nameArray: [String] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
