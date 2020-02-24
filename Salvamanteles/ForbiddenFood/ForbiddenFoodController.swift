@@ -17,7 +17,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
                                  ["Cigalas","Almejas","Ostras"]]
     
     var PickerList = ["Lactosa","Pescado","Carne","Marisco"]
-    var selected: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,12 +70,12 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        
         self.filteredRests = self.TableList[actualRow].filter {
             (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
                 return true
+                
             } else{
                 return false
             }
@@ -93,7 +92,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String? {
-        
         self.view.endEditing(true)
         return PickerList[row]
     }
@@ -109,8 +107,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableView {
             return TableList[actualRow].count
-        }
-        else {
+        
+        } else {
             return filteredRests.count
         }
     }
@@ -124,7 +122,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         }else{
             cell.alergeName.text = filteredRests[indexPath.row]
         }
-        
         return cell
     }
     
@@ -133,22 +130,20 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         
         let platoElegido = cell.alergeName.text!
         
-        if !selected.contains(platoElegido) {
+        if !SummaryController.nameArray.contains(platoElegido) {
             cell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
-            selected.append(platoElegido)
+            SummaryController.nameArray.append(platoElegido)
+            
         } else {
             cell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
-            let indexOfCell = selected.index(of: platoElegido)!
-            selected.remove(at: indexOfCell)
+            let indexOfCell = SummaryController.nameArray.index(of: platoElegido)!
+            SummaryController.nameArray.remove(at: indexOfCell)
         }
-        
-        print(selected)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
         
-        nextScreen.selected = selected
         nextScreen.procedure = "register"
     }
 }

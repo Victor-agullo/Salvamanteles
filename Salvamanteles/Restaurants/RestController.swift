@@ -6,11 +6,15 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let restList = ["Burguer king", "McDonalds", "VIPS", "Ginos", "El Chino De Abajo", "Bar Ricadas"]
     
+    var categoriesOfSelectedRest: [String] = []
+    
+    //var restaurantsList = serverRetriever.restaurantsArray
+    //var optionsList = serverRetriever.optionsArray
+
     var searchController : UISearchController!
     
     var resultsController = UITableViewController()
     
-
     var filteredRests = [String]()
     
     override func viewDidLoad() {
@@ -36,11 +40,11 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func updateSearchResults(for searchController: UISearchController) {
         
         self.filteredRests = self.restList.filter {
-            
             (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
                 return true
+                
             } else{
                 return false
             }
@@ -52,14 +56,13 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if tableView == self.tableView {
             return restList.count
-        }
-        else {
+            
+        } else {
             return filteredRests.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
         if tableView == self.tableView {
@@ -73,8 +76,21 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextScreen = segue.destination as! DishesController
         
+        //nextScreen.categorias = categoriesOfSelectedRest
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
+
+        var restaurant = cell.name.text!
+        /*
+        for item in restaurantsList[restaurant] {
+            categoriesOfSelectedRest.append(item)
+        }
+        */
         performSegue(withIdentifier: "toDishes", sender: self)
     }
 }

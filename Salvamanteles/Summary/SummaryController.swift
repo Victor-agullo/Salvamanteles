@@ -2,7 +2,7 @@ import UIKit
 
 class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var nameArray: [String] = []
+    static var nameArray: [String] = []
     var procedure: String = ""
     
     @IBOutlet weak var tableView: UITableView!
@@ -15,13 +15,13 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameArray.count
+        return SummaryController.nameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath) as? SummaryCell)!
         
-        cell.name.text = nameArray[indexPath.row]
+        cell.name.text = SummaryController.nameArray[indexPath.row]
         cell.accessoryType = .detailDisclosureButton
         return cell
     }
@@ -32,7 +32,7 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            nameArray.remove(at: indexPath.row)
+            SummaryController.nameArray.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
@@ -45,23 +45,11 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if procedure == "register" {
             
-            HTTPMessenger.init().post(endpoint: "saveProfile", params: nameArray)
+            HTTPMessenger.init().post(endpoint: "saveProfile", params: SummaryController.nameArray)
             
         } else if procedure == "reconsidering" {
             
-            HTTPMessenger.init().post(endpoint: "saveSelection", params: nameArray)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if procedure == "register" {
-        let regisScreen = segue.destination as! ForbiddenFoodController
-            regisScreen.selected = nameArray
-            
-        } else if procedure == "reconsidering" {
-        let nextScreen = segue.destination as! DishesController
-            nextScreen.selected = nameArray
+            HTTPMessenger.init().post(endpoint: "saveSelection", params: SummaryController.nameArray)
         }
     }
 }

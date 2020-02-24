@@ -2,9 +2,9 @@ import UIKit
 
 class serverRetriever: UIViewController {
     
-    var restaurantsArray: Array<String> = []
-    var categoriesArray: Array<String> = []
-    var descriptionsArray: Array<String> = []
+    static var restaurantsArray: Array<String> = []
+    static var categoriesArray: Array<String> = []
+    static var descriptionsArray: Array<String> = []
     
     // llamada al gestor de respuestas
     var HttpMessenger = HTTPMessenger()
@@ -41,9 +41,9 @@ class serverRetriever: UIViewController {
             let categories = item["categories"] as! String
             let descriptions = item["descriptions"] as! String
             
-            restaurantsArray.append(restaurants)
-            categoriesArray.append(categories)
-            descriptionsArray.append(descriptions)
+            serverRetriever.restaurantsArray.append(restaurants)
+            serverRetriever.categoriesArray.append(categories)
+            serverRetriever.descriptionsArray.append(descriptions)
         }
     }
 }

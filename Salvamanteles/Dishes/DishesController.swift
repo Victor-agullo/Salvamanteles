@@ -4,11 +4,12 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    var selected: [String] = []
+    //var categoriesList = serverRetriever.categoriesArray
+    //var descriptionsList = serverRetriever.descriptionsArray
     
     let example = [["Hamburguesa", "uetr"], ["Patatas"], ["Fanta de naranja"], ["asdf"], ["asdfgh"]]
     
-    let categorias: Array<String> = ["beverages", "first", "second", "cuarto", "quinta categoría"]
+    let categorias: [String] = ["beverages", "first", "second", "cuarto", "quinta categoría"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,24 +41,24 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? DishesCell
+        let cell = tableView.cellForRow(at: indexPath) as! DishesCell
         
-        cell!.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        let platoElegido = cell.dishName.text!
         
-        let platoElegido = cell!.dishName?.text!
-        
-        selected.append(platoElegido!)
-        print(selected)
-    }
-    
-    @IBAction func sendDataButton(_ sender: RoundButton) {
-        
+        if !SummaryController.nameArray.contains(platoElegido) {
+            cell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            SummaryController.nameArray.append(platoElegido)
+            
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
+            let indexOfCell = SummaryController.nameArray.index(of: platoElegido)!
+            SummaryController.nameArray.remove(at: indexOfCell)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
         
-        nextScreen.selected = selected
         nextScreen.procedure = "reconsidering"
     }
 }
