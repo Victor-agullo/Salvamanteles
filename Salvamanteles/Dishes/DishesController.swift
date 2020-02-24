@@ -57,6 +57,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
         
-        nextScreen.nameArray = selected
+        nextScreen.selected = selected
+        nextScreen.procedure = "reconsidering"
     }
 }

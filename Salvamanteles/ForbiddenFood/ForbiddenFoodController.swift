@@ -72,7 +72,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        // self.filteredRests = self.TableList[actualRow].filter {
         self.filteredRests = self.TableList[actualRow].filter {
             (rest: String) -> Bool in
             
@@ -132,21 +131,24 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ForbiddenCells
         
-        cell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        let platoElegido = cell.alergeName.text!
         
-        let platoElegido = cell.alergeName.text
+        if !selected.contains(platoElegido) {
+            cell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            selected.append(platoElegido)
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
+            let indexOfCell = selected.index(of: platoElegido)!
+            selected.remove(at: indexOfCell)
+        }
         
-        selected.append(platoElegido!)
         print(selected)
-    }
-    
-    @IBAction func sendDataButton(_ sender: RoundButton) {
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
         
-        nextScreen.nameArray = selected
+        nextScreen.selected = selected
+        nextScreen.procedure = "register"
     }
 }
