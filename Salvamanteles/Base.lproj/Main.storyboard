@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MqT-BF-jvM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GdE-KZ-72E">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQk-Sh-PcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260.86956521739131" y="487.5"/>
+            <point key="canvasLocation" x="241" y="488"/>
         </scene>
         <!--Ajustes-->
         <scene sceneID="FH1-oi-aUb">
@@ -219,16 +219,6 @@
                                     <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="gbl-yl-SEm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rl6-uf-DMX">
-                                <rect key="frame" x="139" y="581" width="137" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.061376284250000003" green="0.2226294949" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Guardar cambios"/>
-                                <connections>
-                                    <action selector="saveChangesButton:" destination="GdE-KZ-72E" eventType="touchUpInside" id="OnY-2Z-zWj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tHn-eU-FFq"/>
@@ -243,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-ad-2BB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450.7246376811595" y="487.5"/>
+            <point key="canvasLocation" x="2596" y="507"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="Yhr-LR-TgF">
@@ -345,12 +335,12 @@
                         <outlet property="mailEntry" destination="VCr-qn-Vuj" id="iTe-tB-hfo"/>
                         <outlet property="passEntry" destination="4Af-Bk-nsF" id="D8B-FV-rwQ"/>
                         <segue destination="jnl-fd-mZt" kind="showDetail" identifier="toRegistry" id="8rL-tm-PC8"/>
-                        <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toProfiles" id="S6f-K4-ofs"/>
+                        <segue destination="0i8-Ys-9Tq" kind="showDetail" identifier="toProfiles" id="mX2-0T-cJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhs-ye-Ryf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257.97101449275362" y="-161.38392857142856"/>
+            <point key="canvasLocation" x="1019" y="-242"/>
         </scene>
         <!--Alimentos prohibidos-->
         <scene sceneID="Li5-0R-KBN">
@@ -481,7 +471,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DishesCell" id="xG0-eN-ryG" customClass="DishesCell" customModule="Salvamanteles" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DishesCell" focusStyle="custom" id="xG0-eN-ryG" customClass="DishesCell" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xG0-eN-ryG" id="tsl-OX-3D9">
@@ -497,6 +487,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.66323477029800415" green="0.79463374614715576" blue="0.67064911127090454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="dishName" destination="2hh-fT-Gy1" id="BnP-Cw-dRQ"/>
                                         </connections>
@@ -537,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mf-gV-Tns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450.7246376811595" y="-161.38392857142856"/>
+            <point key="canvasLocation" x="3362" y="-317"/>
         </scene>
         <!--Restaurantes-->
         <scene sceneID="NqJ-w4-U4A">
@@ -582,7 +573,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.60938209295272827" green="0.6845279335975647" blue="0.56757557392120361" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.66323477029800415" green="0.79463374614715576" blue="0.67064911127090454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.74509803919999995" green="0.75686274509999996" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -625,7 +616,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="-161.38392857142856"/>
+            <point key="canvasLocation" x="2636" y="-317"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZXS-8a-HuC">
@@ -641,7 +632,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bze-NH-tUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="1202"/>
+            <point key="canvasLocation" x="241" y="1197"/>
         </scene>
         <!--Perfiles-->
         <scene sceneID="2Ma-ZP-4JB">
@@ -731,12 +722,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ProfileCollection" destination="0Yd-jg-Pek" id="Hg2-JF-Fme"/>
-                        <segue destination="Sjx-bK-oAQ" kind="show" identifier="toRestaurants" id="uj5-ga-sS6"/>
+                        <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toRestaurants" id="cxt-Lg-sVg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rc-E2-bgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018.840579710145" y="-161.38392857142856"/>
+            <point key="canvasLocation" x="1790" y="-317"/>
         </scene>
         <!--Resumen-->
         <scene sceneID="Vum-us-o7x">
@@ -796,7 +787,6 @@
                                 </state>
                                 <connections>
                                     <action selector="finishedSelection:" destination="mqL-kg-pku" eventType="touchUpInside" id="Lly-hG-oOu"/>
-                                    <segue destination="Sjx-bK-oAQ" kind="showDetail" identifier="toRestaurants" id="RHc-i5-Ov5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -812,11 +802,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Onp-xK-hZ7" id="RlQ-tT-hwd"/>
+                        <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toRestaurants" id="asy-MB-d1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7U-wa-sqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="487.5"/>
+            <point key="canvasLocation" x="1791" y="488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d0b-5w-rlf">
@@ -827,12 +818,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0i8-Ys-9Tq" kind="relationship" relationship="rootViewController" id="lDW-L9-bWi"/>
+                        <segue destination="Sjx-bK-oAQ" kind="relationship" relationship="rootViewController" id="nlb-Qp-YNO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BF-zl-2U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="-902"/>
+            <point key="canvasLocation" x="2636" y="-1043"/>
         </scene>
     </scenes>
     <resources>
@@ -845,8 +836,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y8a-Ea-Orm"/>
+        <segue reference="asy-MB-d1H"/>
         <segue reference="4fU-Os-xXa"/>
-        <segue reference="RHc-i5-Ov5"/>
-        <segue reference="yxh-Zu-6mT"/>
+        <segue reference="Syn-G2-IH1"/>
     </inferredMetricsTieBreakers>
 </document>

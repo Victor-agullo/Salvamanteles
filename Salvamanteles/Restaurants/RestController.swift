@@ -85,7 +85,8 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
 
-        var restaurant = cell.name.text!
+        let restaurant = cell.name.text!
+        
         /*
         for item in restaurantsList[restaurant] {
             categoriesOfSelectedRest.append(item)

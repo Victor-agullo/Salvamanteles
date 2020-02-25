@@ -4,7 +4,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     
     var profileArray: Array<String> = []
     
-    var profile = ""
+    static var profile = ""
     
     private static var colors: [UIColor] = []
     
@@ -59,6 +59,10 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     
     // método que responde a la selección de una app, llevando al usuario a un detalle de los tiempos de esta
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ProfileCell" , for: indexPath) as! ProfileCell
+        
+        ProfileController.profile = cell.nameLabel.text!
         
         // cambio de pantalla
         performSegue(withIdentifier: "toRestaurants", sender: self)

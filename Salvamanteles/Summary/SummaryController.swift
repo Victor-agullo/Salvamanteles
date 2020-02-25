@@ -3,7 +3,7 @@ import UIKit
 class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     static var nameArray: [String] = []
-    var procedure: String = ""
+    var procedure = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -12,6 +12,8 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,12 +46,22 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     func saveData(procedure: String) {
         
         if procedure == "register" {
-            
-            HTTPMessenger.init().post(endpoint: "saveProfile", params: SummaryController.nameArray)
-            
+            print("allega")
+           var pos = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
+            print(pos)
         } else if procedure == "reconsidering" {
             
-            HTTPMessenger.init().post(endpoint: "saveSelection", params: SummaryController.nameArray)
+           _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
         }
+    }
+    
+    func getParams() -> Dictionary<String,Any> {
+        
+        let parameters = [
+            "name" : ProfileController.profile,
+            "ingredient_names" : SummaryController.nameArray
+            ] as [String : Any]
+        print(parameters)
+        return parameters
     }
 }

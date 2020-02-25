@@ -34,7 +34,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     var PickerList: [String] = []
     
     func loadProfiles() {
-        let profiles = HTTPMessenger.init().get(endpoint: "dummy")
+        let profiles = HTTPMessenger.init().get(endpoint: "getProfiles")
         print(profiles)
         
         profiles.responseJSON { response in
