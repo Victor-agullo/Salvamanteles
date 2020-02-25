@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GdE-KZ-72E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fDr-qu-Zi3">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQk-Sh-PcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="488"/>
+            <point key="canvasLocation" x="293" y="411"/>
         </scene>
         <!--Ajustes-->
         <scene sceneID="FH1-oi-aUb">
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-ad-2BB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="507"/>
+            <point key="canvasLocation" x="2599" y="428"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="Yhr-LR-TgF">
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhs-ye-Ryf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="-242"/>
+            <point key="canvasLocation" x="1071" y="-317"/>
         </scene>
         <!--Alimentos prohibidos-->
         <scene sceneID="Li5-0R-KBN">
@@ -448,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2en-5g-C8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018.840579710145" y="487.5"/>
+            <point key="canvasLocation" x="1070" y="410"/>
         </scene>
         <!--Platos-->
         <scene sceneID="sTj-qd-txD">
@@ -616,7 +616,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2636" y="-317"/>
+            <point key="canvasLocation" x="2599" y="-317"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZXS-8a-HuC">
@@ -632,7 +632,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bze-NH-tUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="1197"/>
+            <point key="canvasLocation" x="293" y="1087"/>
         </scene>
         <!--Perfiles-->
         <scene sceneID="2Ma-ZP-4JB">
@@ -691,7 +691,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egO-FF-Urb">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egO-FF-Urb">
                                 <rect key="frame" x="20" y="799" width="374" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
@@ -709,16 +709,28 @@
                                     <segue destination="GdE-KZ-72E" kind="show" id="bcP-Dr-KT1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8f-tR-Yj9">
+                                <rect key="frame" x="301" y="820" width="40" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="aquí.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <font key="NSOriginalFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="9"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="lBh-UW-oRh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Perfiles" leftItemsSupplementBackButton="YES" id="Oi6-ee-sVz">
-                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="plain" id="vyB-0J-TOG">
-                            <connections>
-                                <segue destination="GdE-KZ-72E" kind="show" id="g5d-RW-eZ2"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="plain" id="vyB-0J-TOG"/>
                     </navigationItem>
                     <connections>
                         <outlet property="ProfileCollection" destination="0Yd-jg-Pek" id="Hg2-JF-Fme"/>
@@ -727,7 +739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rc-E2-bgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="-317"/>
+            <point key="canvasLocation" x="1831.8840579710147" y="-317.41071428571428"/>
         </scene>
         <!--Resumen-->
         <scene sceneID="Vum-us-o7x">
@@ -807,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7U-wa-sqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="488"/>
+            <point key="canvasLocation" x="1832" y="411"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d0b-5w-rlf">
@@ -823,7 +835,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BF-zl-2U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2636" y="-1043"/>
+            <point key="canvasLocation" x="2599" y="-995"/>
         </scene>
     </scenes>
     <resources>
@@ -835,9 +847,8 @@
         <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y8a-Ea-Orm"/>
         <segue reference="asy-MB-d1H"/>
-        <segue reference="4fU-Os-xXa"/>
+        <segue reference="Vtt-ew-5uo"/>
         <segue reference="Syn-G2-IH1"/>
     </inferredMetricsTieBreakers>
 </document>

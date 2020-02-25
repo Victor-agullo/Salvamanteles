@@ -11,17 +11,10 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     var resultsController = UITableViewController()
     var filteredRests = [String]()
     
-    var TableList: [[String]] = [["Queso","Leche","Yougurt"],
-                                 ["Trucha","Atún","Lubina"],
-                                 ["Pollo","Cerdo","Vacuno"],
-                                 ["Cigalas","Almejas","Ostras"]]
-    
-    var PickerList = ["Lactosa","Pescado","Carne","Marisco"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //loadProfiles()
+        loadProfiles()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,12 +22,12 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         self.creatingSearhBar()
         self.tableSettings()
     }
-    /*
+    
     var TableList: [[String]] = []
     var PickerList: [String] = []
     
     func loadProfiles() {
-        let profiles = HTTPMessenger.init().get(endpoint: "getProfiles")
+        let profiles = HTTPMessenger.init().get(endpoint: "dummy")
         print(profiles)
         
         profiles.responseJSON { response in
@@ -57,7 +50,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
- */
+ 
     func creatingSearhBar() {
         self.searchController = UISearchController(searchResultsController: self.resultsController)
         self.tableView.tableHeaderView = self.searchController.searchBar
