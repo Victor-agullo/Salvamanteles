@@ -7,16 +7,35 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     //var categoriesList = serverRetriever.categoriesArray
     //var descriptionsList = serverRetriever.descriptionsArray
     
-    let example = [["Hamburguesa", "uetr"], ["Patatas"], ["Fanta de naranja"], ["asdf"], ["asdfgh"]]
+    let example = [["Coca Cola", "Fanta"], ["Cheesebacon"], ["Patatas deluxe"], ["Nuggets"], ["Mcflurry oreo"]]
     
-    let categorias: [String] = ["beverages", "first", "second", "cuarto", "quinta categoría"]
+    let categorias: [String] = ["beverages", "first courses", "second courses", "snacks", "desserts"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //loadData()
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
+    /*
+     func loadData() {
+     let foods = HTTPMessenger.init().get(endpoint: "dummy")
+     
+     foods.responseJSON { response in
+     print(response)
+     // se cerciona de que haya respuesta
+     if let JSON = response.result.value {
+     print(JSON)
+     // pasa el JSON a array
+     let jsonArray = JSON as? NSArray
+     print(jsonArray)
+     //Según lo que se devuelva la bbdd sabremos cómo abordar la respuesta.
+     }
+     }
+     }
+     */
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return example.count
@@ -57,8 +76,12 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextScreen = segue.destination as! SummaryController
-        
-        nextScreen.procedure = "reconsidering"
+        if segue.identifier == "toSummary" {
+            let nextScreen = segue.destination as! SummaryController
+            nextScreen.procedure = "reconsidering"
+            
+        } else if segue.identifier == "toSettings" {
+            _ = segue.destination as! SettingsController
+        }
     }
 }

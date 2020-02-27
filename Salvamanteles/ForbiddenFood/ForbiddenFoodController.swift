@@ -2,58 +2,50 @@ import UIKit
 
 class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UISearchResultsUpdating{
     
-    var actualRow = 0
-    
     @IBOutlet weak var dropDown: UIPickerView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var foodTable: UITableView!
     
     var searchController: UISearchController!
     var resultsController = UITableViewController()
     var filteredRests = [String]()
+    var currentCategory = 0
+    static var categoriesList: [String] = ["Lactosa","Pescado","Carne","Marisco"]
+    static var allergensList: [[String]] = [["Queso","Leche","Yougurt"],
+                                            ["Trucha","Atún","Lubina"],
+                                            ["Pollo","Cerdo","Vacuno"],
+                                            ["Cigalas","Almejas","Ostras"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadProfiles()
+        // loadData()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        foodTable.delegate = self
+        foodTable.dataSource = self
         
         self.creatingSearhBar()
         self.tableSettings()
     }
-    
-    var TableList: [[String]] = []
-    var PickerList: [String] = []
-    
-    func loadProfiles() {
-        let profiles = HTTPMessenger.init().get(endpoint: "dummy")
-        print(profiles)
-        
-        profiles.responseJSON { response in
-            print(response)
-            // se cerciona de que haya respuesta
-            if let JSON = response.result.value {
-                print(JSON)
-                // pasa el JSON a array
-                let jsonArray = JSON as? NSArray
-                print(jsonArray)
-                for item in jsonArray as! [NSDictionary] {
-                    
-                    let ingredientes = item["ingredientes"] as! [String]
-                    let categorias = item["categorias"] as! String
-                    
-                    self.TableList.append(ingredientes)
-                    self.PickerList.append(categorias)
-                }
-                print(self.TableList)
-            }
-        }
-    }
- 
+    /*
+     func loadData() {
+     let foods = HTTPMessenger.init().get(endpoint: "dummy")
+     
+     foods.responseJSON { response in
+     print(response)
+     // se cerciona de que haya respuesta
+     if let JSON = response.result.value {
+     print(JSON)
+     // pasa el JSON a array
+     let jsonArray = JSON as? NSArray
+     print(jsonArray)
+     Según lo que se devuelva la bbdd sabremos cómo abordar la respuesta.
+     }
+     }
+     }
+     */
     func creatingSearhBar() {
         self.searchController = UISearchController(searchResultsController: self.resultsController)
-        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.foodTable.tableHeaderView = self.searchController.searchBar
         self.searchController.searchResultsUpdater = self
     }
     
@@ -63,7 +55,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        self.filteredRests = self.TableList[actualRow].filter {
+        self.filteredRests = ForbiddenFoodController.allergensList[currentCategory].filter {
             (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
@@ -81,36 +73,36 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return PickerList.count
+        return ForbiddenFoodController.categoriesList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String? {
         self.view.endEditing(true)
-        return PickerList[row]
+        return ForbiddenFoodController.categoriesList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component : Int) {
-        actualRow = row
+        currentCategory = row
         
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.foodTable.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == self.tableView {
-            return TableList[actualRow].count
-        
+        if tableView == self.foodTable {
+            return ForbiddenFoodController.allergensList[currentCategory].count
+            
         } else {
             return filteredRests.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
+        let cell = self.foodTable.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
         
-        if tableView == self.tableView {
-            cell.alergeName.text = TableList[actualRow][indexPath.row]
+        if tableView == self.foodTable {
+            cell.alergeName.text = ForbiddenFoodController.allergensList[currentCategory][indexPath.row]
             
         }else{
             cell.alergeName.text = filteredRests[indexPath.row]
@@ -140,3 +132,4 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         nextScreen.procedure = "register"
     }
 }
+

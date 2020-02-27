@@ -77,21 +77,25 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextScreen = segue.destination as! DishesController
-        
-        //nextScreen.categorias = categoriesOfSelectedRest
+        if segue.identifier == "toDishes" {
+            let nextScreen = segue.destination as! DishesController
+            
+            //nextScreen.categorias = categoriesOfSelectedRest
+        } else if segue.identifier == "toSettings" {
+            let nextScreen = segue.destination as! SettingsController
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
-
+        
         let restaurant = cell.name.text!
         
         /*
-        for item in restaurantsList[restaurant] {
-            categoriesOfSelectedRest.append(item)
-        }
-        */
+         for item in restaurantsList[restaurant] {
+         categoriesOfSelectedRest.append(item)
+         }
+         */
         performSegue(withIdentifier: "toDishes", sender: self)
     }
 }

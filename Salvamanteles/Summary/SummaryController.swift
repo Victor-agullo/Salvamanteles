@@ -12,8 +12,6 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

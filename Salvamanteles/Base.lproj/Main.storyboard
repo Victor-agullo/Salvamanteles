@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jnl-fd-mZt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgU-mw-pbc">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -335,7 +335,7 @@
                         <outlet property="mailEntry" destination="VCr-qn-Vuj" id="iTe-tB-hfo"/>
                         <outlet property="passEntry" destination="4Af-Bk-nsF" id="D8B-FV-rwQ"/>
                         <segue destination="jnl-fd-mZt" kind="showDetail" identifier="toRegistry" id="8rL-tm-PC8"/>
-                        <segue destination="0i8-Ys-9Tq" kind="showDetail" identifier="toProfiles" id="mX2-0T-cJJ"/>
+                        <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toProfiles" id="F62-U7-idx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhs-ye-Ryf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -734,7 +734,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ProfileCollection" destination="0Yd-jg-Pek" id="Hg2-JF-Fme"/>
-                        <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toRestaurants" id="cxt-Lg-sVg"/>
+                        <segue destination="Sjx-bK-oAQ" kind="show" identifier="toRestaurants" id="q53-gw-1W4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rc-E2-bgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -830,12 +830,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Sjx-bK-oAQ" kind="relationship" relationship="rootViewController" id="nlb-Qp-YNO"/>
+                        <segue destination="0i8-Ys-9Tq" kind="relationship" relationship="rootViewController" id="rhE-so-BLE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BF-zl-2U5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2599" y="-995"/>
+            <point key="canvasLocation" x="1832" y="-1179"/>
         </scene>
     </scenes>
     <resources>
@@ -847,8 +847,8 @@
         <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="asy-MB-d1H"/>
+        <segue reference="F62-U7-idx"/>
         <segue reference="4fU-Os-xXa"/>
-        <segue reference="yxh-Zu-6mT"/>
+        <segue reference="bcP-Dr-KT1"/>
     </inferredMetricsTieBreakers>
 </document>
