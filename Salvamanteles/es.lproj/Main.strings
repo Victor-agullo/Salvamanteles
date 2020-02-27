@@ -1,27 +1,126 @@
 
-/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "6c0-HH-Mag"; */
-"6c0-HH-Mag.normalTitle" = "Inicio de sesión";
+/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "0C9-ez-m2F"; */
+"0C9-ez-m2F.title" = "Ajustes";
 
-/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "7dr-Ly-AqO"; */
-"7dr-Ly-AqO.normalTitle" = "Registro";
+/* Class = "UILabel"; text = "Añadir perfil"; ObjectID = "2Ds-SB-Arw"; */
+"2Ds-SB-Arw.text" = "Añadir perfil";
 
-/* Class = "UITextField"; placeholder = "mail"; ObjectID = "GyP-gh-f6c"; */
-"GyP-gh-f6c.placeholder" = "correo";
+/* Class = "UILabel"; text = "Label"; ObjectID = "2hh-fT-Gy1"; */
+"2hh-fT-Gy1.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "¿Olvidaste la contraseña?"; ObjectID = "KAq-QR-8m2"; */
-"KAq-QR-8m2.normalTitle" = "¿Olvidaste la contraseña?";
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "4Af-Bk-nsF"; */
+"4Af-Bk-nsF.placeholder" = "Password";
 
-/* Class = "UIButton"; normalTitle = "English"; ObjectID = "QnN-ml-PN3"; */
-"QnN-ml-PN3.normalTitle" = "Inglés";
+/* Class = "UIButton"; normalTitle = "¿Ya registrado?"; ObjectID = "6su-Li-f1R"; */
+"6su-Li-f1R.normalTitle" = "¿Ya registrado?";
 
-/* Class = "UITextField"; placeholder = "contra"; ObjectID = "a3e-KG-FQ7"; */
-"a3e-KG-FQ7.placeholder" = "contra";
+/* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "8Bi-JX-w5Z"; */
+"8Bi-JX-w5Z.placeholder" = "Nombre";
 
-/* Class = "UIButton"; normalTitle = "Español"; ObjectID = "htV-sJ-1aT"; */
-"htV-sJ-1aT.normalTitle" = "Spanish";
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8mC-kD-68p"; */
+"8mC-kD-68p.placeholder" = "Password";
 
-/* Class = "UITextField"; placeholder = "nombre"; ObjectID = "vzv-A0-7bh"; */
-"vzv-A0-7bh.placeholder" = "nombre";
+/* Class = "UINavigationItem"; title = "Alimentos prohibidos"; ObjectID = "8ws-IF-mfC"; */
+"8ws-IF-mfC.title" = "Alimentos prohibidos";
 
-/* Class = "UITextField"; placeholder = "nombre"; ObjectID = "zDD-OC-eOG"; */
-"zDD-OC-eOG.placeholder" = "nombre";
+/* Class = "UILabel"; text = "¡Bienvenido a Salvamanteles!"; ObjectID = "Ama-7r-KRf"; */
+"Ama-7r-KRf.text" = "¡Bienvenido a Salvamanteles!";
+
+/* Class = "UINavigationItem"; title = "Restaurantes"; ObjectID = "C2t-Le-0az"; */
+"C2t-Le-0az.title" = "Restaurantes";
+
+/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "D3a-bG-zcL"; */
+"D3a-bG-zcL.title" = "Ajustes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Dm7-yo-nwq"; */
+"Dm7-yo-nwq.text" = "Label";
+
+/* Class = "UILabel"; accessibilityLabel = "name"; ObjectID = "E7h-HE-xcZ"; */
+"E7h-HE-xcZ.accessibilityLabel" = "name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E7h-HE-xcZ"; */
+"E7h-HE-xcZ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Hecho!"; ObjectID = "FAZ-1d-50G"; */
+"FAZ-1d-50G.normalTitle" = "Hecho!";
+
+/* Class = "UITextField"; placeholder = "repita la contraseña"; ObjectID = "Ghh-E0-K4M"; */
+"Ghh-E0-K4M.placeholder" = "repita la contraseña";
+
+/* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "K6m-5z-YJL"; */
+"K6m-5z-YJL.placeholder" = "e-mail";
+
+/* Class = "UINavigationItem"; title = "Perfiles"; ObjectID = "Oi6-ee-sVz"; */
+"Oi6-ee-sVz.title" = "Perfiles";
+
+/* Class = "UIButton"; normalTitle = "Añadir"; ObjectID = "RGi-uY-I4R"; */
+"RGi-uY-I4R.normalTitle" = "Añadir";
+
+/* Class = "UITextField"; placeholder = "nuevo nombre"; ObjectID = "S91-EB-sUf"; */
+"S91-EB-sUf.placeholder" = "nuevo nombre";
+
+/* Class = "UINavigationItem"; title = "Ajustes"; ObjectID = "V1u-kp-zLy"; */
+"V1u-kp-zLy.title" = "Ajustes";
+
+/* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "VCr-qn-Vuj"; */
+"VCr-qn-Vuj.placeholder" = "e-mail";
+
+/* Class = "UILabel"; text = "Registrarse"; ObjectID = "X3B-Gx-5eb"; */
+"X3B-Gx-5eb.text" = "Registrarse";
+
+/* Class = "UIButton"; normalTitle = "¿No registrado aún?"; ObjectID = "XNG-b4-bGj"; */
+"XNG-b4-bGj.normalTitle" = "¿No registrado aún?";
+
+/* Class = "UINavigationItem"; title = "Platos"; ObjectID = "ZVx-NG-at9"; */
+"ZVx-NG-at9.title" = "Platos";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cOV-xg-G8B"; */
+"cOV-xg-G8B.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "nueva contraseña"; ObjectID = "gK6-vD-GlU"; */
+"gK6-vD-GlU.placeholder" = "nueva contraseña";
+
+/* Class = "UINavigationItem"; title = "Resumen"; ObjectID = "gmu-vJ-KuU"; */
+"gmu-vJ-KuU.title" = "Resumen";
+
+/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "iX5-5i-qHN"; */
+"iX5-5i-qHN.title" = "Ajustes";
+
+/* Class = "UIButton"; normalTitle = "Cambiar"; ObjectID = "lAY-Af-wpg"; */
+"lAY-Af-wpg.normalTitle" = "Cambiar";
+
+/* Class = "UIButton"; normalTitle = "Registrarse"; ObjectID = "nbz-be-2wW"; */
+"nbz-be-2wW.normalTitle" = "Registrarse";
+
+/* Class = "UIButton"; normalTitle = "Hecho!"; ObjectID = "nff-ZE-Gyi"; */
+"nff-ZE-Gyi.normalTitle" = "Hecho!";
+
+/* Class = "UILabel"; text = " "; ObjectID = "oSn-Dm-LQS"; */
+"oSn-Dm-LQS.text" = " ";
+
+/* Class = "UILabel"; text = " "; ObjectID = "r73-X4-rZS"; */
+"r73-X4-rZS.text" = " ";
+
+/* Class = "UILabel"; text = " "; ObjectID = "sin-qk-Jl9"; */
+"sin-qk-Jl9.text" = " ";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "tGE-vA-pTC"; */
+"tGE-vA-pTC.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "toA-Mg-94y"; */
+"toA-Mg-94y.text" = "Label";
+
+/* Class = "UILabel"; text = "Cambiar contraseña"; ObjectID = "txS-kf-X9y"; */
+"txS-kf-X9y.text" = "Cambiar contraseña";
+
+/* Class = "UIButton"; normalTitle = "Listo"; ObjectID = "v8V-Z5-p1u"; */
+"v8V-Z5-p1u.normalTitle" = "Listo";
+
+/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "vyB-0J-TOG"; */
+"vyB-0J-TOG.title" = "Ajustes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yON-PT-fZo"; */
+"yON-PT-fZo.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "contraseña actual"; ObjectID = "zEY-y8-7AY"; */
+"zEY-y8-7AY.placeholder" = "contraseña actual";

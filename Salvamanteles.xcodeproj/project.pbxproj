@@ -51,6 +51,7 @@
 		B9D8E6F223F74DF300116977 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B9D8E6F423F756D100116977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD750E5ADE647CF47EA4865F /* Pods-Salvamanteles.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Salvamanteles.release.xcconfig"; path = "Target Support Files/Pods-Salvamanteles/Pods-Salvamanteles.release.xcconfig"; sourceTree = "<group>"; };
+		FD03631524069A490005A1D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		FD585D2623F1AFC8005CDA59 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		FD585D2C23F1B2F3005CDA59 /* ForbiddenFoodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForbiddenFoodController.swift; sourceTree = "<group>"; };
 		FD585D2E23F1B307005CDA59 /* ForbiddenCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForbiddenCells.swift; sourceTree = "<group>"; };
@@ -356,6 +357,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B988910A23F9E8910087724C /* Base */,
+				FD03631524069A490005A1D9 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
