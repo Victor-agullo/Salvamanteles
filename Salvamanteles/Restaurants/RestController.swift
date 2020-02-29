@@ -2,33 +2,23 @@ import UIKit
 
 class RestController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var restaurantsTable: UITableView!
     
-    let restList = ["Burguer king", "McDonalds", "VIPS", "Ginos", "El Chino De Abajo", "Bar Ricadas"]
-    
-    var categoriesOfSelectedRest: [String] = []
-    
-    //var restaurantsList = serverRetriever.restaurantsArray
-    //var optionsList = serverRetriever.optionsArray
-
+    @IBOutlet weak var profileName: UILabel!
     var searchController : UISearchController!
-    
     var resultsController = UITableViewController()
-    
     var filteredRests = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _ = serverRetriever.init().infoGatherer
-        
         self.creatingSearhBar()
         self.tableSettings()
+        profileName.text = ProfileController.profile
     }
     
     func creatingSearhBar() {
         self.searchController = UISearchController(searchResultsController: self.resultsController)
-        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.restaurantsTable.tableHeaderView = self.searchController.searchBar
         self.searchController.searchResultsUpdater = self
     }
     
@@ -39,7 +29,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        self.filteredRests = self.restList.filter {
+        self.filteredRests = serverRetriever.restaurantsArray.filter {
             (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
@@ -53,9 +43,8 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if tableView == self.tableView {
-            return restList.count
+        if tableView == self.restaurantsTable {
+            return serverRetriever.restaurantsArray.count
             
         } else {
             return filteredRests.count
@@ -63,16 +52,13 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
+        let cell = self.restaurantsTable.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
-        if tableView == self.tableView {
-            cell.name.text = restList[indexPath.row]
-            //cell.options.text = optionsList[indexPath.row]
+        if tableView == self.restaurantsTable {
+            cell.name.text = serverRetriever.restaurantsArray[indexPath.row]
         }else{
             cell.name.text = filteredRests[indexPath.row]
-            //cell.options.text = optionsList[indexPath.row]
         }
-        
         return cell
     }
     
@@ -80,22 +66,17 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "toDishes" {
             let nextScreen = segue.destination as! DishesController
             
-            //nextScreen.categorias = categoriesOfSelectedRest
         } else if segue.identifier == "toSettings" {
             let nextScreen = segue.destination as! SettingsController
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
+        let cell = tableView.cellForRow(at: indexPath) as! RestCells
         
         let restaurant = cell.name.text!
         
-        /*
-         for item in restaurantsList[restaurant] {
-         categoriesOfSelectedRest.append(item)
-         }
-         */
+        print(restaurant)
         performSegue(withIdentifier: "toDishes", sender: self)
     }
 }

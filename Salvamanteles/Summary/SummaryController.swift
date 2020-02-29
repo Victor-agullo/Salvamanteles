@@ -44,9 +44,8 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     func saveData(procedure: String) {
         
         if procedure == "register" {
-            print("allega")
-           var pos = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
-            print(pos)
+            var pos = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
+
         } else if procedure == "reconsidering" {
             
            _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
@@ -54,12 +53,19 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func getParams() -> Dictionary<String,Any> {
+        var name = ""
+        
+        if RegisterController.newProfile.isEmpty {
+            name = ProfileController.profile
+        } else {
+            name = RegisterController.newProfile
+        }
         
         let parameters = [
-            "name" : ProfileController.profile,
+            "name" : name,
             "ingredient_names" : SummaryController.nameArray
             ] as [String : Any]
-        print(parameters)
+        
         return parameters
     }
 }

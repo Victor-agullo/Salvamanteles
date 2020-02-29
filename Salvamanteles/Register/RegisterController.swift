@@ -11,7 +11,13 @@ class RegisterController: UIViewController{
     @IBOutlet weak var errorPass: UILabel!
     
     var hadConnected: Bool = Bool()
-
+    static var newProfile = ""
+    
+    override func viewDidLoad() {
+        
+        serverRetriever.init().loadAllergens()
+    }
+    
     @IBAction func registerButton(_ sender: UIButton) {
         
         let mail = validator.init().validateMail(field: emailField)
@@ -23,8 +29,11 @@ class RegisterController: UIViewController{
             let params = paramGetter()
             
             HTTPMessenger.init().viewJumper(parameters: params, uri: "createUser", view: self.view, completion: {
+                
                 success in self.hadConnected = success
+                
                 if self.hadConnected == true {
+                    RegisterController.newProfile = self.nameField.text!
                     self.performSegue(withIdentifier: "toForbidden", sender: self)
                 }
             })

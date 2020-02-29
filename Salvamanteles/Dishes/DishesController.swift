@@ -4,57 +4,43 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    //var categoriesList = serverRetriever.categoriesArray
-    //var descriptionsList = serverRetriever.descriptionsArray
-    
-    let example = [["Coca Cola", "Fanta"], ["Cheesebacon"], ["Patatas deluxe"], ["Nuggets"], ["Mcflurry oreo"]]
-    
     let categorias: [String] = ["beverages", "first courses", "second courses", "snacks", "desserts"]
+    var sections: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //loadData()
-        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        for type in serverRetriever.typesArray {
+            var cat = categorias[type]
+            
+            if !sections.contains(cat) {
+                sections.append(cat)
+            }
+        }
     }
-    /*
-     func loadData() {
-     let foods = HTTPMessenger.init().get(endpoint: "dummy")
-     
-     foods.responseJSON { response in
-     print(response)
-     // se cerciona de que haya respuesta
-     if let JSON = response.result.value {
-     print(JSON)
-     // pasa el JSON a array
-     let jsonArray = JSON as? NSArray
-     print(jsonArray)
-     //Según lo que se devuelva la bbdd sabremos cómo abordar la respuesta.
-     }
-     }
-     }
-     */
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return example.count
+        return serverRetriever.namesArray.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(categorias[section])"
+        
+        return "\(sections[section])"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return example[section].count
+        return serverRetriever.namesArray[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DishesCell", for: indexPath) as? DishesCell)!
         
-        cell.dishName.text! = example[indexPath.section][indexPath.row]
+        cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
         
         return cell
     }

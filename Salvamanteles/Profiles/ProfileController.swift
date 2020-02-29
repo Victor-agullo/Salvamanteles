@@ -10,6 +10,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var ProfileCollection: UICollectionView!
     
+    @IBOutlet weak var toNextButton: UIButton!
     override func viewDidLoad() {
         loadProfiles()
         
@@ -60,9 +61,16 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     // método que responde a la selección de una app, llevando al usuario a un detalle de los tiempos de esta
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ProfileCell" , for: indexPath) as! ProfileCell
+        let cell = collectionView.cellForItem(at: indexPath) as! ProfileCell
         
         ProfileController.profile = cell.nameLabel.text!
+        
+        serverRetriever.infoGatherer()
+        
+        toNextButton.isHidden = false
+    }
+    
+    @IBAction func toNextView(_ sender: UIButton) {
         
         // cambio de pantalla
         performSegue(withIdentifier: "toRestaurants", sender: self)

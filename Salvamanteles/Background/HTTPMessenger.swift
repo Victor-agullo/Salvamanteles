@@ -19,7 +19,11 @@ class HTTPMessenger: UIViewController {
 
         let url = urlModder(urlEndpoint: endpoint)
         
-        let post = Alamofire.request(url, method: .post, parameters: params as? Parameters)
+            let token = [
+                "token" : UserDefaults.standard.value(forKey: "token")!
+                ] as! [String:String]
+        
+        let post = Alamofire.request(url, method: .post, parameters: params as? Parameters, headers: token)
         
         return post
     }
@@ -68,16 +72,9 @@ class HTTPMessenger: UIViewController {
                 
             case 200:
                 
-                if uri == "loginUser"{
-                    HTTPMessenger.init().tokenSavior(response: response)
-                    completion(true)
-                    
-                } else if uri == "createUser" {
-                    
-                    // guarda el usuario en defaults
-                    UserDefaults.standard.set(parameters, forKey: "user")
-                    completion(true)
-                }
+                HTTPMessenger.init().tokenSavior(response: response)
+                UserDefaults.standard.set(parameters, forKey: "user")
+                completion(true)
                 break
                 
             case 401:

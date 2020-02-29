@@ -9,40 +9,25 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     var resultsController = UITableViewController()
     var filteredRests = [String]()
     var currentCategory = 0
+    /*
     static var categoriesList: [String] = ["Lactosa","Pescado","Carne","Marisco"]
     static var allergensList: [[String]] = [["Queso","Leche","Yougurt"],
                                             ["Trucha","Atún","Lubina"],
                                             ["Pollo","Cerdo","Vacuno"],
                                             ["Cigalas","Almejas","Ostras"]]
+    */
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // loadData()
-        
+        print(serverRetriever.allergensList)
         foodTable.delegate = self
         foodTable.dataSource = self
         
         self.creatingSearhBar()
         self.tableSettings()
     }
-    /*
-     func loadData() {
-     let foods = HTTPMessenger.init().get(endpoint: "dummy")
-     
-     foods.responseJSON { response in
-     print(response)
-     // se cerciona de que haya respuesta
-     if let JSON = response.result.value {
-     print(JSON)
-     // pasa el JSON a array
-     let jsonArray = JSON as? NSArray
-     print(jsonArray)
-     Según lo que se devuelva la bbdd sabremos cómo abordar la respuesta.
-     }
-     }
-     }
-     */
+    
     func creatingSearhBar() {
         self.searchController = UISearchController(searchResultsController: self.resultsController)
         self.foodTable.tableHeaderView = self.searchController.searchBar
@@ -55,7 +40,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        self.filteredRests = ForbiddenFoodController.allergensList[currentCategory].filter {
+        self.filteredRests = serverRetriever.allergensList[currentCategory].filter {
             (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
@@ -73,12 +58,12 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ForbiddenFoodController.categoriesList.count
+        return serverRetriever.categoriesList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) ->String? {
         self.view.endEditing(true)
-        return ForbiddenFoodController.categoriesList[row]
+        return serverRetriever.categoriesList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component : Int) {
@@ -91,7 +76,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.foodTable {
-            return ForbiddenFoodController.allergensList[currentCategory].count
+            return serverRetriever.allergensList[currentCategory].count
             
         } else {
             return filteredRests.count
@@ -102,7 +87,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         let cell = self.foodTable.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
         
         if tableView == self.foodTable {
-            cell.alergeName.text = ForbiddenFoodController.allergensList[currentCategory][indexPath.row]
+            cell.alergeName.text = serverRetriever.allergensList[currentCategory][indexPath.row]
             
         }else{
             cell.alergeName.text = filteredRests[indexPath.row]
@@ -132,4 +117,3 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         nextScreen.procedure = "register"
     }
 }
-
