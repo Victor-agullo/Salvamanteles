@@ -23,10 +23,8 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
         
         profiles.responseJSON { response in
             
-            // se cerciona de que haya respuesta
             if let JSON = response.result.value {
                 
-                // pasa el JSON a array
                 let jsonArray = JSON as? NSArray
                 
                 for item in jsonArray as! [NSDictionary] {
@@ -35,7 +33,6 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
                     
                     self.profileArray.append(profile)
                 }
-                // recarga la vista para hacer efectivos los cambios
                 self.ProfileCollection.reloadData()
             }
         }
@@ -58,19 +55,11 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
         return cell
     }
     
-    // método que responde a la selección de una app, llevando al usuario a un detalle de los tiempos de esta
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = collectionView.cellForItem(at: indexPath) as! ProfileCell
         
         ProfileController.profile = cell.nameLabel.text!
-        
-        serverRetriever.infoGatherer()
-        
-        toNextButton.isHidden = false
-    }
-    
-    @IBAction func toNextView(_ sender: UIButton) {
         
         // cambio de pantalla
         performSegue(withIdentifier: "toRestaurants", sender: self)

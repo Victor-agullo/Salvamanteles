@@ -44,7 +44,7 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     func saveData(procedure: String) {
         
         if procedure == "register" {
-            var pos = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
+            _ = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
 
         } else if procedure == "reconsidering" {
             

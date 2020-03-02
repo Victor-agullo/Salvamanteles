@@ -9,18 +9,10 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     var resultsController = UITableViewController()
     var filteredRests = [String]()
     var currentCategory = 0
-    /*
-    static var categoriesList: [String] = ["Lactosa","Pescado","Carne","Marisco"]
-    static var allergensList: [[String]] = [["Queso","Leche","Yougurt"],
-                                            ["Trucha","Atún","Lubina"],
-                                            ["Pollo","Cerdo","Vacuno"],
-                                            ["Cigalas","Almejas","Ostras"]]
-    */
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(serverRetriever.allergensList)
+        
         foodTable.delegate = self
         foodTable.dataSource = self
         
@@ -40,8 +32,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        self.filteredRests = serverRetriever.allergensList[currentCategory].filter {
-            (rest: String) -> Bool in
+        
+        self.filteredRests = serverRetriever.allergensList[currentCategory].filter { (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
                 return true
@@ -97,7 +89,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ForbiddenCells
-        
         let platoElegido = cell.alergeName.text!
         
         if !SummaryController.nameArray.contains(platoElegido) {
@@ -113,7 +104,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
-        
         nextScreen.procedure = "register"
     }
 }

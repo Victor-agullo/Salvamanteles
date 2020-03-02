@@ -3,17 +3,41 @@ import UIKit
 class RestController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
     @IBOutlet weak var restaurantsTable: UITableView!
-    
     @IBOutlet weak var profileName: UILabel!
     var searchController : UISearchController!
     var resultsController = UITableViewController()
     var filteredRests = [String]()
+    static var restaurantsArray: [String] = []
+    static var jsonArray: NSArray = []
+    var menuOfRestaurant: [NSDictionary]?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        profileName.text = ProfileController.profile
+        
+        infoGatherer()
+        
         self.creatingSearhBar()
         self.tableSettings()
-        profileName.text = ProfileController.profile
+    }
+    
+    func infoGatherer() {
+        RestController.restaurantsArray.removeAll()
+        let params = ["name" : ProfileController.profile]
+        let get = HTTPMessenger.init().post(endpoint: "dummy", params: params)
+        
+        get.responseJSON { response in
+            
+            if let JSON = response.result.value {
+                RestController.jsonArray = (JSON as? NSArray)!
+                
+                for item in RestController.jsonArray as! [NSDictionary] {
+                    
+                    let restaurants = item["name"] as! String
+                    RestController.restaurantsArray.append(restaurants)
+                }
+                self.restaurantsTable.reloadData()
+            }
+        }
     }
     
     func creatingSearhBar() {
@@ -29,8 +53,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        self.filteredRests = serverRetriever.restaurantsArray.filter {
-            (rest: String) -> Bool in
+        self.filteredRests = RestController.restaurantsArray.filter { (rest: String) -> Bool in
             
             if rest.lowercased().contains(self.searchController.searchBar.text!.lowercased()){
                 return true
@@ -44,7 +67,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.restaurantsTable {
-            return serverRetriever.restaurantsArray.count
+            return RestController.restaurantsArray.count
             
         } else {
             return filteredRests.count
@@ -55,28 +78,32 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = self.restaurantsTable.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
         if tableView == self.restaurantsTable {
-            cell.name.text = serverRetriever.restaurantsArray[indexPath.row]
-        }else{
+            cell.name.text = RestController.restaurantsArray[indexPath.row]
+            
+        }else {
             cell.name.text = filteredRests[indexPath.row]
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! RestCells
+        let restaurant = cell.name.text!
+        let indexOfRestaurant = RestController.restaurantsArray.index(of: restaurant)!
+        let restaurantChosen = RestController.jsonArray[indexOfRestaurant] as! NSDictionary
+        
+        menuOfRestaurant = restaurantChosen["dishes"]! as? [NSDictionary]
+        
+        performSegue(withIdentifier: "toDishes", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDishes" {
             let nextScreen = segue.destination as! DishesController
+            nextScreen.menu = menuOfRestaurant!
             
         } else if segue.identifier == "toSettings" {
-            let nextScreen = segue.destination as! SettingsController
+            _ = segue.destination as! SettingsController
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! RestCells
-        
-        let restaurant = cell.name.text!
-        
-        print(restaurant)
-        performSegue(withIdentifier: "toDishes", sender: self)
     }
 }

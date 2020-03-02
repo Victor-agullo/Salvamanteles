@@ -1,25 +1,22 @@
 import UIKit
 
 class DishesController: UIViewController , UITableViewDelegate,  UITableViewDataSource {
-    
+    @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    let categorias: [String] = ["beverages", "first courses", "second courses", "snacks", "desserts"]
-    var sections: [String] = []
+    static let categorias: [String] = ["beverages", "first courses", "second courses", "snacks", "desserts"]
+    static var sections: [String] = []
+    var menu: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileLabel.text! = ProfileController.profile
+        
+        serverRetriever.menuSetter(menu: menu!)
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        for type in serverRetriever.typesArray {
-            var cat = categorias[type]
-            
-            if !sections.contains(cat) {
-                sections.append(cat)
-            }
-        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -27,27 +24,24 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return "\(sections[section])"
+        return "\(DishesController.sections[section])"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return serverRetriever.namesArray[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DishesCell", for: indexPath) as? DishesCell)!
-        
+
         cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
+        cell.dishDescription.text! = serverRetriever.descriptionsArray[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! DishesCell
-        
         let platoElegido = cell.dishName.text!
         
         if !SummaryController.nameArray.contains(platoElegido) {
