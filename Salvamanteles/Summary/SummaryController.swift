@@ -45,7 +45,8 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         if procedure == "register" {
             _ = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
-
+            SummaryController.nameArray.removeAll()
+            
         } else if procedure == "reconsidering" {
             
            _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())

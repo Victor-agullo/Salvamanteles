@@ -21,6 +21,10 @@ class SettingsController: UIViewController {
     }
     
     @IBAction func addNewProfile(_ sender: Any) {
-        _ = HTTPMessenger.init().post(endpoint: "createProfile", params: newProfile.text!)
+        var parameters = [
+            "name": newProfile.text!
+        ]
+        
+        _ = HTTPMessenger.init().post(endpoint: "createProfile", params: parameters)
     }
 }

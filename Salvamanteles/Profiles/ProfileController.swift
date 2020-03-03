@@ -10,7 +10,6 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     
     @IBOutlet weak var ProfileCollection: UICollectionView!
     
-    @IBOutlet weak var toNextButton: UIButton!
     override func viewDidLoad() {
         loadProfiles()
         
