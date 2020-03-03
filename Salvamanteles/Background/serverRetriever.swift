@@ -58,7 +58,7 @@ class serverRetriever: UIViewController {
     
     func loadAllergens() {
         //getListedIngredients
-        let foods = HTTPMessenger.init().get(endpoint: "dummy")
+        let foods = HTTPMessenger.init().get(endpoint: "getListedIngredients")
         
         foods.responseJSON { response in
             

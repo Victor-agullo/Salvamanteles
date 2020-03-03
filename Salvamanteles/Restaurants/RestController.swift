@@ -23,7 +23,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func infoGatherer() {
         RestController.restaurantsArray.removeAll()
         let params = ["name" : ProfileController.profile]
-        let get = HTTPMessenger.init().post(endpoint: "dummy", params: params)
+        let get = HTTPMessenger.init().post(endpoint: "getFinalFood", params: params)
         
         get.responseJSON { response in
             
@@ -33,7 +33,9 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for item in RestController.jsonArray as! [NSDictionary] {
                     
                     let restaurants = item["name"] as! String
+                    print("REstaurants es:   ", restaurants)
                     RestController.restaurantsArray.append(restaurants)
+                    print("el otro:   ", RestController.restaurantsArray)
                 }
                 self.restaurantsTable.reloadData()
             }

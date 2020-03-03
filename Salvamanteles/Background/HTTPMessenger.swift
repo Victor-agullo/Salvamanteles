@@ -7,7 +7,15 @@ class HTTPMessenger: UIViewController {
     // la convierte en una URL válida
     func urlModder(urlEndpoint: String) -> URL {
         //let urlString = "http://127.0.0.1/salvamanteles/public/index.php/api/"
-        let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
+        
+        
+        // este es el de victor:
+       // let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
+        
+        
+        
+        // este es el de diego:
+        let urlString = "http://localhost:8888/Diego/salvamanteles_dos/public/index.php/api/"
         
         let url = URL(string: urlString+urlEndpoint)!
         
@@ -24,6 +32,16 @@ class HTTPMessenger: UIViewController {
                 ] as! [String:String]
         
         let post = Alamofire.request(url, method: .post, parameters: params as? Parameters, headers: token)
+        
+        return post
+    }
+    
+    // función que realiza el post sin token
+    func post_without_token(endpoint: String, params: Any) -> DataRequest{
+        
+        let url = urlModder(urlEndpoint: endpoint)
+        
+        let post = Alamofire.request(url, method: .post, parameters: params as? Parameters)
         
         return post
     }
@@ -63,7 +81,7 @@ class HTTPMessenger: UIViewController {
     func viewJumper(parameters: Any, uri: String, view: UIView, completion: @escaping (Bool) -> Void ) {
         
         // se realiza el post
-        let hadConnected = HTTPMessenger.init().post(endpoint: uri, params: parameters)
+        let hadConnected = HTTPMessenger.init().post_without_token(endpoint: uri, params: parameters)
         
         // respuesta del server
         hadConnected.responseJSON { response in
@@ -71,11 +89,14 @@ class HTTPMessenger: UIViewController {
             switch (response.response?.statusCode) {
                 
             case 200:
+             
+                    // guarda el usuario en defaults
+                    UserDefaults.standard.set(parameters, forKey: "user")
+                    HTTPMessenger.init().tokenSavior(response: response)
+                    completion(true)
                 
-                HTTPMessenger.init().tokenSavior(response: response)
-                UserDefaults.standard.set(parameters, forKey: "user")
-                completion(true)
                 break
+
                 
             case 401:
                 

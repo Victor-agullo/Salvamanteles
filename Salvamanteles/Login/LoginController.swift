@@ -16,14 +16,14 @@ class LoginController: UIViewController {
     
     var hadConnected: Bool = Bool()
     
-    override func viewWillAppear(_ animated: Bool) {
+   /* override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         //si al iniciar la app, hay un "user" guardado en defaults, hace un login automáticamente
         if let params = UserDefaults.standard.dictionary(forKey: "user") {
             gettinInTouch(params: params)
         }
-    }
+    }   */
     
     //botón de login
     @IBAction func loginButton(_ sender: UIButton) {
