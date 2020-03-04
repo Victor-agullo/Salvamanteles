@@ -20,11 +20,11 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return serverRetriever.namesArray.count
+        return DishesController.categorias.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(DishesController.sections[section])"
+        return "\(DishesController.categorias[section])"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,10 +33,9 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DishesCell", for: indexPath) as? DishesCell)!
-
-        cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
-        cell.dishDescription.text! = serverRetriever.descriptionsArray[indexPath.row]
         
+        cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
+        cell.dishDescription.text! = serverRetriever.descriptionsArray[indexPath.section][indexPath.row]
         return cell
     }
     

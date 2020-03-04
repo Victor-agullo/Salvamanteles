@@ -5,7 +5,6 @@ class RegisterController: UIViewController{
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passField: UITextField!
-    
     @IBOutlet weak var errorName: UILabel!
     @IBOutlet weak var errorMail: UILabel!
     @IBOutlet weak var errorPass: UILabel!

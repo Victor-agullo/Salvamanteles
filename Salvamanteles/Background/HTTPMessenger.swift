@@ -8,13 +8,10 @@ class HTTPMessenger: UIViewController {
     func urlModder(urlEndpoint: String) -> URL {
         
         //este es el de javi:
-        let urlString = "http://127.0.0.1/salvamanteles-master/public/index.php/api/"
-        
+        //let urlString = "http://127.0.0.1/salvamanteles-master/public/index.php/api/"
         
         // este es el de victor:
-       // let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
-        
-        
+        let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
         
         // este es el de diego:
         //let urlString = "http://localhost:8888/Diego/salvamanteles_dos/public/index.php/api/"
@@ -91,17 +88,14 @@ class HTTPMessenger: UIViewController {
             switch (response.response?.statusCode) {
                 
             case 200:
-             
                     // guarda el usuario en defaults
                     UserDefaults.standard.set(parameters, forKey: "user")
                     HTTPMessenger.init().tokenSavior(response: response)
                     completion(true)
-                
                 break
 
                 
             case 401:
-                
                 var JSONtoString = response.result.value as! [String:Any]
                 let errorFromJSON = JSONtoString["message"] as! String
                 Toaster.init().showToast(message: errorFromJSON, view: view)

@@ -5,16 +5,13 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var dropDown: UIPickerView!
     @IBOutlet weak var foodTable: UITableView!
     
-    
     var searchController: UISearchController!
     var resultsController = UITableViewController()
     var filteredRests = [String]()
     var currentCategory: Int = 0
-    
     var categoriesList: [String] = []
     var allergens: [String] = []
     var allergensList: [[String]] = []
-    
     var didload: Bool = false
     
     override func viewDidLoad() {
@@ -26,14 +23,13 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         
         self.creatingSearhBar()
         self.tableSettings()
-        
     }
     
     func infoGatherer() {
         let foods = HTTPMessenger.init().get(endpoint: "getListedIngredients")
-        print(foods)
+
         foods.responseJSON { response in
-            print(response)
+
             if let JSON = response.result.value {
                 
                 // pasa el JSON a array
@@ -44,19 +40,12 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
                     
                     for i in item["ingredients"] as! [NSDictionary] {
                         let allergen = i["name"] as! String
-                        print(allergen)
                         self.allergens.append(allergen)
                     }
-                    print(self.allergens)
                     self.categoriesList.append(cat)
-                    print(self.categoriesList)
                     self.allergensList.append(self.allergens)
-                    print(self.allergensList)
                     self.allergens.removeAll()
                 }
-                
-                
-                
                 self.didload = true
                 self.foodTable.reloadData()
                 self.dropDown.reloadAllComponents()
@@ -121,8 +110,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        
         if didload {
             if tableView == self.foodTable {
                 return allergensList[currentCategory].count
@@ -137,9 +124,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.foodTable.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
-        
-    
-        
         
         if tableView == self.foodTable {
             cell.alergeName.text = allergensList[currentCategory][indexPath.row]
