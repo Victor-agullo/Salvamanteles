@@ -26,14 +26,19 @@ class serverRetriever: UIViewController {
             switch type {
             case 0:
                 first.append(name)
+                break
             case 1:
                 second.append(name)
+                break
             case 2:
                 third.append(name)
+                break
             case 3:
                 fourth.append(name)
+                break
             case 4:
                 fifth.append(name)
+                break
             default:
                 break
             }
@@ -41,7 +46,9 @@ class serverRetriever: UIViewController {
             typesArray.append(type)
         }
         namesArray.append(first+second+third+fourth+fifth)
-
+        print(namesArray)
+        
+        print(typesArray)
         for type in typesArray {
             
             let cat = DishesController.categorias[type]

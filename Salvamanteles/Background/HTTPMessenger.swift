@@ -6,7 +6,9 @@ class HTTPMessenger: UIViewController {
     // recoge la string de contacto con el server y, junto con el fragmento del endpoint,
     // la convierte en una URL válida
     func urlModder(urlEndpoint: String) -> URL {
-        //let urlString = "http://127.0.0.1/salvamanteles/public/index.php/api/"
+        
+        //este es el de javi:
+        let urlString = "http://127.0.0.1/salvamanteles-master/public/index.php/api/"
         
         
         // este es el de victor:
@@ -15,7 +17,7 @@ class HTTPMessenger: UIViewController {
         
         
         // este es el de diego:
-        let urlString = "http://localhost:8888/Diego/salvamanteles_dos/public/index.php/api/"
+        //let urlString = "http://localhost:8888/Diego/salvamanteles_dos/public/index.php/api/"
         
         let url = URL(string: urlString+urlEndpoint)!
         

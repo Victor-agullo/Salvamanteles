@@ -99,7 +99,7 @@
                                         <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Registrarse">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -127,7 +127,7 @@
                                     <action selector="toLoginButton:" destination="jnl-fd-mZt" eventType="touchUpInside" id="j5y-cI-Idf"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-LV-lsg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño-1" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-LV-lsg">
                                 <rect key="frame" x="122" y="99" width="170" height="126"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="126" id="3fl-ii-yxC"/>
@@ -204,6 +204,13 @@
                                 <color key="textColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Borrar perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-cI-sTT">
+                                <rect key="frame" x="66" y="541" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="contraseña actual" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEY-y8-7AY">
                                 <rect key="frame" x="153" y="194" width="175" height="30"/>
                                 <nil key="textColor"/>
@@ -228,6 +235,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre del perfil" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVE-eY-hfI">
+                                <rect key="frame" x="153" y="570" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAY-Af-wpg">
                                 <rect key="frame" x="195" y="326" width="70" height="30"/>
                                 <color key="backgroundColor" red="0.061376284250000003" green="0.2226294949" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -244,6 +258,17 @@
                                 <state key="normal" title="Añadir"/>
                                 <connections>
                                     <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="gbl-yl-SEm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-bI-eQ9">
+                                <rect key="frame" x="218" y="616" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.061376284250000003" green="0.2226294949" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Borrar"/>
+                                <connections>
+                                    <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="lF5-US-f37"/>
+                                    <action selector="deleteProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="YP9-iV-1C7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -285,6 +310,7 @@
                         <outlet property="currentPass" destination="zEY-y8-7AY" id="QLc-kO-DNe"/>
                         <outlet property="newPass" destination="gK6-vD-GlU" id="sVM-YS-gpN"/>
                         <outlet property="newProfile" destination="S91-EB-sUf" id="HgS-pI-5Ra"/>
+                        <outlet property="profileTodelete" destination="nVE-eY-hfI" id="NBP-0h-Pm2"/>
                         <outlet property="repeatPass" destination="Ghh-E0-K4M" id="rtN-s8-Mwz"/>
                     </connections>
                 </viewController>
@@ -305,7 +331,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zEH-J0-2c3">
-                                <rect key="frame" x="50" y="371.5" width="314" height="190.5"/>
+                                <rect key="frame" x="50" y="372" width="314" height="190"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-mail" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCr-qn-Vuj" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
@@ -320,7 +346,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-Bk-nsF" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="314" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="70" width="314" height="50"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.74509803921568629" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -332,7 +358,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGE-vA-pTC" userLabel="login Butt" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140.5" width="314" height="50"/>
+                                        <rect key="frame" x="0.0" y="140" width="314" height="50"/>
                                         <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login">
@@ -361,14 +387,14 @@
                                     <action selector="toRegistryButton:" destination="zgU-mw-pbc" eventType="touchUpInside" id="BKE-Bj-7FB"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
-                                <rect key="frame" x="87" y="123.5" width="240" height="240"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
+                                <rect key="frame" x="87" y="124" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="syM-Ey-aUT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-7r-KRf">
-                                <rect key="frame" x="0.0" y="86" width="414" height="29.5"/>
+                                <rect key="frame" x="0.0" y="86" width="414" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="¡Bienvenido a Salvamanteles!">
                                         <attributes>
@@ -524,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2en-5g-C8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070" y="410"/>
+            <point key="canvasLocation" x="1069.5652173913045" y="409.82142857142856"/>
         </scene>
         <!--Platos-->
         <scene sceneID="sTj-qd-txD">
@@ -539,7 +565,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29s-Jp-0dZ">
-                                <rect key="frame" x="157" y="74" width="100" height="50"/>
+                                <rect key="frame" x="157" y="118" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pEp-Up-gN5"/>
@@ -549,7 +575,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KOF-Td-RPr">
-                                <rect key="frame" x="20" y="122" width="374" height="642"/>
+                                <rect key="frame" x="20" y="166" width="374" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <prototypes>
@@ -664,7 +690,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EbC-Pa-2al">
-                                <rect key="frame" x="20" y="124" width="374" height="718"/>
+                                <rect key="frame" x="20" y="168" width="374" height="674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -714,7 +740,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsG-ld-wC9">
-                                <rect key="frame" x="157" y="74" width="100" height="50"/>
+                                <rect key="frame" x="157" y="118" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="P3u-eI-GvW"/>
@@ -1022,12 +1048,11 @@
         <image name="Restaurants_Screen-image" width="1000" height="1000"/>
         <image name="ajustes" width="512" height="512"/>
         <image name="bluefish 23.36.26" width="900" height="1718"/>
-        <image name="logopequeño" width="1063" height="1063"/>
+        <image name="logopequeño-1" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q53-gw-1W4"/>
         <segue reference="Ifk-hM-p6F"/>
         <segue reference="4fU-Os-xXa"/>
-        <segue reference="wHj-Aq-djQ"/>
+        <segue reference="yxh-Zu-6mT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -5,6 +5,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var dropDown: UIPickerView!
     @IBOutlet weak var foodTable: UITableView!
     
+    
     var searchController: UISearchController!
     var resultsController = UITableViewController()
     var filteredRests = [String]()
@@ -120,6 +121,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        
+        
         if didload {
             if tableView == self.foodTable {
                 return allergensList[currentCategory].count
@@ -134,6 +137,9 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.foodTable.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
+        
+    
+        
         
         if tableView == self.foodTable {
             cell.alergeName.text = allergensList[currentCategory][indexPath.row]

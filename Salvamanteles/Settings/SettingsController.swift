@@ -6,6 +6,7 @@ class SettingsController: UIViewController {
     @IBOutlet weak var newPass: UITextField!
     @IBOutlet weak var repeatPass: UITextField!
     @IBOutlet weak var newProfile: UITextField!
+    @IBOutlet weak var profileTodelete: UITextField!
     
     let defaults = UserDefaults.standard
     
@@ -27,4 +28,25 @@ class SettingsController: UIViewController {
         
         _ = HTTPMessenger.init().post(endpoint: "createProfile", params: parameters)
     }
+    
+    
+    @IBAction func deleteProfile(_ sender: Any) {
+        var parameters = [
+            "name": profileTodelete.text!
+        ]
+        
+        _ = HTTPMessenger.init().post(endpoint: "removeProfile", params: parameters)
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
