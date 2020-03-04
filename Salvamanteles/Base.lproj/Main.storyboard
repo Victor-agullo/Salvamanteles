@@ -25,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EXI-OE-hxO">
                                 <rect key="frame" x="50" y="264" width="314" height="298"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nombre" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Bi-JX-w5Z" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Bi-JX-w5Z" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="47"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.74509803919999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -98,7 +98,7 @@
                                         <rect key="frame" x="0.0" y="241" width="314" height="57"/>
                                         <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Registrarse">
+                                        <state key="normal" title="Register">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -116,11 +116,11 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6su-Li-f1R">
-                                <rect key="frame" x="242" y="600" width="106" height="30"/>
+                                <rect key="frame" x="215" y="600" width="133" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0sB-jO-aCm"/>
                                 </constraints>
-                                <state key="normal" title="¿Ya registrado?">
+                                <state key="normal" title="Already registered?">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -133,7 +133,7 @@
                                     <constraint firstAttribute="height" constant="126" id="3fl-ii-yxC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registrarse" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3B-Gx-5eb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3B-Gx-5eb">
                                 <rect key="frame" x="107" y="59" width="200" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Nc5-bC-I5a"/>
@@ -192,80 +192,100 @@
                                 <rect key="frame" x="0.0" y="0.0" width="439" height="924"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambiar contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txS-kf-X9y">
-                                <rect key="frame" x="66" y="165" width="166" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txS-kf-X9y">
+                                <rect key="frame" x="85" y="209" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Añadir perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ds-SB-Arw">
-                                <rect key="frame" x="66" y="378" width="102" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ds-SB-Arw">
+                                <rect key="frame" x="78" y="422" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Borrar perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-cI-sTT">
-                                <rect key="frame" x="66" y="541" width="100" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delete profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-cI-sTT">
+                                <rect key="frame" x="66" y="541" width="110" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="contraseña actual" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEY-y8-7AY">
-                                <rect key="frame" x="153" y="194" width="175" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="current password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEY-y8-7AY" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
+                                <rect key="frame" x="153" y="238" width="175" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gK6-vD-GlU">
+                                <rect key="frame" x="153" y="276" width="175" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nueva contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gK6-vD-GlU">
-                                <rect key="frame" x="153" y="232" width="175" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat the password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-E0-K4M">
+                                <rect key="frame" x="153" y="322" width="175" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repita la contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-E0-K4M">
-                                <rect key="frame" x="153" y="278" width="175" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S91-EB-sUf">
+                                <rect key="frame" x="153" y="451" width="175" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nuevo nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S91-EB-sUf">
-                                <rect key="frame" x="153" y="407" width="175" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre del perfil" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVE-eY-hfI">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="profile name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVE-eY-hfI">
                                 <rect key="frame" x="153" y="570" width="175" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAY-Af-wpg">
-                                <rect key="frame" x="195" y="326" width="70" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAY-Af-wpg" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                                <rect key="frame" x="195" y="370" width="70" height="30"/>
                                 <color key="backgroundColor" red="0.061376284250000003" green="0.2226294949" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Cambiar"/>
+                                <state key="normal" title="Change"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changePassButton:" destination="GdE-KZ-72E" eventType="touchUpInside" id="c4A-8E-aOF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-uY-I4R">
-                                <rect key="frame" x="218" y="453" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGi-uY-I4R" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                                <rect key="frame" x="218" y="497" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.061376284250000003" green="0.2226294949" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Añadir"/>
+                                <state key="normal" title="Add"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="gbl-yl-SEm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-bI-eQ9">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-bI-eQ9" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
                                 <rect key="frame" x="218" y="616" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.061376284250000003" green="0.2226294949" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Borrar"/>
+                                <state key="normal" title="Delete"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="lF5-US-f37"/>
                                     <action selector="deleteProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="YP9-iV-1C7"/>
@@ -362,7 +382,7 @@
                                         <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -376,11 +396,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNG-b4-bGj">
-                                <rect key="frame" x="242" y="604" width="138" height="30"/>
+                                <rect key="frame" x="249" y="604" width="131" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="IyO-oC-3Pb"/>
                                 </constraints>
-                                <state key="normal" title="¿No registrado aún?">
+                                <state key="normal" title="Not registered yet?">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -396,8 +416,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-7r-KRf">
                                 <rect key="frame" x="0.0" y="86" width="414" height="30"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="¡Bienvenido a Salvamanteles!">
+                                    <fragment content="Salvamanteles">
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="25"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -443,7 +464,7 @@
             </objects>
             <point key="canvasLocation" x="1070" y="-336"/>
         </scene>
-        <!--Alimentos prohibidos-->
+        <!--Forbidden food-->
         <scene sceneID="Li5-0R-KBN">
             <objects>
                 <viewController id="fDr-qu-Zi3" customClass="ForbiddenFoodController" customModule="Salvamanteles" customModuleProvider="target" sceneMemberID="viewController">
@@ -461,7 +482,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="z0R-u2-diT"/>
                                 </constraints>
-                                <state key="normal" title="Hecho!">
+                                <state key="normal" title="Done!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -497,11 +518,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toA-Mg-94y">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toA-Mg-94y" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="55"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -510,6 +536,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="toA-Mg-94y" secondAttribute="trailing" id="Yae-xS-SWw"/>
                                                 <constraint firstItem="toA-Mg-94y" firstAttribute="top" secondItem="nhV-tc-fDb" secondAttribute="top" id="fAE-c8-A7z"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.64705882349999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -542,7 +573,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UfT-DY-zxn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Alimentos prohibidos" leftItemsSupplementBackButton="YES" id="8ws-IF-mfC"/>
+                    <navigationItem key="navigationItem" title="Forbidden food" leftItemsSupplementBackButton="YES" id="8ws-IF-mfC"/>
                     <connections>
                         <outlet property="dropDown" destination="Xp1-dl-Dru" id="0Aa-bv-WrE"/>
                         <outlet property="foodTable" destination="9qS-ti-Pfc" id="WpN-jN-SVR"/>
@@ -552,7 +583,7 @@
             </objects>
             <point key="canvasLocation" x="1069.5652173913045" y="409.82142857142856"/>
         </scene>
-        <!--Platos-->
+        <!--Dishes-->
         <scene sceneID="sTj-qd-txD">
             <objects>
                 <viewController id="eNR-dA-zBd" customClass="DishesController" customModule="Salvamanteles" customModuleProvider="target" sceneMemberID="viewController">
@@ -628,7 +659,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="YgV-1K-DV0"/>
                                 </constraints>
-                                <state key="normal" title="Hecho!">
+                                <state key="normal" title="Done!">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -661,8 +692,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UWO-ZH-4R6"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Platos" leftItemsSupplementBackButton="YES" id="ZVx-NG-at9">
-                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="done" id="0C9-ez-m2F">
+                    <navigationItem key="navigationItem" title="Dishes" leftItemsSupplementBackButton="YES" id="ZVx-NG-at9">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" largeContentSizeImage="ajustes" style="done" id="0C9-ez-m2F">
                             <connections>
                                 <segue destination="GdE-KZ-72E" kind="show" id="yxh-Zu-6mT"/>
                             </connections>
@@ -677,7 +708,7 @@
             </objects>
             <point key="canvasLocation" x="4892.753623188406" y="-317.41071428571428"/>
         </scene>
-        <!--Restaurantes-->
+        <!--Restaurants-->
         <scene sceneID="NqJ-w4-U4A">
             <objects>
                 <viewController id="Sjx-bK-oAQ" customClass="RestController" customModule="Salvamanteles" customModuleProvider="target" sceneMemberID="viewController">
@@ -739,7 +770,7 @@
                                     <outlet property="delegate" destination="Sjx-bK-oAQ" id="B55-wq-kwp"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsG-ld-wC9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsG-ld-wC9" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
                                 <rect key="frame" x="157" y="118" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -748,6 +779,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="37"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -766,8 +802,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="roi-SW-J7b"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Restaurantes" leftItemsSupplementBackButton="YES" id="C2t-Le-0az">
-                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="plain" id="iX5-5i-qHN">
+                    <navigationItem key="navigationItem" title="Restaurants" leftItemsSupplementBackButton="YES" id="C2t-Le-0az">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" largeContentSizeImage="ajustes" style="plain" id="iX5-5i-qHN">
                             <connections>
                                 <segue destination="GdE-KZ-72E" kind="show" id="9rp-SU-1L1"/>
                             </connections>
@@ -804,7 +840,7 @@
             </objects>
             <point key="canvasLocation" x="293" y="1087"/>
         </scene>
-        <!--Perfiles-->
+        <!--Profiles-->
         <scene sceneID="2Ma-ZP-4JB">
             <objects>
                 <viewController id="0i8-Ys-9Tq" customClass="ProfileController" customModule="Salvamanteles" customModuleProvider="target" sceneMemberID="viewController">
@@ -862,42 +898,26 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egO-FF-Urb">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="egO-FF-Urb">
                                 <rect key="frame" x="20" y="799" width="374" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="uZO-iD-pm0"/>
                                 </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="También puedes añadir o eliminar perfiles en la pantalla de ajustes desde aquí.">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" title="You can add or delete profiles at settings screen from ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="GdE-KZ-72E" kind="show" id="bcP-Dr-KT1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8f-tR-Yj9">
-                                <rect key="frame" x="301" y="820" width="40" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="here." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8f-tR-Yj9">
+                                <rect key="frame" x="125" y="820" width="38.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="IAk-gT-RBT"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="aquí.">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
-                                            <font key="NSOriginalFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                            <integer key="NSUnderline" value="9"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -919,8 +939,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lBh-UW-oRh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Perfiles" leftItemsSupplementBackButton="YES" id="Oi6-ee-sVz">
-                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="plain" id="vyB-0J-TOG">
+                    <navigationItem key="navigationItem" title="Profiles" leftItemsSupplementBackButton="YES" id="Oi6-ee-sVz">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" largeContentSizeImage="ajustes" style="plain" id="vyB-0J-TOG">
                             <connections>
                                 <segue destination="GdE-KZ-72E" kind="show" id="wHj-Aq-djQ"/>
                             </connections>
@@ -935,7 +955,7 @@
             </objects>
             <point key="canvasLocation" x="3363.7681159420295" y="-317.41071428571428"/>
         </scene>
-        <!--Resumen-->
+        <!--Summary-->
         <scene sceneID="Vum-us-o7x">
             <objects>
                 <viewController id="mqL-kg-pku" customClass="SummaryController" customModule="Salvamanteles" customModuleProvider="target" sceneMemberID="viewController">
@@ -948,7 +968,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Onp-xK-hZ7">
-                                <rect key="frame" x="0.0" y="54" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="700"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -961,11 +981,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yON-PT-fZo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yON-PT-fZo" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="47"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -982,12 +1007,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-Z5-p1u">
-                                <rect key="frame" x="279" y="850" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-Z5-p1u" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                                <rect key="frame" x="279" y="806" width="77" height="30"/>
                                 <color key="backgroundColor" red="0.06137628424657534" green="0.2226294948630137" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Listo">
+                                <state key="normal" title="Ready">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="finishedSelection:" destination="mqL-kg-pku" eventType="touchUpInside" id="Lly-hG-oOu"/>
                                     <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toRestaurants" id="Ifk-hM-p6F"/>
@@ -1010,8 +1040,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OLa-pc-WPD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Resumen" leftItemsSupplementBackButton="YES" id="gmu-vJ-KuU">
-                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="plain" id="D3a-bG-zcL">
+                    <navigationItem key="navigationItem" title="Summary" leftItemsSupplementBackButton="YES" id="gmu-vJ-KuU">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" largeContentSizeImage="ajustes" style="plain" id="D3a-bG-zcL">
                             <connections>
                                 <segue destination="GdE-KZ-72E" kind="show" id="Syn-G2-IH1"/>
                             </connections>
@@ -1051,8 +1081,8 @@
         <image name="logopequeño-1" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ifk-hM-p6F"/>
+        <segue reference="F62-U7-idx"/>
         <segue reference="4fU-Os-xXa"/>
-        <segue reference="yxh-Zu-6mT"/>
+        <segue reference="bcP-Dr-KT1"/>
     </inferredMetricsTieBreakers>
 </document>

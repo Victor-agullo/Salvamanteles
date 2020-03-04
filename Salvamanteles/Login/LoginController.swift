@@ -20,9 +20,9 @@ class LoginController: UIViewController {
         super.viewWillAppear(true)
         
         //si al iniciar la app, hay un "user" guardado en defaults, hace un login automáticamente
-        if let params = UserDefaults.standard.dictionary(forKey: "user") {
-            gettinInTouch(params: params)
-        }
+        //if let params = UserDefaults.standard.dictionary(forKey: "user") {
+            //gettinInTouch(params: params)
+        //}
     }   
     
     //botón de login

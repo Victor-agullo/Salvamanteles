@@ -20,13 +20,10 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print(serverRetriever.namesArray)
         return serverRetriever.namesArray.count
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        print(DishesController.sections[section])
         return "\(DishesController.sections[section])"
     }
     

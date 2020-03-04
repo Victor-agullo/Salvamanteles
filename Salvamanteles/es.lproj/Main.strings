@@ -1,102 +1,117 @@
 
-/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "0C9-ez-m2F"; */
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "0C9-ez-m2F"; */
 "0C9-ez-m2F.title" = "Ajustes";
 
-/* Class = "UILabel"; text = "Añadir perfil"; ObjectID = "2Ds-SB-Arw"; */
+/* Class = "UILabel"; text = "Label"; ObjectID = "29s-Jp-0dZ"; */
+"29s-Jp-0dZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Add profile"; ObjectID = "2Ds-SB-Arw"; */
 "2Ds-SB-Arw.text" = "Añadir perfil";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "2hh-fT-Gy1"; */
 "2hh-fT-Gy1.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "4Af-Bk-nsF"; */
-"4Af-Bk-nsF.placeholder" = "Password";
+"4Af-Bk-nsF.placeholder" = "Contraseña";
 
-/* Class = "UIButton"; normalTitle = "¿Ya registrado?"; ObjectID = "6su-Li-f1R"; */
+/* Class = "UIButton"; normalTitle = "Already registered?"; ObjectID = "6su-Li-f1R"; */
 "6su-Li-f1R.normalTitle" = "¿Ya registrado?";
 
-/* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "8Bi-JX-w5Z"; */
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "8Bi-JX-w5Z"; */
 "8Bi-JX-w5Z.placeholder" = "Nombre";
 
-/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8mC-kD-68p"; */
-"8mC-kD-68p.placeholder" = "Password";
+/* Class = "UILabel"; text = "Delete profile"; ObjectID = "8EI-cI-sTT"; */
+"8EI-cI-sTT.text" = "Borrar perfil";
 
-/* Class = "UINavigationItem"; title = "Alimentos prohibidos"; ObjectID = "8ws-IF-mfC"; */
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "8mC-kD-68p"; */
+"8mC-kD-68p.placeholder" = "Contraseña";
+
+/* Class = "UINavigationItem"; title = "Forbidden food"; ObjectID = "8ws-IF-mfC"; */
 "8ws-IF-mfC.title" = "Alimentos prohibidos";
 
-/* Class = "UILabel"; text = "¡Bienvenido a Salvamanteles!"; ObjectID = "Ama-7r-KRf"; */
-"Ama-7r-KRf.text" = "¡Bienvenido a Salvamanteles!";
-
-/* Class = "UINavigationItem"; title = "Restaurantes"; ObjectID = "C2t-Le-0az"; */
+/* Class = "UINavigationItem"; title = "Restaurants"; ObjectID = "C2t-Le-0az"; */
 "C2t-Le-0az.title" = "Restaurantes";
 
-/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "D3a-bG-zcL"; */
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "D3a-bG-zcL"; */
 "D3a-bG-zcL.title" = "Ajustes";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Dm7-yo-nwq"; */
 "Dm7-yo-nwq.text" = "Label";
 
 /* Class = "UILabel"; accessibilityLabel = "name"; ObjectID = "E7h-HE-xcZ"; */
-"E7h-HE-xcZ.accessibilityLabel" = "name";
+"E7h-HE-xcZ.accessibilityLabel" = "nombre";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "E7h-HE-xcZ"; */
-"E7h-HE-xcZ.text" = "Label";
+/* Class = "UIButton"; normalTitle = "Done!"; ObjectID = "FAZ-1d-50G"; */
+"FAZ-1d-50G.normalTitle" = "¡Hecho!";
 
-/* Class = "UIButton"; normalTitle = "Hecho!"; ObjectID = "FAZ-1d-50G"; */
-"FAZ-1d-50G.normalTitle" = "Hecho!";
-
-/* Class = "UITextField"; placeholder = "repita la contraseña"; ObjectID = "Ghh-E0-K4M"; */
-"Ghh-E0-K4M.placeholder" = "repita la contraseña";
+/* Class = "UITextField"; placeholder = "repeat the password"; ObjectID = "Ghh-E0-K4M"; */
+"Ghh-E0-K4M.placeholder" = "repite la contraseña";
 
 /* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "K6m-5z-YJL"; */
 "K6m-5z-YJL.placeholder" = "e-mail";
 
-/* Class = "UINavigationItem"; title = "Perfiles"; ObjectID = "Oi6-ee-sVz"; */
+/* Class = "UINavigationItem"; title = "Profiles"; ObjectID = "Oi6-ee-sVz"; */
 "Oi6-ee-sVz.title" = "Perfiles";
 
-/* Class = "UIButton"; normalTitle = "Añadir"; ObjectID = "RGi-uY-I4R"; */
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "RGi-uY-I4R"; */
 "RGi-uY-I4R.normalTitle" = "Añadir";
 
-/* Class = "UITextField"; placeholder = "nuevo nombre"; ObjectID = "S91-EB-sUf"; */
+/* Class = "UITextField"; placeholder = "new name"; ObjectID = "S91-EB-sUf"; */
 "S91-EB-sUf.placeholder" = "nuevo nombre";
 
-/* Class = "UINavigationItem"; title = "Ajustes"; ObjectID = "V1u-kp-zLy"; */
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "V1u-kp-zLy"; */
 "V1u-kp-zLy.title" = "Ajustes";
 
 /* Class = "UITextField"; placeholder = "e-mail"; ObjectID = "VCr-qn-Vuj"; */
 "VCr-qn-Vuj.placeholder" = "e-mail";
 
-/* Class = "UILabel"; text = "Registrarse"; ObjectID = "X3B-Gx-5eb"; */
-"X3B-Gx-5eb.text" = "Registrarse";
+/* Class = "UILabel"; text = "Label"; ObjectID = "W0f-iZ-JYA"; */
+"W0f-iZ-JYA.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "¿No registrado aún?"; ObjectID = "XNG-b4-bGj"; */
+/* Class = "UILabel"; text = "Register"; ObjectID = "X3B-Gx-5eb"; */
+"X3B-Gx-5eb.text" = "Registro";
+
+/* Class = "UIButton"; normalTitle = "Not registered yet?"; ObjectID = "XNG-b4-bGj"; */
 "XNG-b4-bGj.normalTitle" = "¿No registrado aún?";
 
-/* Class = "UINavigationItem"; title = "Platos"; ObjectID = "ZVx-NG-at9"; */
+/* Class = "UINavigationItem"; title = "Dishes"; ObjectID = "ZVx-NG-at9"; */
 "ZVx-NG-at9.title" = "Platos";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "cOV-xg-G8B"; */
-"cOV-xg-G8B.text" = "Label";
+/* Class = "UILabel"; text = "here."; ObjectID = "a8f-tR-Yj9"; */
+"a8f-tR-Yj9.text" = "aquí.";
 
-/* Class = "UITextField"; placeholder = "nueva contraseña"; ObjectID = "gK6-vD-GlU"; */
+/* Class = "UIButton"; normalTitle = "You can add or delete profiles at settings screen from "; ObjectID = "egO-FF-Urb"; */
+"egO-FF-Urb.normalTitle" = "Puedes añadir o borrar perfiles en la pantalla de ajustes desde";
+
+/* Class = "UITextField"; placeholder = "new password"; ObjectID = "gK6-vD-GlU"; */
 "gK6-vD-GlU.placeholder" = "nueva contraseña";
 
-/* Class = "UINavigationItem"; title = "Resumen"; ObjectID = "gmu-vJ-KuU"; */
+/* Class = "UINavigationItem"; title = "Summary"; ObjectID = "gmu-vJ-KuU"; */
 "gmu-vJ-KuU.title" = "Resumen";
 
-/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "iX5-5i-qHN"; */
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "iX5-5i-qHN"; */
 "iX5-5i-qHN.title" = "Ajustes";
 
-/* Class = "UIButton"; normalTitle = "Cambiar"; ObjectID = "lAY-Af-wpg"; */
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "jOG-bI-eQ9"; */
+"jOG-bI-eQ9.normalTitle" = "Borrar";
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "lAY-Af-wpg"; */
 "lAY-Af-wpg.normalTitle" = "Cambiar";
 
-/* Class = "UIButton"; normalTitle = "Registrarse"; ObjectID = "nbz-be-2wW"; */
-"nbz-be-2wW.normalTitle" = "Registrarse";
+/* Class = "UITextField"; placeholder = "profile name"; ObjectID = "nVE-eY-hfI"; */
+"nVE-eY-hfI.placeholder" = "nombre del perfil";
 
-/* Class = "UIButton"; normalTitle = "Hecho!"; ObjectID = "nff-ZE-Gyi"; */
-"nff-ZE-Gyi.normalTitle" = "Hecho!";
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "nbz-be-2wW"; */
+"nbz-be-2wW.normalTitle" = "Registro";
+
+/* Class = "UIButton"; normalTitle = "Done!"; ObjectID = "nff-ZE-Gyi"; */
+"nff-ZE-Gyi.normalTitle" = "¡Hecho!";
 
 /* Class = "UILabel"; text = " "; ObjectID = "oSn-Dm-LQS"; */
 "oSn-Dm-LQS.text" = " ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qsG-ld-wC9"; */
+"qsG-ld-wC9.text" = "Label";
 
 /* Class = "UILabel"; text = " "; ObjectID = "r73-X4-rZS"; */
 "r73-X4-rZS.text" = " ";
@@ -110,17 +125,17 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "toA-Mg-94y"; */
 "toA-Mg-94y.text" = "Label";
 
-/* Class = "UILabel"; text = "Cambiar contraseña"; ObjectID = "txS-kf-X9y"; */
+/* Class = "UILabel"; text = "Change password"; ObjectID = "txS-kf-X9y"; */
 "txS-kf-X9y.text" = "Cambiar contraseña";
 
-/* Class = "UIButton"; normalTitle = "Listo"; ObjectID = "v8V-Z5-p1u"; */
+/* Class = "UIButton"; normalTitle = "Ready"; ObjectID = "v8V-Z5-p1u"; */
 "v8V-Z5-p1u.normalTitle" = "Listo";
 
-/* Class = "UIBarButtonItem"; title = "Ajustes"; ObjectID = "vyB-0J-TOG"; */
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "vyB-0J-TOG"; */
 "vyB-0J-TOG.title" = "Ajustes";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "yON-PT-fZo"; */
 "yON-PT-fZo.text" = "Label";
 
-/* Class = "UITextField"; placeholder = "contraseña actual"; ObjectID = "zEY-y8-7AY"; */
+/* Class = "UITextField"; placeholder = "current password"; ObjectID = "zEY-y8-7AY"; */
 "zEY-y8-7AY.placeholder" = "contraseña actual";

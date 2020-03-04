@@ -26,19 +26,19 @@ class serverRetriever: UIViewController {
             switch type {
             case 0:
                 first.append(name)
-                break
+                
             case 1:
                 second.append(name)
-                break
+                
             case 2:
                 third.append(name)
-                break
+                
             case 3:
                 fourth.append(name)
-                break
+            
             case 4:
                 fifth.append(name)
-                break
+                
             default:
                 break
             }
