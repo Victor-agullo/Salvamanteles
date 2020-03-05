@@ -8,11 +8,13 @@ class RegisterController: UIViewController{
     @IBOutlet weak var errorName: UILabel!
     @IBOutlet weak var errorMail: UILabel!
     @IBOutlet weak var errorPass: UILabel!
+    @IBOutlet weak var registerButt: UIButton!
     
     var hadConnected: Bool = Bool()
     static var newProfile = ""
         
     @IBAction func registerButton(_ sender: UIButton) {
+        registerButt.isEnabled = false
         
         let mail = validator.init().validateMail(field: emailField)
         let name = validator.init().validateName(field: nameField)
@@ -31,6 +33,8 @@ class RegisterController: UIViewController{
                     RegisterController.newProfile = self.nameField.text!
                                    
                     self.performSegue(withIdentifier: "toForbidden", sender: self)
+                } else {
+                    self.registerButt.isEnabled = true
                 }
             })
         } else {
@@ -38,6 +42,7 @@ class RegisterController: UIViewController{
             errorName.text! = name
             errorMail.text! = mail
             errorPass.text! = pass
+            registerButt.isEnabled = true
         }
     }
     

@@ -28,7 +28,7 @@ class LoginController: UIViewController {
     //botón de login
     @IBAction func loginButton(_ sender: UIButton) {
         let params = paramGetter()
-        
+        loginButt.isEnabled = false
         gettinInTouch(params: params)
     }
     
@@ -39,6 +39,8 @@ class LoginController: UIViewController {
             
             if self.hadConnected == true {
                 self.successfullyLogged()
+            } else {
+                self.loginButt.isEnabled = true
             }
         })
     }

@@ -132,11 +132,22 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         
         if tableView == self.foodTable {
             cell.alergeName.text = allergensList[currentCategory][indexPath.row]
+            isSelected(loadingCell: cell)
             
         } else {
             cell.alergeName.text = filteredRests[indexPath.row]
+            isSelected(loadingCell: cell)
         }
         return cell
+    }
+    
+    func isSelected(loadingCell: ForbiddenCells) {
+        if SummaryController.nameArray.contains(loadingCell.alergeName.text!) {
+            loadingCell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            
+        } else {
+            loadingCell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
