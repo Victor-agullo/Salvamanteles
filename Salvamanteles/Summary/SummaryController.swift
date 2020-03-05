@@ -21,6 +21,10 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "SummaryCell", for: indexPath) as? SummaryCell)!
         
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = cell.bounds.width / 31.5
+        
+        
         cell.name.text = SummaryController.nameArray[indexPath.row]
         cell.accessoryType = .detailDisclosureButton
         return cell

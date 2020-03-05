@@ -23,6 +23,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         
         self.creatingSearhBar()
         self.tableSettings()
+        dropDown.layer.masksToBounds = true
+        dropDown.layer.cornerRadius = dropDown.bounds.width / 3.5
     }
     
     func infoGatherer() {
@@ -124,6 +126,9 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.foodTable.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
+        
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = cell.bounds.width / 31.5
         
         if tableView == self.foodTable {
             cell.alergeName.text = allergensList[currentCategory][indexPath.row]

@@ -77,11 +77,8 @@
 /* Class = "UINavigationItem"; title = "Dishes"; ObjectID = "ZVx-NG-at9"; */
 "ZVx-NG-at9.title" = "Platos";
 
-/* Class = "UILabel"; text = "here."; ObjectID = "a8f-tR-Yj9"; */
-"a8f-tR-Yj9.text" = "aquí.";
-
-/* Class = "UIButton"; normalTitle = "You can add or delete profiles at settings screen from "; ObjectID = "egO-FF-Urb"; */
-"egO-FF-Urb.normalTitle" = "Puedes añadir o borrar perfiles en la pantalla de ajustes desde";
+/* Class = "UIButton"; normalTitle = "You can add or delete profiles at settings screen from here"; ObjectID = "egO-FF-Urb"; */
+"egO-FF-Urb.normalTitle" = "Puedes añadir o borrar perfiles en la pantalla de ajustes desde aquí";
 
 /* Class = "UITextField"; placeholder = "new password"; ObjectID = "gK6-vD-GlU"; */
 "gK6-vD-GlU.placeholder" = "nueva contraseña";

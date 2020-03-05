@@ -17,6 +17,8 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        profileLabel.layer.masksToBounds = true
+        profileLabel.layer.cornerRadius = profileLabel.bounds.width / 3.5
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,6 +35,9 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DishesCell", for: indexPath) as? DishesCell)!
+        
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = cell.bounds.width / 13.5
         
         cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
         cell.dishDescription.text! = serverRetriever.descriptionsArray[indexPath.section][indexPath.row]

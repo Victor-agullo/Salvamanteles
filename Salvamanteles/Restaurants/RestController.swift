@@ -18,6 +18,12 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.creatingSearhBar()
         self.tableSettings()
+        profileName.layer.masksToBounds = true
+        profileName.layer.cornerRadius = profileName.bounds.width / 3.5
+        
+       
+        
+        
     }
     
     func infoGatherer() {
@@ -82,12 +88,19 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.restaurantsTable.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
+    cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = cell.bounds.width / 13.5
+        
+        
         if tableView == self.restaurantsTable {
             cell.name.text = RestController.restaurantsArray[indexPath.row]
+            
+        
             
         }else {
             cell.name.text = filteredRests[indexPath.row]
         }
+        
         return cell
     }
     
