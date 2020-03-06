@@ -4,6 +4,7 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     static var nameArray: [String] = []
     var procedure = ""
+    var name = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -58,7 +59,6 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func getParams() -> Dictionary<String,Any> {
-        var name = ""
         
         if RegisterController.newProfile.isEmpty {
             name = ProfileController.profile

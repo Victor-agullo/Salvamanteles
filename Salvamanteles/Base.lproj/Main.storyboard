@@ -277,6 +277,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="gbl-yl-SEm"/>
+                                    <segue destination="MqT-BF-jvM" kind="showDetail" id="Z4b-KV-dK0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-bI-eQ9" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
@@ -291,8 +292,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="lF5-US-f37"/>
                                     <action selector="deleteProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="YP9-iV-1C7"/>
+                                    <segue destination="3DG-8J-Pnt" kind="showDetail" id="swT-V6-F7I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -831,7 +832,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bze-NH-tUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="293" y="1087"/>
+            <point key="canvasLocation" x="293" y="1154"/>
         </scene>
         <!--Profiles-->
         <scene sceneID="2Ma-ZP-4JB">
@@ -1066,8 +1067,9 @@
         <image name="logopequeño-1" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ifk-hM-p6F"/>
+        <segue reference="swT-V6-F7I"/>
         <segue reference="Vtt-ew-5uo"/>
+        <segue reference="Z4b-KV-dK0"/>
         <segue reference="Syn-G2-IH1"/>
     </inferredMetricsTieBreakers>
 </document>

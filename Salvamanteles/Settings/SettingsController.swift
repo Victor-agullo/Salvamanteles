@@ -27,8 +27,9 @@ class SettingsController: UIViewController {
         ]
         
         _ = HTTPMessenger.init().post(endpoint: "createProfile", params: parameters)
+        
+        ProfileController.profile = newProfile.text!
     }
-    
     
     @IBAction func deleteProfile(_ sender: Any) {
         var parameters = [
@@ -36,17 +37,5 @@ class SettingsController: UIViewController {
         ]
         
         _ = HTTPMessenger.init().post(endpoint: "removeProfile", params: parameters)
-        
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
