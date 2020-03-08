@@ -11,6 +11,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     @IBOutlet weak var ProfileCollection: UICollectionView!
     
     override func viewDidLoad() {
+        SummaryController.nameArray.removeAll()
         loadProfiles()
         
         ProfileCollection.dataSource = self

@@ -54,7 +54,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
             SummaryController.nameArray.append(platoElegido)
             
         } else {
-            cell.backgroundColor = #colorLiteral(red: 0.6632347703, green: 0.7946337461, blue: 0.6706491113, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
             let indexOfCell = SummaryController.nameArray.index(of: platoElegido)!
             SummaryController.nameArray.remove(at: indexOfCell)
         }
@@ -72,10 +72,10 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     func isSelected(loadingCell: DishesCell) {
         if SummaryController.nameArray.contains(loadingCell.dishName.text!) {
-            loadingCell.backgroundColor =  #colorLiteral(red: 0.6632347703, green: 0.7946337461, blue: 0.6706491113, alpha: 1)
+            loadingCell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             
         } else {
-            loadingCell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
+            loadingCell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
         }
     }
 }

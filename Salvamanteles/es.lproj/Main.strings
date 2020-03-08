@@ -78,7 +78,7 @@
 "ZVx-NG-at9.title" = "Platos";
 
 /* Class = "UIButton"; normalTitle = "You can add or delete profiles at settings screen from here"; ObjectID = "egO-FF-Urb"; */
-"egO-FF-Urb.normalTitle" = "Puedes añadir o borrar perfiles en la pantalla de ajustes desde aquí";
+"egO-FF-Urb.normalTitle" = "Puedes añadir o borrar perfiles en la pantalla de ajustes";
 
 /* Class = "UITextField"; placeholder = "new password"; ObjectID = "gK6-vD-GlU"; */
 "gK6-vD-GlU.placeholder" = "nueva contraseña";
@@ -126,7 +126,7 @@
 "txS-kf-X9y.text" = "Cambiar contraseña";
 
 /* Class = "UIButton"; normalTitle = "Ready"; ObjectID = "v8V-Z5-p1u"; */
-"v8V-Z5-p1u.normalTitle" = "Listo";
+"v8V-Z5-p1u.normalTitle" = "Terminar e ir a la vista de perfiles";
 
 /* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "vyB-0J-TOG"; */
 "vyB-0J-TOG.title" = "Ajustes";
