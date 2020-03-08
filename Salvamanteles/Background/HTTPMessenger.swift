@@ -23,12 +23,12 @@ class HTTPMessenger: UIViewController {
     
     // función que realiza el post
     func post(endpoint: String, params: Any) -> DataRequest{
-
+        
         let url = urlModder(urlEndpoint: endpoint)
         
-            let token = [
-                "token" : UserDefaults.standard.value(forKey: "token")!
-                ] as! [String:String]
+        let token = [
+            "token" : UserDefaults.standard.value(forKey: "token")!
+            ] as! [String:String]
         
         let post = Alamofire.request(url, method: .post, parameters: params as? Parameters, headers: token)
         
@@ -52,10 +52,10 @@ class HTTPMessenger: UIViewController {
         
         let token = [
             "token" : UserDefaults.standard.value(forKey: "token")!
-        ] as! [String:String]
+            ] as! [String:String]
         
         let get = Alamofire.request(url, method: .get, headers: token)
-
+        
         return get
     }
     
@@ -88,12 +88,11 @@ class HTTPMessenger: UIViewController {
             switch (response.response?.statusCode) {
                 
             case 200:
-                    // guarda el usuario en defaults
-                    UserDefaults.standard.set(parameters, forKey: "user")
-                    HTTPMessenger.init().tokenSavior(response: response)
-                    completion(true)
+                // guarda el usuario en defaults
+                UserDefaults.standard.set(parameters, forKey: "user")
+                HTTPMessenger.init().tokenSavior(response: response)
+                completion(true)
                 break
-
                 
             case 401:
                 var JSONtoString = response.result.value as! [String:Any]

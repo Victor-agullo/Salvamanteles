@@ -41,6 +41,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
         
         cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
         cell.dishDescription.text! = serverRetriever.descriptionsArray[indexPath.section][indexPath.row]
+        isSelected(loadingCell: cell)
         return cell
     }
     
@@ -66,6 +67,15 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
             
         } else if segue.identifier == "toSettings" {
             _ = segue.destination as! SettingsController
+        }
+    }
+    
+    func isSelected(loadingCell: DishesCell) {
+        if SummaryController.nameArray.contains(loadingCell.dishName.text!) {
+            loadingCell.backgroundColor =  #colorLiteral(red: 0.6632347703, green: 0.7946337461, blue: 0.6706491113, alpha: 1)
+            
+        } else {
+            loadingCell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
         }
     }
 }

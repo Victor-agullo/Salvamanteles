@@ -23,7 +23,7 @@ class LoginController: UIViewController {
         if let params = UserDefaults.standard.dictionary(forKey: "user") {
             gettinInTouch(params: params)
         }
-    }   
+    }
     
     //botón de login
     @IBAction func loginButton(_ sender: UIButton) {

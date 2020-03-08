@@ -17,7 +17,11 @@ class SettingsController: UIViewController {
         
         if currentPass.text! == password && newPass.text! == repeatPass.text! {
             
-            _ = HTTPMessenger.init().post(endpoint: "changePassword", params: newPass.text!)
+            let newPassword = HTTPMessenger.init().post(endpoint: "changePassword", params: newPass.text!)
+            newPassword.responseJSON {
+                response in
+                HTTPMessenger.init().tokenSavior(response: response)
+            }
         }
     }
     

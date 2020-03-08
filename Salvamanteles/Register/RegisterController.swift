@@ -12,7 +12,7 @@ class RegisterController: UIViewController{
     
     var hadConnected: Bool = Bool()
     static var newProfile = ""
-        
+    
     @IBAction func registerButton(_ sender: UIButton) {
         registerButt.isEnabled = false
         
@@ -31,7 +31,7 @@ class RegisterController: UIViewController{
                 if self.hadConnected == true {
                     
                     RegisterController.newProfile = self.nameField.text!
-                                   
+                    
                     self.performSegue(withIdentifier: "toForbidden", sender: self)
                 } else {
                     self.registerButt.isEnabled = true

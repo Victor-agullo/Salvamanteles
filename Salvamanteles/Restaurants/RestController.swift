@@ -20,22 +20,19 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableSettings()
         profileName.layer.masksToBounds = true
         profileName.layer.cornerRadius = profileName.bounds.width / 3.5
-        
-       
-        
-        
     }
     
     func infoGatherer() {
         RestController.restaurantsArray.removeAll()
         
         let params = ["name" : ProfileController.profile]
+
         let get = HTTPMessenger.init().post(endpoint: "getFinalFood", params: params)
         
         get.responseJSON { response in
             
             if let JSON = response.result.value {
-                
+
                 for item in JSON as! [NSDictionary] {
                     let dishes = item["dishes"] as! [Any]
                     
@@ -88,19 +85,15 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.restaurantsTable.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
-    cell.layer.masksToBounds = true
+        cell.layer.masksToBounds = true
         cell.layer.cornerRadius = cell.bounds.width / 13.5
-        
         
         if tableView == self.restaurantsTable {
             cell.name.text = RestController.restaurantsArray[indexPath.row]
             
-        
-            
         }else {
             cell.name.text = filteredRests[indexPath.row]
         }
-        
         return cell
     }
     
@@ -109,7 +102,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let restaurant = cell.name.text!
         let indexOfRestaurant = RestController.restaurantsArray.index(of: restaurant)!
         let restaurantChosen = RestController.jsonArray[indexOfRestaurant]
-
+        
         menuOfRestaurant = restaurantChosen as? [Any]
         
         performSegue(withIdentifier: "toDishes", sender: self)

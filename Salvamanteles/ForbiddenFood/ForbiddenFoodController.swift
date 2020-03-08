@@ -16,7 +16,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SummaryController.nameArray.removeAll()
         foodTable.delegate = self
         foodTable.dataSource = self
         infoGatherer()
@@ -29,9 +29,9 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func infoGatherer() {
         let foods = HTTPMessenger.init().get(endpoint: "getListedIngredients")
-
+        
         foods.responseJSON { response in
-
+            
             if let JSON = response.result.value {
                 
                 // pasa el JSON a array

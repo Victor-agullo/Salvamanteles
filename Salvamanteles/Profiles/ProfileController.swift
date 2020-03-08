@@ -27,7 +27,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
                 let jsonArray = JSON as? NSArray
                 
                 for item in jsonArray as! [NSDictionary] {
-                
+                    
                     let profile = item["name"] as! String
                     
                     self.profileArray.append(profile)

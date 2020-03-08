@@ -2,9 +2,7 @@ import UIKit
 
 class RestCells: UITableViewCell {
     
-    
     @IBOutlet weak var name: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

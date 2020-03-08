@@ -41,7 +41,7 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
             tableView.reloadData()
         }
     }
-
+    
     @IBAction func finishedSelection(_ sender: UIButton) {
         saveData(procedure: procedure)
     }
@@ -54,7 +54,7 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
             
         } else if procedure == "reconsidering" {
             
-           _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
+            _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
         }
     }
     
