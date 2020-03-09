@@ -8,13 +8,17 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     static var sections: [String] = []
     var menu: [NSDictionary]?
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+        SummaryController.procedure = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         profileLabel.text! = ProfileController.profile
         
         serverRetriever.menuSetter(menu: menu!)
-        
         tableView.delegate = self
         tableView.dataSource = self
         profileLabel.layer.masksToBounds = true
@@ -62,9 +66,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSummary" {
-            let nextScreen = segue.destination as! SummaryController
-            nextScreen.procedure = "reconsidering"
-            
+            _ = segue.destination as! SummaryController
         } else if segue.identifier == "toSettings" {
             _ = segue.destination as! SettingsController
         }

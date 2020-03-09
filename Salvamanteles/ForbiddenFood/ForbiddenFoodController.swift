@@ -17,6 +17,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         SummaryController.nameArray.removeAll()
+        SummaryController.procedure = false
         foodTable.delegate = self
         foodTable.dataSource = self
         infoGatherer()
@@ -167,6 +168,5 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
-        nextScreen.procedure = "register"
     }
 }

@@ -3,10 +3,21 @@ import UIKit
 class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     static var nameArray: [String] = []
-    var procedure = ""
+    static var procedure: Bool = true
     var name = ""
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet var GoBackButton: UIButton!
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if SummaryController.procedure {
+            self.GoBackButton.setTitle("Elegir menú de otro comensal", for: UIControl.State.normal)
+            
+        } else {
+            self.GoBackButton.setTitle("Guardar y terminar registro", for: UIControl.State.normal)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +54,18 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func finishedSelection(_ sender: UIButton) {
-        saveData(procedure: procedure)
+        saveData(procedure: SummaryController.procedure)
     }
     
-    func saveData(procedure: String) {
+    func saveData(procedure: Bool) {
         
-        if procedure == "register" {
+        if procedure {
+            _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
+            
+        } else {
+            
             _ = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
             SummaryController.nameArray.removeAll()
-            
-        } else if procedure == "reconsidering" {
-            
-            _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
         }
     }
     

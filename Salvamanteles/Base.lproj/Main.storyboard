@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jnl-fd-mZt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgU-mw-pbc">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -186,7 +186,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ENb-3R-OsW">
-                                <rect key="frame" x="50" y="144" width="314" height="430"/>
+                                <rect key="frame" x="50" y="188" width="314" height="430"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambiar contraseña" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txS-kf-X9y">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
@@ -358,10 +358,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zEH-J0-2c3">
-                                <rect key="frame" x="50" y="378" width="314" height="184"/>
+                                <rect key="frame" x="50" y="377" width="314" height="185"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-mail" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCr-qn-Vuj" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="48.5"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.74509803921568629" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -373,7 +373,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-Bk-nsF" customClass="RoundField" customModule="Salvamanteles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="68" width="314" height="48"/>
+                                        <rect key="frame" x="0.0" y="68.5" width="314" height="48"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.74509803921568629" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -385,7 +385,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGE-vA-pTC" userLabel="login Butt" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136" width="314" height="48"/>
+                                        <rect key="frame" x="0.0" y="136.5" width="314" height="48.5"/>
                                         <color key="backgroundColor" red="0.69411764705882351" green="0.46274509803921571" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login">
@@ -403,7 +403,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
-                                <rect key="frame" x="87" y="130" width="240" height="240"/>
+                                <rect key="frame" x="87" y="129" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="syM-Ey-aUT"/>
                                 </constraints>
@@ -923,7 +923,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Puedes añadir o borrar perfiles en la pantalla de ajustes">
                                             <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" metaFont="system" size="24"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -1130,8 +1130,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ifk-hM-p6F"/>
-        <segue reference="Vtt-ew-5uo"/>
-        <segue reference="Z4b-KV-dK0"/>
-        <segue reference="Syn-G2-IH1"/>
+        <segue reference="4fU-Os-xXa"/>
+        <segue reference="p1F-ca-ggZ"/>
+        <segue reference="yxh-Zu-6mT"/>
     </inferredMetricsTieBreakers>
 </document>
