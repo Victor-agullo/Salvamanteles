@@ -7,8 +7,8 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     var name = ""
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var GoBackButton: UIButton!
     
-    @IBOutlet var GoBackButton: UIButton!
     override func viewWillAppear(_ animated: Bool) {
         
         if SummaryController.procedure {
