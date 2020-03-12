@@ -28,6 +28,21 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         dropDown.layer.cornerRadius = dropDown.bounds.width / 3.5
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        createAlert(title: "Escoge un tipo de alimento", message: "Despúes elige un alérgeno pinchando en la tabla, y por último haz click en ¡Hecho! para ver la selección")
+    }
+    
+    func createAlert (title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message,
+                                      preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil )
+    }
+    
     func infoGatherer() {
         let foods = HTTPMessenger.init().get(endpoint: "getListedIngredients")
         

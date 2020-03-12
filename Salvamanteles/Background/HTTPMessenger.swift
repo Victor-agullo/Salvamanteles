@@ -8,10 +8,10 @@ class HTTPMessenger: UIViewController {
     func urlModder(urlEndpoint: String) -> URL {
         
         //este es el de javi:
-        //let urlString = "http://127.0.0.1/salvamanteles-master/public/index.php/api/"
+        let urlString = "http://127.0.0.1/salvamanteles-master/public/index.php/api/"
         
         // este es el de victor:
-        let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
+        //let urlString = "http://localhost:8888/salvamanteles/public/index.php/api/"
         
         // este es el de diego:
         //let urlString = "http://localhost:8888/Diego/salvamanteles_dos/public/index.php/api/"
