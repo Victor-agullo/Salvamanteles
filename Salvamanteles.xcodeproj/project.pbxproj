@@ -154,6 +154,7 @@
 				B98890FF23F9D07D0087724C /* Main.storyboard */,
 				B9B793BE23CE3B7F0048146E /* LaunchScreen.storyboard */,
 				B9B793C123CE3B7F0048146E /* Info.plist */,
+				FD18FEB02423E20F00D1A0DF /* Resources */,
 				7FC28F2123D9970F00C6A8D7 /* Background */,
 			);
 			path = Salvamanteles;
@@ -165,6 +166,13 @@
 				B9D8E6F223F74DF300116977 /* SettingsController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		FD18FEB02423E20F00D1A0DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FD585D2523F1AF8A005CDA59 /* Register */ = {
