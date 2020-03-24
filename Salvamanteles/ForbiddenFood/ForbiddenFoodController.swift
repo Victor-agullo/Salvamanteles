@@ -29,14 +29,14 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        createAlert(title: "Escoge un tipo de alimento", message: "Despúes elige un alérgeno pinchando en la tabla, y por último haz click en ¡Hecho! para ver la selección")
+        createAlert(title: "Modo de uso", message: "Pincha en una categoría de la ruleta, despúes en un alérgeno de la tabla y por último en ¡Hecho! para ver tu selección")
     }
     
     func createAlert (title: String, message: String)
     {
         let alert = UIAlertController(title: title, message: message,
                                       preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "¡Entendido!", style: UIAlertAction.Style.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
         
@@ -183,5 +183,6 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextScreen = segue.destination as! SummaryController
+        SummaryController.procedure = false
     }
 }

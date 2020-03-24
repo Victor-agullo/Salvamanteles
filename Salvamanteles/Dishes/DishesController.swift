@@ -4,7 +4,7 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    static let categorias: [String] = ["beverages", "first courses", "second courses", "snacks", "desserts"]
+    static let categorias: [String] = ["Bebidas", "Primeros", "Segundos", "Picoteo", "Postres"]
     static var sections: [String] = []
     var menu: [NSDictionary]?
     

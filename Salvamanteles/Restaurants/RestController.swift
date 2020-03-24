@@ -15,7 +15,8 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         profileName.text = ProfileController.profile
         
         infoGatherer()
-        
+        self.restaurantsTable.reloadData()
+
         self.creatingSearhBar()
         self.tableSettings()
         profileName.layer.masksToBounds = true
@@ -24,8 +25,9 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func infoGatherer() {
         RestController.restaurantsArray.removeAll()
-        
-        let params = ["name" : ProfileController.profile]
+        RestController.jsonArray.removeAll()
+
+        let params = ["name" : profileName.text!]
 
         let get = HTTPMessenger.init().post(endpoint: "getFinalFood", params: params)
         

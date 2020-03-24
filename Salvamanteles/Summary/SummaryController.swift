@@ -12,10 +12,10 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewWillAppear(_ animated: Bool) {
         
         if SummaryController.procedure {
-            self.GoBackButton.setTitle("Elegir menú de otro comensal", for: UIControl.State.normal)
+            self.GoBackButton.setTitle("Elegir menú de otro comensal", for: .normal)
             
         } else {
-            self.GoBackButton.setTitle("Guardar y terminar registro", for: UIControl.State.normal)
+            self.GoBackButton.setTitle("Guardar y terminar registro", for: .normal)
         }
     }
     
@@ -35,7 +35,6 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = cell.bounds.width / 31.5
-        
         
         cell.name.text = SummaryController.nameArray[indexPath.row]
         cell.accessoryType = .detailDisclosureButton

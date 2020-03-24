@@ -60,7 +60,8 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
         let cell = collectionView.cellForItem(at: indexPath) as! ProfileCell
         
         ProfileController.profile = cell.nameLabel.text!
-        
+        SummaryController.nameArray.removeAll()
+
         // cambio de pantalla
         performSegue(withIdentifier: "toRestaurants", sender: self)
     }
