@@ -107,7 +107,7 @@
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Registrarse">
                                                     <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <font key="NSFont" size="24" name="GillSans"/>
                                                     </attributes>
                                                 </fragment>
@@ -325,7 +325,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="addNewProfile:" destination="GdE-KZ-72E" eventType="touchUpInside" id="gbl-yl-SEm"/>
-                                            <segue destination="MqT-BF-jvM" kind="showDetail" id="Z4b-KV-dK0"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-cI-sTT">
@@ -425,6 +424,7 @@
                         <outlet property="newProfile" destination="S91-EB-sUf" id="HgS-pI-5Ra"/>
                         <outlet property="profileTodelete" destination="nVE-eY-hfI" id="NBP-0h-Pm2"/>
                         <outlet property="repeatPass" destination="Ghh-E0-K4M" id="rtN-s8-Mwz"/>
+                        <segue destination="MqT-BF-jvM" kind="showDetail" identifier="toRegistry" id="ifH-y9-BOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pm9-ad-2BB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,7 +488,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
                                 <rect key="frame" x="87" y="129" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="syM-Ey-aUT"/>
@@ -587,7 +587,7 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="¡Hecho!">
                                             <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <font key="NSFont" size="24" name="GillSans"/>
                                             </attributes>
                                         </fragment>
@@ -1196,13 +1196,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OLa-pc-WPD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Resumen" leftItemsSupplementBackButton="YES" id="gmu-vJ-KuU">
-                        <barButtonItem key="rightBarButtonItem" title="Ajustes" largeContentSizeImage="ajustes" style="plain" id="D3a-bG-zcL">
-                            <connections>
-                                <segue destination="GdE-KZ-72E" kind="show" id="Syn-G2-IH1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Resumen" leftItemsSupplementBackButton="YES" id="gmu-vJ-KuU"/>
                     <connections>
                         <outlet property="GoBackButton" destination="v8V-Z5-p1u" id="GY5-zN-EMi"/>
                         <outlet property="tableView" destination="Onp-xK-hZ7" id="RlQ-tT-hwd"/>
@@ -1235,12 +1229,12 @@
         <image name="Restaurants_Screen-image" width="1000" height="1000"/>
         <image name="ajustes" width="512" height="512"/>
         <image name="bluefish 23.36.26" width="900" height="1718"/>
-        <image name="logopequeño-1" width="1063" height="1063"/>
+        <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="swT-V6-F7I"/>
+        <segue reference="Ifk-hM-p6F"/>
         <segue reference="Vtt-ew-5uo"/>
-        <segue reference="Z4b-KV-dK0"/>
-        <segue reference="Syn-G2-IH1"/>
+        <segue reference="ifH-y9-BOV"/>
+        <segue reference="bcP-Dr-KT1"/>
     </inferredMetricsTieBreakers>
 </document>

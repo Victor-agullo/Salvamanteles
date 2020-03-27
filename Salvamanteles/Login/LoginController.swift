@@ -8,16 +8,11 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginButt: UIButton!
     @IBOutlet weak var imageLogo: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageLogo.layer.masksToBounds = true
         imageLogo.layer.cornerRadius = imageLogo.bounds.width / 2
-        
-      
-    
     }
-    
    
     var hadConnected: Bool = Bool()
     

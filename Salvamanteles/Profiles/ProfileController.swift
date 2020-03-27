@@ -2,7 +2,7 @@ import UIKit
 
 class ProfileController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    var profileArray: Array<String> = []
+    static var profileArray: Array<String> = []
     
     static var profile = ""
     
@@ -12,6 +12,8 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     
     override func viewDidLoad() {
         SummaryController.nameArray.removeAll()
+        ProfileController.profileArray.removeAll()
+
         loadProfiles()
         
         ProfileCollection.dataSource = self
@@ -20,7 +22,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     
     func loadProfiles() {
         let profiles = HTTPMessenger.init().get(endpoint: "getProfiles")
-        
+
         profiles.responseJSON { response in
             
             if let JSON = response.result.value {
@@ -31,7 +33,10 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
                     
                     let profile = item["name"] as! String
                     
-                    self.profileArray.append(profile)
+                    if !ProfileController.profileArray.contains(profile) {
+                        
+                        ProfileController.profileArray.append(profile)
+                    }
                 }
                 self.ProfileCollection.reloadData()
             }
@@ -39,7 +44,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let numberOfProfiles = profileArray.count
+        let numberOfProfiles = ProfileController.profileArray.count
         ProfileController.colorsOfProfiles(numbersOfColor: numberOfProfiles)
         
         return numberOfProfiles
@@ -49,7 +54,7 @@ class ProfileController: UIViewController, UICollectionViewDataSource, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ProfileCell" , for: indexPath) as! ProfileCell
         
-        cell.nameLabel.text = profileArray[indexPath.row]
+        cell.nameLabel.text = ProfileController.profileArray[indexPath.row]
         cell.backgroundColor = ProfileController.colors[indexPath.row]
         
         return cell
