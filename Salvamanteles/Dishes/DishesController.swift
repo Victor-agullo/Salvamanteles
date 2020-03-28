@@ -4,6 +4,8 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var doneWeak: UIButton!
+    
     static let categorias: [String] = ["Bebidas", "Primeros", "Segundos", "Picoteo", "Postres"]
     static var sections: [String] = []
     var menu: [NSDictionary]?
@@ -23,6 +25,16 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
         tableView.dataSource = self
         profileLabel.layer.masksToBounds = true
         profileLabel.layer.cornerRadius = profileLabel.bounds.width / 3.5
+        
+        doneWeak.layer.shadowColor = UIColor.black.cgColor
+        doneWeak.layer.shadowOffset = CGSize(width: 3, height: 3)
+        doneWeak.layer.shadowRadius = 3
+        doneWeak.layer.shadowOpacity = 1.0
+        
+        profileLabel.layer.shadowColor = UIColor.black.cgColor
+        profileLabel.layer.shadowOffset = CGSize(width: 3, height: 3)
+        profileLabel.layer.shadowRadius = 3
+        profileLabel.layer.shadowOpacity = 1.0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

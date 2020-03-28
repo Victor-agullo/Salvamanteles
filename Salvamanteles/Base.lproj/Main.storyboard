@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgU-mw-pbc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jnl-fd-mZt">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,7 +100,7 @@
                                         <color key="textColor" red="0.59999999999999998" green="0.20000000000000001" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbz-be-2wW" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbz-be-2wW" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="257" width="314" height="57"/>
                                         <color key="backgroundColor" red="0.41035512089999998" green="0.66418242449999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal">
@@ -115,7 +115,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -205,7 +205,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ENb-3R-OsW">
-                                <rect key="frame" x="50" y="188" width="314" height="534.5"/>
+                                <rect key="frame" x="50" y="144" width="314" height="534.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txS-kf-X9y">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="39.5"/>
@@ -419,7 +419,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Ajustes" leftItemsSupplementBackButton="YES" id="V1u-kp-zLy"/>
                     <connections>
+                        <outlet property="addWeak" destination="RGi-uY-I4R" id="Ght-Ql-2pM"/>
+                        <outlet property="changeWeak" destination="lAY-Af-wpg" id="jcr-sy-Z1v"/>
                         <outlet property="currentPass" destination="zEY-y8-7AY" id="QLc-kO-DNe"/>
+                        <outlet property="deleteWeak" destination="jOG-bI-eQ9" id="FXI-l9-NNd"/>
                         <outlet property="newPass" destination="gK6-vD-GlU" id="sVM-YS-gpN"/>
                         <outlet property="newProfile" destination="S91-EB-sUf" id="HgS-pI-5Ra"/>
                         <outlet property="profileTodelete" destination="nVE-eY-hfI" id="NBP-0h-Pm2"/>
@@ -470,7 +473,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGE-vA-pTC" userLabel="login Butt" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGE-vA-pTC" userLabel="login Butt" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="136.5" width="314" height="48.5"/>
                                         <color key="backgroundColor" red="0.41035512089999998" green="0.66418242449999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
@@ -577,7 +580,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="924"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nff-ZE-Gyi" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nff-ZE-Gyi" customClass="RoundButton" customModule="Salvamanteles" customModuleProvider="target">
                                 <rect key="frame" x="47" y="802" width="320" height="60"/>
                                 <color key="backgroundColor" red="0.41035512089999998" green="0.66418242449999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -595,7 +598,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -643,9 +646,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toA-Mg-94y" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="0iV-Qr-Ccq"/>
+                                                        <constraint firstAttribute="height" constant="63.5" id="YJi-uq-Tjp"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -658,6 +661,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" constant="2" id="CPF-9c-fN7"/>
                                                 <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" constant="10" id="MWD-0J-clI"/>
                                                 <constraint firstItem="toA-Mg-94y" firstAttribute="leading" secondItem="nhV-tc-fDb" secondAttribute="leading" id="WeF-Jd-0h0"/>
                                                 <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" id="Xy9-s2-pNz"/>
@@ -706,6 +710,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Alimentos prohibidos" leftItemsSupplementBackButton="YES" id="8ws-IF-mfC"/>
                     <connections>
+                        <outlet property="doneWeak" destination="nff-ZE-Gyi" id="Kfz-vi-QH5"/>
                         <outlet property="dropDown" destination="Xp1-dl-Dru" id="0Aa-bv-WrE"/>
                         <outlet property="foodTable" destination="9qS-ti-Pfc" id="WpN-jN-SVR"/>
                     </connections>
@@ -806,6 +811,20 @@
                                     <segue destination="mqL-kg-pku" kind="show" id="4fU-Os-xXa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bw-cF-K1h">
+                                <rect key="frame" x="69" y="87" width="277" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Estás eligiendo platos en Burger King">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="GillSans-Italic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.73165023330000001" green="0.87653070690000001" blue="0.84164088960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -834,6 +853,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneWeak" destination="FAZ-1d-50G" id="YyI-fe-USD"/>
                         <outlet property="profileLabel" destination="29s-Jp-0dZ" id="TyC-lB-GlU"/>
                         <outlet property="tableView" destination="KOF-Td-RPr" id="sXg-8F-Tnh"/>
                     </connections>
@@ -1199,6 +1219,7 @@
                     <navigationItem key="navigationItem" title="Resumen" leftItemsSupplementBackButton="YES" id="gmu-vJ-KuU"/>
                     <connections>
                         <outlet property="GoBackButton" destination="v8V-Z5-p1u" id="GY5-zN-EMi"/>
+                        <outlet property="MessageLabel" destination="Qtb-7j-lKA" id="fB9-ga-Vao"/>
                         <outlet property="tableView" destination="Onp-xK-hZ7" id="RlQ-tT-hwd"/>
                     </connections>
                 </viewController>
@@ -1232,9 +1253,9 @@
         <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ifk-hM-p6F"/>
-        <segue reference="Vtt-ew-5uo"/>
+        <segue reference="swT-V6-F7I"/>
+        <segue reference="4fU-Os-xXa"/>
         <segue reference="ifH-y9-BOV"/>
-        <segue reference="bcP-Dr-KT1"/>
+        <segue reference="yxh-Zu-6mT"/>
     </inferredMetricsTieBreakers>
 </document>

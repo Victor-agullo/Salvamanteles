@@ -9,6 +9,7 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var GoBackButton: UIButton!
     
+    @IBOutlet weak var MessageLabel: RoundLabel!
     override func viewWillAppear(_ animated: Bool) {
         
         if SummaryController.procedure {
@@ -24,6 +25,16 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        GoBackButton.layer.shadowColor = UIColor.black.cgColor
+        GoBackButton.layer.shadowOffset = CGSize(width: 3, height: 3)
+        GoBackButton.layer.shadowRadius = 3
+        GoBackButton.layer.shadowOpacity = 1.0
+        
+        MessageLabel.layer.shadowColor = UIColor.black.cgColor
+        MessageLabel.layer.shadowOffset = CGSize(width: 3, height: 3)
+        MessageLabel.layer.shadowRadius = 3
+        MessageLabel.layer.shadowOpacity = 1.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

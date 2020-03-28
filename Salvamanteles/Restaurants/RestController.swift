@@ -21,6 +21,11 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableSettings()
         profileName.layer.masksToBounds = true
         profileName.layer.cornerRadius = profileName.bounds.width / 3.5
+        
+        profileName.layer.shadowColor = UIColor.black.cgColor
+        profileName.layer.shadowOffset = CGSize(width: 3, height: 3)
+        profileName.layer.shadowRadius = 3
+        profileName.layer.shadowOpacity = 1.0
     }
     
     func infoGatherer() {

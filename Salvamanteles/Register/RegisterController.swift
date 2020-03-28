@@ -2,6 +2,8 @@ import UIKit
 
 class RegisterController: UIViewController{
     
+    
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passField: UITextField!
@@ -44,6 +46,32 @@ class RegisterController: UIViewController{
             errorPass.text! = pass
             registerButt.isEnabled = true
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        registerButt.layer.shadowColor = UIColor.black.cgColor
+        registerButt.layer.shadowOffset = CGSize(width: 3, height: 3)
+        registerButt.layer.shadowRadius = 3
+        registerButt.layer.shadowOpacity = 1.0
+        
+        nameField.layer.shadowColor = UIColor.black.cgColor
+        nameField.layer.shadowOffset = CGSize(width: 3, height: 3)
+        nameField.layer.shadowRadius = 3
+        nameField.layer.shadowOpacity = 1.0
+        
+        emailField.layer.shadowColor = UIColor.black.cgColor
+        emailField.layer.shadowOffset = CGSize(width: 3, height: 3)
+        emailField.layer.shadowRadius = 3
+        emailField.layer.shadowOpacity = 1.0
+        
+        passField.layer.shadowColor = UIColor.black.cgColor
+        passField.layer.shadowOffset = CGSize(width: 3, height: 3)
+        passField.layer.shadowRadius = 3
+        passField.layer.shadowOpacity = 1.0
+        
     }
     
     // getter de las entradas de la vista

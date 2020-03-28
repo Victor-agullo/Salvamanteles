@@ -12,6 +12,22 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         imageLogo.layer.masksToBounds = true
         imageLogo.layer.cornerRadius = imageLogo.bounds.width / 2
+        
+        loginButt.layer.shadowColor = UIColor.black.cgColor
+        loginButt.layer.shadowOffset = CGSize(width: 3, height: 3)
+        loginButt.layer.shadowRadius = 3
+        loginButt.layer.shadowOpacity = 1.0
+        
+        mailEntry.layer.shadowColor = UIColor.black.cgColor
+        mailEntry.layer.shadowOffset = CGSize(width: 3, height: 3)
+        mailEntry.layer.shadowRadius = 3
+        mailEntry.layer.shadowOpacity = 1.0
+        
+        passEntry.layer.shadowColor = UIColor.black.cgColor
+        passEntry.layer.shadowOffset = CGSize(width: 3, height: 3)
+        passEntry.layer.shadowRadius = 3
+        passEntry.layer.shadowOpacity = 1.0
+        
     }
    
     var hadConnected: Bool = Bool()

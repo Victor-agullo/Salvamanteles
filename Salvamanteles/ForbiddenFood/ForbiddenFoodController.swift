@@ -2,8 +2,10 @@ import UIKit
 
 class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, UISearchResultsUpdating{
     
+ 
     @IBOutlet weak var dropDown: UIPickerView!
     @IBOutlet weak var foodTable: UITableView!
+    @IBOutlet weak var doneWeak: UIButton!
     
     var searchController: UISearchController!
     var resultsController = UITableViewController()
@@ -26,6 +28,11 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         self.tableSettings()
         dropDown.layer.masksToBounds = true
         dropDown.layer.cornerRadius = dropDown.bounds.width / 3.5
+        
+        doneWeak.layer.shadowColor = UIColor.black.cgColor
+        doneWeak.layer.shadowOffset = CGSize(width: 3, height: 3)
+        doneWeak.layer.shadowRadius = 3
+        doneWeak.layer.shadowOpacity = 1.0
     }
     
     override func viewDidAppear(_ animated: Bool) {
