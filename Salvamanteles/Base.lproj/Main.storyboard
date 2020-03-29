@@ -497,8 +497,8 @@
                                     <constraint firstAttribute="height" constant="240" id="syM-Ey-aUT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-7r-KRf">
-                                <rect key="frame" x="0.0" y="86" width="414" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ama-7r-KRf">
+                                <rect key="frame" x="0.0" y="86" width="414" height="35"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Salvamanteles">
                                         <attributes>
@@ -613,8 +613,8 @@
                                     <outlet property="delegate" destination="fDr-qu-Zi3" id="YUX-kd-H1r"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-b1-yyf">
-                                <rect key="frame" x="20" y="88" width="374" height="74"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-b1-yyf">
+                                <rect key="frame" x="20" y="112" width="374" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="vXp-JZ-ani"/>
                                 </constraints>
@@ -646,9 +646,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="62o-in-Brk">
-                                                    <rect key="frame" x="0.0" y="5" width="414" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="34"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="9cY-77-esa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toA-Mg-94y" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
@@ -675,6 +675,9 @@
                                                         </constraints>
                                                     </view>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="dfE-un-tBQ"/>
+                                                    </constraints>
                                                     <blurEffect style="regular"/>
                                                 </visualEffectView>
                                             </subviews>
@@ -924,9 +927,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKK-hJ-xjv">
-                                                    <rect key="frame" x="0.0" y="5" width="414" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="34"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="i6U-D0-89i">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="middleTruncation" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zs9-ME-bxg">
@@ -959,6 +962,9 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="FWM-VU-Mqf"/>
+                                                    </constraints>
                                                     <blurEffect style="regular"/>
                                                 </visualEffectView>
                                             </subviews>
@@ -1344,7 +1350,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="F62-U7-idx"/>
-        <segue reference="Vtt-ew-5uo"/>
+        <segue reference="4fU-Os-xXa"/>
         <segue reference="ifH-y9-BOV"/>
         <segue reference="9rp-SU-1L1"/>
     </inferredMetricsTieBreakers>

@@ -89,6 +89,8 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
             "ingredient_names" : SummaryController.nameArray
             ] as [String : Any]
         
+        RegisterController.newProfile = ""
+        
         return parameters
     }
 }
