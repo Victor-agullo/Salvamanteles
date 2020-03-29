@@ -151,7 +151,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         let cell = self.foodTable.dequeueReusableCell(withIdentifier: "ForbiddenCells") as! ForbiddenCells
         
         cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = cell.bounds.width / 31.5
+        cell.visibleBackground.layer.cornerRadius = cell.bounds.width / 13.5
         
         if tableView == self.foodTable {
             cell.alergeName.text = allergensList[currentCategory][indexPath.row]
@@ -166,10 +166,10 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     
     func isSelected(loadingCell: ForbiddenCells) {
         if SummaryController.nameArray.contains(loadingCell.alergeName.text!) {
-            loadingCell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            loadingCell.visibleBackground.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             
         } else {
-            loadingCell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
+            loadingCell.visibleBackground.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
         }
     }
     
@@ -178,11 +178,11 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
         let platoElegido = cell.alergeName.text!
         
         if !SummaryController.nameArray.contains(platoElegido) {
-            cell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            cell.visibleBackground.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             SummaryController.nameArray.append(platoElegido)
             
         } else {
-            cell.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
+            cell.visibleBackground.backgroundColor = #colorLiteral(red: 1, green: 0.7031216025, blue: 0, alpha: 1)
             let indexOfCell = SummaryController.nameArray.index(of: platoElegido)!
             SummaryController.nameArray.remove(at: indexOfCell)
         }

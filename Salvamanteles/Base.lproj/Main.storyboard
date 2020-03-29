@@ -205,7 +205,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ENb-3R-OsW">
-                                <rect key="frame" x="50" y="144" width="314" height="534.5"/>
+                                <rect key="frame" x="50" y="188" width="314" height="534.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txS-kf-X9y">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="39.5"/>
@@ -641,32 +641,44 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ForbiddenCells" focusStyle="custom" id="Uwj-vQ-7vB" customClass="ForbiddenCells" customModule="Salvamanteles" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwj-vQ-7vB" id="nhV-tc-fDb">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwj-vQ-7vB" id="nhV-tc-fDb">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toA-Mg-94y" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="63.5" id="YJi-uq-Tjp"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="55"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
+                                                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62o-in-Brk">
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="33.5"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9cY-77-esa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toA-Mg-94y" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="33.5"/>
+                                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="55"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="toA-Mg-94y" secondAttribute="trailing" id="58l-2h-voq"/>
+                                                            <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" id="6GV-Ku-BMj"/>
+                                                            <constraint firstItem="toA-Mg-94y" firstAttribute="top" secondItem="9cY-77-esa" secondAttribute="top" id="Y0p-4d-5G4"/>
+                                                            <constraint firstItem="toA-Mg-94y" firstAttribute="leading" secondItem="9cY-77-esa" secondAttribute="leading" id="zVf-4y-del"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <blurEffect style="regular"/>
+                                                </visualEffectView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" constant="2" id="CPF-9c-fN7"/>
-                                                <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" constant="10" id="MWD-0J-clI"/>
-                                                <constraint firstItem="toA-Mg-94y" firstAttribute="leading" secondItem="nhV-tc-fDb" secondAttribute="leading" id="WeF-Jd-0h0"/>
-                                                <constraint firstAttribute="bottom" secondItem="toA-Mg-94y" secondAttribute="bottom" id="Xy9-s2-pNz"/>
-                                                <constraint firstAttribute="trailing" secondItem="toA-Mg-94y" secondAttribute="trailing" id="Yae-xS-SWw"/>
-                                                <constraint firstItem="toA-Mg-94y" firstAttribute="top" secondItem="nhV-tc-fDb" secondAttribute="top" id="fAE-c8-A7z"/>
+                                                <constraint firstAttribute="bottom" secondItem="62o-in-Brk" secondAttribute="bottom" constant="5" id="8dU-gX-jPI"/>
+                                                <constraint firstItem="62o-in-Brk" firstAttribute="leading" secondItem="nhV-tc-fDb" secondAttribute="leading" id="Czb-bG-SU5"/>
+                                                <constraint firstItem="62o-in-Brk" firstAttribute="top" secondItem="nhV-tc-fDb" secondAttribute="top" constant="5" id="I7g-yx-tHj"/>
+                                                <constraint firstAttribute="trailing" secondItem="62o-in-Brk" secondAttribute="trailing" id="JXX-V8-RVe"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -674,9 +686,10 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.74509803919999995" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="alergeName" destination="toA-Mg-94y" id="RqD-1a-5W1"/>
+                                            <outlet property="visibleBackground" destination="62o-in-Brk" id="kmP-MP-XdW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -742,7 +755,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOF-Td-RPr">
-                                <rect key="frame" x="0.0" y="122" width="414" height="642"/>
+                                <rect key="frame" x="0.0" y="166" width="414" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1177,7 +1190,7 @@
                                     <segue destination="3DG-8J-Pnt" kind="showDetail" identifier="toRestaurants" id="Ifk-hM-p6F"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Onp-xK-hZ7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="29" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Onp-xK-hZ7">
                                 <rect key="frame" x="0.0" y="234" width="414" height="523"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1189,45 +1202,65 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" focusStyle="custom" rowHeight="50" id="DIl-Lk-vfh" customClass="SummaryCell" customModule="Salvamanteles" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryCell" focusStyle="custom" id="DIl-Lk-vfh" customClass="SummaryCell" customModule="Salvamanteles" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DIl-Lk-vfh" id="LGi-yS-R4B">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DIl-Lk-vfh" id="LGi-yS-R4B">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yON-PT-fZo" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
+                                                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4S-KZ-kfa">
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="49.5"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JN8-nl-UQw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yON-PT-fZo" customClass="RoundLabel" customModule="Salvamanteles" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="dgt-lf-W4J"/>
+                                                                </constraints>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="Label">
+                                                                        <attributes>
+                                                                            <color key="NSColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                            <font key="NSFont" size="24" name="GillSans-SemiBoldItalic"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="yON-PT-fZo" firstAttribute="leading" secondItem="JN8-nl-UQw" secondAttribute="leading" id="9mz-Uz-V9I"/>
+                                                            <constraint firstItem="yON-PT-fZo" firstAttribute="top" secondItem="JN8-nl-UQw" secondAttribute="top" id="TTe-QL-pVj"/>
+                                                            <constraint firstAttribute="trailing" secondItem="yON-PT-fZo" secondAttribute="trailing" id="wNb-ya-T49"/>
+                                                        </constraints>
+                                                    </view>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60.5" id="dgt-lf-W4J"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="KjI-Cg-AbL"/>
                                                     </constraints>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Label">
-                                                            <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                                <font key="NSFont" size="24" name="GillSans-SemiBoldItalic"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="47"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
+                                                    <blurEffect style="light"/>
+                                                </visualEffectView>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="yON-PT-fZo" secondAttribute="trailing" id="9PP-Gk-ai2"/>
-                                                <constraint firstItem="yON-PT-fZo" firstAttribute="centerY" secondItem="LGi-yS-R4B" secondAttribute="centerY" id="CUW-aV-lVX"/>
-                                                <constraint firstItem="yON-PT-fZo" firstAttribute="leading" secondItem="LGi-yS-R4B" secondAttribute="leading" id="PUh-4h-iIt"/>
-                                                <constraint firstItem="yON-PT-fZo" firstAttribute="top" secondItem="LGi-yS-R4B" secondAttribute="top" id="dB1-lC-xVG"/>
+                                                <constraint firstAttribute="trailing" secondItem="t4S-KZ-kfa" secondAttribute="trailing" id="IKx-Ee-dHi"/>
+                                                <constraint firstItem="t4S-KZ-kfa" firstAttribute="leading" secondItem="LGi-yS-R4B" secondAttribute="leading" id="ThB-x6-bYZ"/>
+                                                <constraint firstItem="t4S-KZ-kfa" firstAttribute="top" secondItem="LGi-yS-R4B" secondAttribute="top" constant="5" id="c1E-Qf-hk0"/>
+                                                <constraint firstAttribute="bottom" secondItem="t4S-KZ-kfa" secondAttribute="bottom" constant="5" id="rpU-2r-pWV"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.18431372549019609" green="0.42745098039215684" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="name" destination="yON-PT-fZo" id="WGI-IQ-Sze"/>
+                                            <outlet property="visibleBackground" destination="t4S-KZ-kfa" id="k9g-VB-RBp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1306,10 +1339,9 @@
         <image name="logopequeño" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PKE-vC-SAf"/>
         <segue reference="Ifk-hM-p6F"/>
-        <segue reference="4fU-Os-xXa"/>
+        <segue reference="Vtt-ew-5uo"/>
         <segue reference="ifH-y9-BOV"/>
-        <segue reference="9rp-SU-1L1"/>
+        <segue reference="yxh-Zu-6mT"/>
     </inferredMetricsTieBreakers>
 </document>
