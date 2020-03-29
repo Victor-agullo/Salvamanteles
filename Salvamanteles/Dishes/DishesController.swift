@@ -18,8 +18,8 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profileLabel.text! = ProfileController.profile
-        
+        profileLabel.text! = ProfileController.profile + " está eligiendo en " + RestController.restaurant!
+
         serverRetriever.menuSetter(menu: menu!)
         tableView.delegate = self
         tableView.dataSource = self
@@ -53,7 +53,8 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DishesCell", for: indexPath) as? DishesCell)!
         
         cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = cell.bounds.width / 13.5
+        cell.visibleBackground.layer.cornerRadius = cell.bounds.width / 13.5
+        cell.visibleBackground.clipsToBounds = true
         
         cell.dishName.text! = serverRetriever.namesArray[indexPath.section][indexPath.row]
         cell.dishDescription.text! = serverRetriever.descriptionsArray[indexPath.section][indexPath.row]
@@ -66,11 +67,11 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
         let platoElegido = cell.dishName.text!
         
         if !SummaryController.nameArray.contains(platoElegido) {
-            cell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            cell.visibleBackground.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             SummaryController.nameArray.append(platoElegido)
             
         } else {
-            cell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            cell.visibleBackground.backgroundColor = #colorLiteral(red: 0.7333333333, green: 0.8784313725, blue: 0.8431372549, alpha: 1)
             let indexOfCell = SummaryController.nameArray.index(of: platoElegido)!
             SummaryController.nameArray.remove(at: indexOfCell)
         }
@@ -86,10 +87,10 @@ class DishesController: UIViewController , UITableViewDelegate,  UITableViewData
     
     func isSelected(loadingCell: DishesCell) {
         if SummaryController.nameArray.contains(loadingCell.dishName.text!) {
-            loadingCell.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            loadingCell.visibleBackground.backgroundColor =  #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             
         } else {
-            loadingCell.backgroundColor = #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            loadingCell.visibleBackground.backgroundColor = #colorLiteral(red: 0.7333333333, green: 0.8784313725, blue: 0.8431372549, alpha: 1)
         }
     }
 }

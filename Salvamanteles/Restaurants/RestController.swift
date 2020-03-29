@@ -7,6 +7,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var searchController : UISearchController!
     var resultsController = UITableViewController()
     var filteredRests = [String]()
+    static var restaurant:String?
     static var restaurantsArray: [String] = []
     static var jsonArray: [Any] = []
     var menuOfRestaurant: [Any]?
@@ -93,7 +94,7 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = self.restaurantsTable.dequeueReusableCell(withIdentifier: "Cell") as! RestCells
         
         cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = cell.bounds.width / 13.5
+        cell.visibleBackground.layer.cornerRadius = cell.bounds.width / 29.0
         
         if tableView == self.restaurantsTable {
             cell.name.text = RestController.restaurantsArray[indexPath.row]
@@ -106,8 +107,8 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! RestCells
-        let restaurant = cell.name.text!
-        let indexOfRestaurant = RestController.restaurantsArray.index(of: restaurant)!
+        RestController.restaurant = cell.name.text!
+        let indexOfRestaurant = RestController.restaurantsArray.index(of: RestController.restaurant!)!
         let restaurantChosen = RestController.jsonArray[indexOfRestaurant]
         
         menuOfRestaurant = restaurantChosen as? [Any]

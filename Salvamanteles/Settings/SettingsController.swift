@@ -36,7 +36,7 @@ class SettingsController: UIViewController {
         ]
         ProfileController.profile = newProfile.text!
         
-        if profiles.contains(newProfile.text!) && (newProfile.text?.isEmpty)! {
+        if profiles.contains(newProfile.text!) || (newProfile.text?.isEmpty)! {
             Toaster.init().showToast(message: "Perfil ya existente o inválido", view: view)
         } else {
             _ = HTTPMessenger.init().post(endpoint: "createProfile", params: parameters)
