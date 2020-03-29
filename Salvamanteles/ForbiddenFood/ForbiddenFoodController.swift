@@ -6,6 +6,7 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var dropDown: UIPickerView!
     @IBOutlet weak var foodTable: UITableView!
     @IBOutlet weak var doneWeak: UIButton!
+
     
     var searchController: UISearchController!
     var resultsController = UITableViewController()
@@ -15,6 +16,8 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     var allergens: [String] = []
     var allergensList: [[String]] = []
     var didload: Bool = false
+    
+    public static var already_showed:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +39,15 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        ForbiddenFoodController.createAlert(title: "Modo de uso", message: "Pincha en una categoría de la ruleta, despúes en un alérgeno de la tabla y por último en ¡Hecho! para ver tu selección", view: self)
-    }
+        
+        if !ForbiddenFoodController.already_showed {
+            ForbiddenFoodController.createAlert(title: "Modo de uso", message: "Pincha en una categoría de la ruleta, despúes en un alérgeno de la tabla y por último en ¡Hecho! para ver tu selección", view: self)
+            
+            ForbiddenFoodController.already_showed = true
+
+        }
+        
+           }
     
     public static func createAlert (title: String, message: String, view: UIViewController)
     {

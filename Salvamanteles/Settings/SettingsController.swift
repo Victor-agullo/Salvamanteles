@@ -70,7 +70,10 @@ class SettingsController: UIViewController {
         ]
         ProfileController.profile = newProfile.text!
         
-        if profiles.contains(newProfile.text!) || (newProfile.text?.isEmpty)! {
+        if (newProfile.text?.isEmpty)! {
+            ForbiddenFoodController.createAlert(title: "Campo Vacío", message: "Rellene el campo con el nombre de perfil deseado", view: self)
+        
+        } else if profiles.contains(newProfile.text!)  {
              ForbiddenFoodController.createAlert(title: "Nombre en uso", message: "Nombre de perfil se encuentra usado por otro perfil", view: self)
         } else {
             _ = HTTPMessenger.init().post(endpoint: "createProfile", params: parameters)
@@ -79,6 +82,12 @@ class SettingsController: UIViewController {
     }
     
     @IBAction func deleteProfile(_ sender: Any) {
+        
+        if (profileTodelete.text!.isEmpty) {
+            ForbiddenFoodController.createAlert(title: "Campo Vacío", message: "Rellene el campo con el nombre de perfil deseado", view: self)
+            
+        } else {
+        
         var parameters = [
             "name": profileTodelete.text!
         ]
@@ -102,6 +111,7 @@ class SettingsController: UIViewController {
             
         }
 
+        }
 
     }
     override func viewDidLoad() {
