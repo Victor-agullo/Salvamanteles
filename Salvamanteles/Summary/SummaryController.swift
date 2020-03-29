@@ -69,14 +69,11 @@ class SummaryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func saveData(procedure: Bool) {
         
-        if procedure {
-            _ = HTTPMessenger.init().post(endpoint: "saveSelection", params: getParams())
-            
-        } else {
-            
+       
+        
             _ = HTTPMessenger.init().post(endpoint: "assignIngredientToProfile", params: getParams())
             SummaryController.nameArray.removeAll()
-        }
+        
     }
     
     func getParams() -> Dictionary<String,Any> {

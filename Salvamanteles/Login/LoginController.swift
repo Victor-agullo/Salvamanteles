@@ -9,7 +9,10 @@ class LoginController: UIViewController {
     @IBOutlet weak var imageLogo: UIImageView!
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
+        
         imageLogo.layer.masksToBounds = true
         imageLogo.layer.cornerRadius = imageLogo.bounds.width / 2
         
@@ -27,10 +30,11 @@ class LoginController: UIViewController {
         passEntry.layer.shadowOffset = CGSize(width: 3, height: 3)
         passEntry.layer.shadowRadius = 3
         passEntry.layer.shadowOpacity = 1.0
-        
+          print(hadConnected)
     }
    
     var hadConnected: Bool = Bool()
+  
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -50,15 +54,18 @@ class LoginController: UIViewController {
     
     func gettinInTouch(params: Any) {
         
+        
         HTTPMessenger.init().viewJumper(parameters: params, uri: "loginUser", view: self.view, completion: {
             success in self.hadConnected = success
             
             if self.hadConnected == true {
                 self.successfullyLogged()
-            } else {
-                self.loginButt.isEnabled = true
             }
         })
+        
+        self.loginButt.isEnabled = true
+
+        
     }
     
     // getter de las entradas de la vista

@@ -20,13 +20,47 @@ class SettingsController: UIViewController {
         
         let password = user["password"] as! String
         
-        if currentPass.text! == password && newPass.text! == repeatPass.text! {
+        var parameters = [
+            "password": currentPass.text!,
+            "new_password": newPass.text!
+        ]
+        
+         let pass = validator.init().validatePass(entry: newPass)
+        
+        if currentPass.text! == password && newPass.text! == repeatPass.text! && pass == " " {
             
-            let newPassword = HTTPMessenger.init().post(endpoint: "changePassword", params: newPass.text!)
+            
+            
+            let newPassword = HTTPMessenger.init().post(endpoint: "changePassword", params: parameters)
             newPassword.responseJSON {
                 response in
-                HTTPMessenger.init().tokenSavior(response: response)
+                
+                switch  response.response?.statusCode {
+                case 200:
+                    HTTPMessenger.init().tokenSavior(response: response)
+                    ForbiddenFoodController.createAlert(title: "Contraseña cambiada", message: "La conraseña se ha cambiado correctamente", view: self)
+                    
+                    let params = [
+                        "name" : user["name"],
+                        "email" : user["email"],
+                        "password" : self.newPass.text!,
+                    ]
+                    
+                    UserDefaults.standard.set(params, forKey: "user")
+                    
+                    break
+                case 401:
+                    ForbiddenFoodController.createAlert(title: "Error", message: "La contraseña n coincide", view: self)
+                case .none:
+                    ForbiddenFoodController.createAlert(title: "Fallo de conexión", message: "Revise su conexión a internet", view: self)
+                    break
+                case .some(_):
+                    break
+                }
+                
             }
+        } else {
+              ForbiddenFoodController.createAlert(title: "Error", message: "Revise los campos. La contraseña debe tener al menos 8 caracteres, 1 mayúscula, 1 minúscula, 1 numero y 1 símbolo", view: self)
         }
     }
     
@@ -48,12 +82,27 @@ class SettingsController: UIViewController {
         var parameters = [
             "name": profileTodelete.text!
         ]
-        _ = HTTPMessenger.init().post(endpoint: "removeProfile", params: parameters)
+        
+        var delete_request = HTTPMessenger.init().post(endpoint: "removeProfile", params: parameters)
+        
+  
+        
+        if delete_request.response!.statusCode == 200 {
+            
+            // coger la lista de perfiles de la app y borrarlo
+            let indexOfProfile = profiles.index(of: self.profileTodelete.text!)!
+            
+            self.profiles.remove(at: indexOfProfile)
+            
+            performSegue(withIdentifier: "ToProfiles", sender: self)
+            
+        } else {
+            
+           ForbiddenFoodController.createAlert(title: "No encontrado", message: "no se ha encontrado un perfil con ese nombre", view: self)
+            
+        }
 
-        // coger la lista de perfiles de la app y borrarlo
-        let indexOfProfile = profiles.index(of: profileTodelete.text!)!
 
-        profiles.remove(at: indexOfProfile)
     }
     override func viewDidLoad() {
         currentPass.layer.shadowColor = UIColor.black.cgColor

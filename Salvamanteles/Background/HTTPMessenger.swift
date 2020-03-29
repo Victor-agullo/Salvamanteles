@@ -2,6 +2,7 @@ import UIKit
 import Alamofire
 
 class HTTPMessenger: UIViewController {
+
     
     // recoge la string de contacto con el server y, junto con el fragmento del endpoint,
     // la convierte en una URL válida
@@ -24,6 +25,9 @@ class HTTPMessenger: UIViewController {
     // función que realiza el post
     func post(endpoint: String, params: Any) -> DataRequest{
         
+        var doing = true
+        
+        
         let url = urlModder(urlEndpoint: endpoint)
         
         let token = [
@@ -32,11 +36,19 @@ class HTTPMessenger: UIViewController {
         
         let post = Alamofire.request(url, method: .post, parameters: params as? Parameters, headers: token)
         
+        while (doing) {
+            if post.response != nil {
+                doing = false
+            }
+            
+        }
+        
         return post
     }
     
     // función que realiza el post sin token
     func post_without_token(endpoint: String, params: Any) -> DataRequest{
+        
         
         let url = urlModder(urlEndpoint: endpoint)
         
@@ -47,6 +59,8 @@ class HTTPMessenger: UIViewController {
     
     // función que realiza el get con el token en el header
     func get(endpoint: String) -> DataRequest {
+        
+        var doing = true
         
         let url = urlModder(urlEndpoint: endpoint)
         
@@ -102,12 +116,12 @@ class HTTPMessenger: UIViewController {
                 
             case .none:
                 let errorConection = "Sin conexión a la base de datos"
-                let view = self.view
-                Toaster.init().showToast(message: errorConection, view: view!)
+                Toaster.init().showToast(message: errorConection, view: view)
                 break
                 
             case .some(_):
                 break
+                
             }
         }
     }

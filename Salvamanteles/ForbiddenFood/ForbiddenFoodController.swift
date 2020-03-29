@@ -36,18 +36,18 @@ class ForbiddenFoodController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        createAlert(title: "Modo de uso", message: "Pincha en una categoría de la ruleta, despúes en un alérgeno de la tabla y por último en ¡Hecho! para ver tu selección")
+        ForbiddenFoodController.createAlert(title: "Modo de uso", message: "Pincha en una categoría de la ruleta, despúes en un alérgeno de la tabla y por último en ¡Hecho! para ver tu selección", view: self)
     }
     
-    func createAlert (title: String, message: String)
+    public static func createAlert (title: String, message: String, view: UIViewController)
     {
         let alert = UIAlertController(title: title, message: message,
                                       preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "¡Entendido!", style: UIAlertAction.Style.default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Entendido", style: UIAlertAction.Style.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
         
-        self.present(alert, animated: true, completion: nil )
+        view.present(alert, animated: true, completion: nil )
     }
     
     func infoGatherer() {

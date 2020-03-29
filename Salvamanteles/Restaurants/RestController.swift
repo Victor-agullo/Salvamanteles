@@ -27,6 +27,11 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         profileName.layer.shadowOffset = CGSize(width: 3, height: 3)
         profileName.layer.shadowRadius = 3
         profileName.layer.shadowOpacity = 1.0
+     
+        
+        
+        
+        
     }
     
     func infoGatherer() {
@@ -49,7 +54,12 @@ class RestController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         RestController.jsonArray.append(dishes)
                         RestController.restaurantsArray.append(restaurants)
+                        
+                    
                     }
+                }
+                if RestController.restaurantsArray.isEmpty {
+                    ForbiddenFoodController.createAlert(title: "Lo sentimos", message: "Ningún restaurante cumple tus requisitos", view: self)
                 }
                 self.restaurantsTable.reloadData()
             }

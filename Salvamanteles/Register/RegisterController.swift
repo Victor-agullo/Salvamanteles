@@ -35,10 +35,10 @@ class RegisterController: UIViewController{
                     RegisterController.newProfile = self.nameField.text!
                     
                     self.performSegue(withIdentifier: "toForbidden", sender: self)
-                } else {
-                    self.registerButt.isEnabled = true
                 }
             })
+            self.registerButt.isEnabled = true
+
         } else {
             
             errorName.text! = name
