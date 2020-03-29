@@ -491,7 +491,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeño" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logopequeno" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lk7-Lj-3eX">
                                 <rect key="frame" x="87" y="129" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="syM-Ey-aUT"/>
@@ -780,7 +780,7 @@
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hh-fT-Gy1">
-                                                                <rect key="frame" x="10" y="5" width="150" height="23.5"/>
+                                                                <rect key="frame" x="10" y="5" width="150" height="23"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="coy-Tm-rJn"/>
@@ -790,7 +790,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0f-iZ-JYA">
-                                                                <rect key="frame" x="100" y="28.5" width="40" height="30"/>
+                                                                <rect key="frame" x="100" y="28" width="40" height="30"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="o0V-ag-xn9"/>
@@ -1340,10 +1340,10 @@
         <image name="Restaurants_Screen-image" width="1000" height="1000"/>
         <image name="ajustes" width="512" height="512"/>
         <image name="bluefish 23.36.26" width="900" height="1718"/>
-        <image name="logopequeño" width="1063" height="1063"/>
+        <image name="logopequeno" width="1063" height="1063"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="THL-Dz-vtb"/>
+        <segue reference="F62-U7-idx"/>
         <segue reference="Vtt-ew-5uo"/>
         <segue reference="ifH-y9-BOV"/>
         <segue reference="9rp-SU-1L1"/>
